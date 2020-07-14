@@ -1,0 +1,62 @@
+@font-face {
+    font-family: "IRANYekanWebFn-Light";
+    src: url("../fonts/iranyekanweblightfanum.eot");
+    /* IE9 Compat Modes */
+    src: url("../fonts/iranyekanweblightfanum.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("../fonts/iranyekanweblightfanum.otf") format("opentype"), /* Open Type Font */
+    url("../fonts/iranyekanweblightfanum.svg") format("svg"), /* Legacy iOS */
+    url("../fonts/iranyekanweblightfanum.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("../fonts/iranyekanweblightfanum.woff") format("woff"), /* Modern Browsers */
+    url("../fonts/iranyekanweblightfanum.woff2") format("woff2");
+    /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    overflow-x: hidden;
+    width: 100%;
+    padding: 0px 15px 0px 15px;
+    font-family: "IRANYekanWebFn-Light" !important;
+}
+
+a {
+    font-family: "IRANYekanWebFn-Light" !important;
+}
+
+.header {
+    padding: 20px 10px 20px 10px;
+    text-align: center;
+    background: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-shadow: rgba(0, 0, 0, .07) 0 0 30px;
+}
+
+.login-button {
+    background: green;
+    color: #fff;
+    padding: 10px 15px 10px 15px;
+    border-radius: 10px;
+}
+
+.section {
+    margin-top: 150px;
+}
+
+.section-boxs {
+    text-align: center;
+    padding: 70px;
+    box-shadow: rgba(0, 0, 0, 0.20) 0 0 30px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.section-boxs:hover {
+    box-shadow: rgba(0, 0, 0, 0.10) 0 0 30px;
+    -webkit-transform: translateY(-6px);
+    transform: translateY(-6px);
+    transition: all 0.3s ease;
+}
