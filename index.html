@@ -2,12 +2,22 @@
 <html lang="en">
 
 <head>
+
+    <title>مث بات | ربات هوشمند آموزش ریاضی</title>
+
+    <!-- Meta Data -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مث بات | ربات هوشمند آموزش ریاضی</title>
-    <link rel="stylesheet" href="css/bootstrap-rtl.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="icons/css/all.css" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="address=no" />
+    <meta name="author" content="Hossein Akbari" />
+    <!-- <meta name="description" content="" /> -->
+    <meta name="keywords" content="مث بات , آموزش ریاضی">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/bootstrap-rtl.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/icons/css/all.css" />
 </head>
 
 <body>
@@ -15,40 +25,236 @@
         <div class="header">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-2">
-                        <a class="logo-button" href="#">مث بات</a>
+                    <div class="col-md-5 col-xs-4"></div>
+                    <div class="col-md-2 col-xs-4">
+                        <a class="logo-button" href="https://mathbot.ir"><span class="logo-button-span">م</span>ث <span class="logo-button-span">ب</span>ات</a>
                     </div>
-                    <div class="col-md-8"></div>
-                    <div class="col-md-2">
-                        <a class="login-button" href="#">ورود</a>
-                    </div>
+                    <div class="col-md-5 col-xs-4"></div>
                 </div>
             </div>
         </div>
         <div class="section">
-            <div class="row">
-                <a href="#">
-                    <div class="col-md-4">
-                        <div class="section-boxs"><i class="far fa-file-alt"></i> ایجاد آزمون آنلاین
+            <div class="container">
+                <div class="row section-header">
+                    <a href="#">
+                        <div class="col-md-4 col-xs-12">
+                            <div onmouseout="section_header_out_1();" onmouseover="section_header_over_1();" class="section-header-boxs"><i id="section-header-boxs-icon-1" class="fas fa-file-alt section-header-boxs-icon"></i> ایجاد آزمون آنلاین <br>
+                                <p style="font-size: 12px; margin-top: 10px;">4 گزینه ای، تشریحی و...</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="col-md-4 col-xs-12">
+                            <div onmouseout="section_header_out_2();" onmouseover="section_header_over_2();" class="section-header-boxs"><i id="section-header-boxs-icon-2" class="fas fa-video section-header-boxs-icon"></i> آپلود آموزش ویدئویی <br>
+                                <p style="font-size: 12px; margin-top: 10px;">مشابه یوتیوب و آپارات</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://mathbot.ir/forum/ask">
+                        <div class="col-md-4 col-xs-12">
+                            <div onmouseout="section_header_out_3();" onmouseover="section_header_over_3();" class="section-header-boxs"><i id="section-header-boxs-icon-3" class="fas fa-question section-header-boxs-icon"></i> سوال خودت رو بپرس <br>
+                                <p style="font-size: 12px; margin-top: 10px;">انجمن پرسش و پاسخ ریاضی</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="row">
+                    <a href=" # ">
+                        <div class="col-md-4 col-xs-12 ">
+                            <div onmouseout="section_header_out_1(); " onmouseover="section_header_over_1(); " class="section-header-boxs "><i id="section-header-boxs-icon-1 " class="fas fa-user-circle section-header-boxs-icon "></i> ورود به حساب کاربری <br>
+                                <p style="font-size: 12px; margin-top: 10px; ">ثبت نام / ورود</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="# ">
+                        <div class="col-md-8 col-xs-12 ">
+                            <div onmouseout="section_header_out_2(); " onmouseover="section_header_over_2(); " class="section-header-boxs "><i id="section-header-boxs-icon-2 " class="fas fa-money-check-alt section-header-boxs-icon "></i> خرید اشتراک <br>
+                                <p style="font-size: 12px; margin-top: 10px; ">30 درصد تخفیف برای اولین اشتراک، با کد تخفیف MathbotLover</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="row section-item-1 ">
+                    <div class="row title ">
+                        <h3 class="col-xs-12 col-md-11">جدیدترین آزمون های آنلاین</h3>
+                        <a class="col-xs-0 col-md-1 title-a " href="# ">مشاهده همه</a>
+                    </div>
+                    <div class="row section-item-1-box ">
+                        <div class="col-md-3 col-xs-12 col-sm-6">
+                            <div class="question-box ">
+                                <h4>نام آزمون</h4>
+                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ ...</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-12 col-sm-6">
+                            <div class="question-box ">
+                                <h4>نام آزمون</h4>
+                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ ...</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-12 col-sm-6">
+                            <div class="question-box ">
+                                <h4>نام آزمون</h4>
+                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ ...</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-12 col-sm-6">
+                            <div class="question-box ">
+                                <h4>نام آزمون</h4>
+                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ ...</p>
+                            </div>
                         </div>
                     </div>
-                </a>
-                <a href="#">
-                    <div class="col-md-4">
-                        <div class="section-boxs"><i class="fas fa-video"></i> آپلود آموزش ویدئویی
+                </div>
+                <div class="row section-item-2 ">
+                    <div class="row title ">
+                        <h3 class="col-xs-12 col-md-11">محبوب ترین آموزش های ویدئویی</h3>
+                        <a class="col-xs-0 col-md-1 title-a " href="# ">مشاهده همه</a>
+                    </div>
+                    <div class="row section-item-1-box ">
+                        <div class="col-md-3 col-xs-12 col-sm-6">
+                            <div class="question-box ">
+                                <h4>نام آموزش</h4>
+                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ ...</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-12 col-sm-6">
+                            <div class="question-box ">
+                                <h4>نام آموزش</h4>
+                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ ...</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-12 col-sm-6">
+                            <div class="question-box ">
+                                <h4>نام آموزش</h4>
+                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ ...</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-12 col-sm-6">
+                            <div class="question-box ">
+                                <h4>نام آموزش</h4>
+                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ ...</p>
+                            </div>
                         </div>
                     </div>
-                </a>
-                <a href="#">
-                    <div class="col-md-4">
-                        <div class="section-boxs"><i class="fas fa-question"></i> ثبت سوال در انجمن ریاضی
+                </div>
+                <div class="row section-item-3 ">
+                    <div class="row title ">
+                        <h3 class="col-xs-12 col-md-11">پر بازدید ترین سوالات انجمن</h3>
+                        <a class="col-xs-0 col-md-1 title-a " href="https://mathbot.ir/forum">مشاهده همه</a>
+                    </div>
+                    <div class="row section-item-1-box ">
+                        <div class="col-md-3 col-xs-12 col-sm-6">
+                            <div class="question-box ">
+                                <h4>نام سوال</h4>
+                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ ...</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-12 col-sm-6">
+                            <div class="question-box ">
+                                <h4>نام سوال</h4>
+                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ ...</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-12 col-sm-6">
+                            <div class="question-box ">
+                                <h4>نام سوال</h4>
+                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ ...</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-12 col-sm-6">
+                            <div class="question-box ">
+                                <h4>نام سوال</h4>
+                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ ...</p>
+                            </div>
                         </div>
                     </div>
-                </a>
+                    <div class="swiper-pagination "></div>
+                </div>
             </div>
         </div>
-        <div class="footer"></div>
+        <div class="footer ">
+            <div class="container ">
+                <div class="row ">
+                    <div class="col-md-4 footer-box ">
+                        <h4>ارتباط با ما</h4>
+                        <div class="footer-a-box ">
+                            <p><i class="fab fa-instagram "></i> پیج اینستاگرام :
+                                <a href="http://instagram.com/mathbot.ir ">mathbot.ir@</a></p>
+                            <p><i class="fas fa-phone "></i> همراه :
+                                <a href="tel:+989156179233 ">989156179233+</a></p>
+                            <p><i class="fas fa-envelope "></i> ایمیل :
+                                <a href="mailto:hosseinakbari506@gmail.com ">hosseinakbari506@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 footer-box ">
+                        <h4>سایر صفحات</h4>
+                        <div class="footer-a-box ">
+                            <a href="# ">
+                                <p>ورود به حساب کاربری</p>
+                            </a>
+                            <a href="https://mathbot.ir/developers ">
+                                <p>توسعه دهندگان مث بات</p>
+                            </a>
+                            <a href="# ">
+                                <p>همکاری با ما</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 footer-box ">
+                        <h4>لینک های مهم</h4>
+                        <div class="footer-a-box ">
+                            <a href="https://ticnet.ir ">
+                                <p>سایت ساز رایگان</p>
+                            </a>
+                            <a href="https://speed-learn.ir ">
+                                <p>آموزش برنامه نویسی</p>
+                            </a>
+                            <a href="https://hosseinakbari506.ir ">
+                                <p>سفارش طراحی وب سایت</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom ">
+            <div class="container ">
+                <div class="row ">
+                    <div class="footer-programmer ">
+                        <p>طراحی و توسعه توسط تیم<a href="https://mathbot.ir/developers "> توسعه دهندگان مث بات</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <script>
+        function section_header_over_1() {
+            document.getElementById('section-header-boxs-icon-1').style.color = '#aae68b';
+        }
+
+        function section_header_out_1() {
+            document.getElementById('section-header-boxs-icon-1').style.color = '#29a58d';
+        }
+
+        function section_header_over_2() {
+            document.getElementById('section-header-boxs-icon-2').style.color = '#aae68b';
+        }
+
+        function section_header_out_2() {
+            document.getElementById('section-header-boxs-icon-2').style.color = '#29a58d';
+        }
+
+        function section_header_over_3() {
+            document.getElementById('section-header-boxs-icon-3').style.color = '#aae68b';
+        }
+
+        function section_header_out_3() {
+            document.getElementById('section-header-boxs-icon-3').style.color = '#29a58d';
+        }
+    </script>
+
 </body>
 
 </html>
