@@ -308,6 +308,43 @@ button {
     padding: 10px 0 0 0;
 }
 
+.question-box-big {
+    background: #fff;
+    box-shadow: 0 5px 10px 0 rgba(20, 83, 155, .05);
+    padding: 15px 15px 10px 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.question-box-big-p {
+    line-height: 30px;
+}
+
+.question-box-big-tags {
+    font-size: 12px;
+    background: #eee;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: -moz-fit-content;
+}
+
+.question-answer-big {
+    background: #fff;
+    box-shadow: 0 5px 10px 0 rgba(20, 83, 155, .05);
+    padding: 15px 15px 15px 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    left: 15px;
+}
+
+.question-answer-big-p {
+    line-height: 30px;
+}
+
+.answer-again {
+    margin-right: 45px;
+}
+
 .question-answer {
     background: #075065;
     color: #fff;
@@ -334,7 +371,7 @@ button {
     }
 }
 
-.forum-ad {
+.forum-sidebar {
     background: #29a58d;
     margin-top: 15px;
     padding: 15px;
@@ -342,10 +379,10 @@ button {
     text-align: center;
     color: #fff;
     width: 100%;
-    height: 115px;
+    height: auto;
 }
 
-.forum-ad h6 {
+.forum-sidebar h6 {
     line-height: 25px;
 }
 
@@ -384,8 +421,35 @@ button {
     }
 }
 
+.forum-ad {
+    width: 100%;
+    border-radius: 10px;
+}
 
-/* login */
+.forum-ad-box {
+    margin-top: 15px;
+    width: 100%;
+    height: auto;
+}
+
+.question-box-link {
+    color: #333;
+}
+
+.forum-title-view {
+    width: auto !important;
+}
+
+.forum-title-ask {
+    width: auto !important;
+}
+
+.forum-title-last-seen {
+    width: auto !important;
+}
+
+
+/* Login */
 
 .login-page {
     width: 100%;
@@ -498,4 +562,140 @@ button {
 
 .container-login .info span .fa {
     color: #EF3B3A;
+}
+
+
+/* 404 */
+
+.NotFound-box {
+    padding: 70px 0;
+}
+
+.NotFound-h1 {
+    text-align: center;
+    font-size: 120px;
+    color: #29A58D;
+    font-weight: 600;
+}
+
+.NotFound-p {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.NotFound-a {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+/* Developers */
+
+.developers {
+    padding: 30px 200px;
+}
+
+@media only screen and (max-width: 1076px) {
+    .developers {
+        padding: 70px 150px;
+    }
+}
+
+@media only screen and (max-width: 631px) {
+    .developers {
+        padding: 70px 50px;
+    }
+}
+
+.developer {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px 0 rgba(20, 83, 155, .05);
+    margin-bottom: 30px;
+}
+
+.dev-img {
+    width: 100px;
+    border-radius: 50%;
+}
+
+.dev-h1 {
+    margin-bottom: 80px;
+    text-align: center;
+}
+
+.dev-p {
+    margin: 20px 0;
+}
+
+
+/* Ask */
+
+.ask-your-Q {
+    margin-bottom: 20px;
+    margin-top: 40px;
+    line-height: 35px;
+}
+
+.ask-input-title {
+    font-family: "IRANYekanWebFn-Light" !important;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    padding: 8px;
+    box-sizing: border-box;
+    font-size: 14px;
+    border-radius: 10px;
+    margin: 10px 0 15px;
+    height: 40px;
+    resize: vertical;
+}
+
+.ask-input-description {
+    font-family: "IRANYekanWebFn-Light" !important;
+    background: #f2f2f2;
+    width: 100%;
+    height: 250px;
+    border: 0;
+    padding: 8px;
+    box-sizing: border-box;
+    font-size: 14px;
+    border-radius: 10px;
+    margin: 10px 0 15px;
+    resize: vertical;
+}
+
+.ask-input-tags {
+    font-family: "IRANYekanWebFn-Light" !important;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    padding: 8px;
+    box-sizing: border-box;
+    font-size: 14px;
+    border-radius: 10px;
+    margin: 10px 0 15px;
+    height: 40px;
+    resize: vertical;
+}
+
+.ask-box {
+    background: #fff;
+    box-shadow: 0 5px 10px 0 rgba(20, 83, 155, .05);
+    padding: 15px 15px 15px 15px;
+    border-radius: 10px;
+}
+
+.ask-input-button {
+    background: #29a58d;
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    line-height: 25px;
+    border: 0;
+    margin: 10px 0 0;
 }
