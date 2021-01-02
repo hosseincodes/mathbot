@@ -1,5 +1,13 @@
+/* SCSS Codes */
+
 $font-family-IRANYekan: "IRANYekanWebFn-Light" !important;
 $font-family-Cinema: "Cinema" !important;
+$font-size-medium: 14px;
+$font-size-little: 12px;
+$font-size-big: 28px;
+
+/* Fonts */
+
 @font-face {
     font-family: "IRANYekanWebFn-Light";
     src: url("../fonts/iranyekanweblightfanum.eot");
@@ -51,6 +59,9 @@ a:hover {
     text-decoration: none;
 }
 
+
+/* Header */
+
 .header {
     padding: 12px 10px 12px 10px;
     text-align: center;
@@ -65,7 +76,7 @@ a:hover {
 
 .logo-button {
     color: #333;
-    font-size: 28px;
+    font-size: $font-size-big;
     font-family: $font-family-Cinema;
 }
 
@@ -80,7 +91,7 @@ a:hover {
     padding: 5px 10px 5px 10px;
     border-radius: 5px;
     transition: all 0.2s ease;
-    font-size: 28px;
+    font-size: $font-size-big;
     font-family: $font-family-Cinema;
     &:hover {
         color: #fff !important;
@@ -89,30 +100,15 @@ a:hover {
     }
 }
 
+
+/* Homepage */
+
 .section {
     margin-top: 120px;
 }
 
-@media only screen and (max-width: 770px) {
-    .section-item-1 {
-        padding: 35px;
-    }
-    .section-item-2 {
-        padding: 35px;
-    }
-    .section-item-3 {
-        padding: 35px;
-    }
-}
-
 .section-header {
     margin-bottom: 30px;
-}
-
-@media only screen and (max-width: 992px) {
-    .section-header {
-        margin-bottom: -20px;
-    }
 }
 
 .section-header-boxs {
@@ -135,23 +131,11 @@ a:hover {
     }
 }
 
-@media only screen and (max-width: 992px) {
-    .section-header-boxs {
-        margin: 20px;
-    }
-}
-
 .section-header-boxs-icon {
     color: #29a58d;
 }
 
 .title {
-    position: relative;
-    margin-bottom: 40px;
-    margin-top: 40px;
-}
-
-.forum-title {
     position: relative;
     margin-bottom: 40px;
     margin-top: 40px;
@@ -176,38 +160,14 @@ a:hover {
     }
 }
 
-@media only screen and (max-width: 617px) {
-    .title-a {
-        display: none;
-    }
-}
 
-@media only screen and (max-width: 490px) {
-    .title h3 {
-        line-height: 35px;
-        text-align: center;
-    }
-    .title {
-        margin-top: -10px;
-    }
-    .forum-title h3 {
-        text-align: center;
-    }
-}
+/* Footer */
 
 .footer {
     margin-top: 40px;
     background: #29a58d;
     color: #fff;
     padding: 25px;
-}
-
-.footer-p-box p {
-    padding: 25px;
-    text-align: center;
-    font-family: "ADastNevis";
-    font-family: "ADastNevis" !important;
-    font-size: 25px;
 }
 
 .footer-box h4 {
@@ -241,14 +201,179 @@ a:hover {
     padding-bottom: 5px;
 }
 
-@media only screen and (max-width: 770px) {
-    .footer-bottom {
-        text-align: center;
+.footer-programmers a {
+    color: #fff;
+}
+
+
+/* Login */
+
+.login-page {
+    width: 100%;
+    padding: 8% 0 0;
+    margin: auto;
+}
+
+.form {
+    position: relative;
+    /* z-index: 1; */
+    background: #fff;
+    max-width: 360px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 5px 10px 0 rgba(20, 83, 155, .05);
+    border-radius: 10px;
+}
+
+.form input {
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: $font-size-medium;
+    border-radius: 10px;
+}
+
+.form button {
+    text-transform: uppercase;
+    outline: 0;
+    background: #29a58d;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #fff;
+    font-size: $font-size-medium;
+    transition: all 0.2 ease;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.form button:hover,
+.form button:active,
+.form button:focus {
+    background: #aae68b;
+    transition: all 0.2s ease;
+}
+
+.form .message {
+    margin: 15px 0 0;
+    color: #b3b3b3;
+    font-size: $font-size-little;
+    a {
+        color: #29a58d;
+        text-decoration: none;
     }
 }
 
-.footer-programmer a {
+.form .register-form {
+    display: none;
+}
+
+.container-login {
+    position: relative;
+    /* z-index: 1; */
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.container-login:before,
+.container-login:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.container-login .info {
+    margin: 50px auto;
+    text-align: center;
+}
+
+.container-login .info span {
+    color: #4d4d4d;
+    font-size: $font-size-little;
+}
+
+.container-login .info span a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.container-login .info span .fa {
+    color: #EF3B3A;
+}
+
+
+/* Froum */
+
+.ask-your-Q {
+    margin-bottom: 20px;
+    margin-top: 40px;
+    line-height: 35px;
+}
+
+.ask-input-title {
+    font-family: $font-family-IRANYekan;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    padding: 8px;
+    box-sizing: border-box;
+    font-size: $font-size-medium;
+    border-radius: 10px;
+    margin: 10px 0 15px;
+    height: 40px;
+    resize: vertical;
+}
+
+.ask-input-description {
+    font-family: $font-family-IRANYekan;
+    background: #f2f2f2;
+    width: 100%;
+    height: 250px;
+    border: 0;
+    padding: 8px;
+    box-sizing: border-box;
+    font-size: $font-size-medium;
+    border-radius: 10px;
+    margin: 10px 0 15px;
+    resize: vertical;
+}
+
+.ask-input-tags {
+    font-family: $font-family-IRANYekan;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    padding: 8px;
+    box-sizing: border-box;
+    font-size: $font-size-medium;
+    border-radius: 10px;
+    margin: 10px 0 15px;
+    height: 40px;
+    resize: vertical;
+}
+
+.ask-box {
+    background: #fff;
+    box-shadow: 0 5px 10px 0 rgba(20, 83, 155, .05);
+    padding: 15px 15px 15px 15px;
+    border-radius: 10px;
+}
+
+.ask-input-button {
+    background: #29a58d;
     color: #fff;
+    border-radius: 10px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    line-height: 25px;
+    border: 0;
+    margin: 10px 0 0;
 }
 
 .question-box {
@@ -274,7 +399,7 @@ a:hover {
 .question-box p {
     text-align: justify;
     line-height: 22px;
-    font-size: 12px;
+    font-size: $font-size-little;
 }
 
 .question-box-bottom {
@@ -296,7 +421,7 @@ a:hover {
 }
 
 .question-box-big-tags {
-    font-size: 12px;
+    font-size: $font-size-little;
     background: #eee;
     padding: 10px;
     border-radius: 10px;
@@ -304,7 +429,7 @@ a:hover {
 }
 
 .question-box-big-questioner {
-    font-size: 12px;
+    font-size: $font-size-little;
     background: #eee;
     padding: 10px;
     border-radius: 10px;
@@ -358,15 +483,6 @@ a:hover {
     left: 5px;
 }
 
-@media only screen and (max-width: 1200px) {
-    .question-answer {
-        display: none;
-    }
-    .question-visit {
-        display: none;
-    }
-}
-
 .forum-sidebar {
     background: #29a58d;
     margin-top: 15px;
@@ -410,12 +526,6 @@ a:hover {
     }
 }
 
-@media only screen and (max-width: 593px) {
-    .more {
-        width: 40%;
-    }
-}
-
 .forum-ad {
     width: 100%;
     border-radius: 10px;
@@ -443,144 +553,10 @@ a:hover {
     width: auto !important;
 }
 
-
-/* Login */
-
-.login-page {
-    width: 100%;
-    padding: 8% 0 0;
-    margin: auto;
-}
-
-.form {
+.forum-title {
     position: relative;
-    /* z-index: 1; */
-    background: #fff;
-    max-width: 360px;
-    margin: 0 auto 100px;
-    padding: 45px;
-    text-align: center;
-    box-shadow: 0 5px 10px 0 rgba(20, 83, 155, .05);
-    border-radius: 10px;
-}
-
-.form input {
-    outline: 0;
-    background: #f2f2f2;
-    width: 100%;
-    border: 0;
-    margin: 0 0 15px;
-    padding: 15px;
-    box-sizing: border-box;
-    font-size: 14px;
-    border-radius: 10px;
-}
-
-.form button {
-    text-transform: uppercase;
-    outline: 0;
-    background: #29a58d;
-    width: 100%;
-    border: 0;
-    padding: 15px;
-    color: #fff;
-    font-size: 14px;
-    transition: all 0.2 ease;
-    cursor: pointer;
-    border-radius: 10px;
-}
-
-.form button:hover,
-.form button:active,
-.form button:focus {
-    background: #aae68b;
-    transition: all 0.2s ease;
-}
-
-.form .message {
-    margin: 15px 0 0;
-    color: #b3b3b3;
-    font-size: 12px;
-    a {
-        color: #29a58d;
-        text-decoration: none;
-    }
-}
-
-.form .register-form {
-    display: none;
-}
-
-.container-login {
-    position: relative;
-    /* z-index: 1; */
-    max-width: 400px;
-    margin: 0 auto;
-}
-
-@media only screen and (max-width: 400px) {
-    .container-login {
-        max-width: 300px;
-    }
-}
-
-.container-login:before,
-.container-login:after {
-    content: "";
-    display: block;
-    clear: both;
-}
-
-.container-login .info {
-    margin: 50px auto;
-    text-align: center;
-}
-
-.container-login .info h1 {
-    margin: 0 0 15px;
-    padding: 0;
-    font-size: 36px;
-    font-weight: 300;
-    color: #1a1a1a;
-}
-
-.container-login .info span {
-    color: #4d4d4d;
-    font-size: 12px;
-}
-
-.container-login .info span a {
-    color: #000000;
-    text-decoration: none;
-}
-
-.container-login .info span .fa {
-    color: #EF3B3A;
-}
-
-
-/* 404 */
-
-.NotFound-box {
-    padding: 70px 0;
-}
-
-.NotFound-h1 {
-    text-align: center;
-    font-size: 120px;
-    color: #29A58D;
-    font-weight: 600;
-}
-
-.NotFound-p {
-    text-align: center;
-    font-size: 30px;
-    font-weight: 600;
-}
-
-.NotFound-a {
-    text-align: center;
-    margin-top: 20px;
+    margin-bottom: 40px;
+    margin-top: 40px;
 }
 
 
@@ -588,18 +564,6 @@ a:hover {
 
 .developers {
     padding: 30px 200px;
-}
-
-@media only screen and (max-width: 1076px) {
-    .developers {
-        padding: 70px 150px;
-    }
-}
-
-@media only screen and (max-width: 631px) {
-    .developers {
-        padding: 70px 50px;
-    }
 }
 
 .developer {
@@ -622,76 +586,6 @@ a:hover {
 
 .dev-p {
     margin: 20px 0;
-}
-
-
-/* Ask */
-
-.ask-your-Q {
-    margin-bottom: 20px;
-    margin-top: 40px;
-    line-height: 35px;
-}
-
-.ask-input-title {
-    font-family: $font-family-IRANYekan;
-    background: #f2f2f2;
-    width: 100%;
-    border: 0;
-    padding: 8px;
-    box-sizing: border-box;
-    font-size: 14px;
-    border-radius: 10px;
-    margin: 10px 0 15px;
-    height: 40px;
-    resize: vertical;
-}
-
-.ask-input-description {
-    font-family: $font-family-IRANYekan;
-    background: #f2f2f2;
-    width: 100%;
-    height: 250px;
-    border: 0;
-    padding: 8px;
-    box-sizing: border-box;
-    font-size: 14px;
-    border-radius: 10px;
-    margin: 10px 0 15px;
-    resize: vertical;
-}
-
-.ask-input-tags {
-    font-family: $font-family-IRANYekan;
-    background: #f2f2f2;
-    width: 100%;
-    border: 0;
-    padding: 8px;
-    box-sizing: border-box;
-    font-size: 14px;
-    border-radius: 10px;
-    margin: 10px 0 15px;
-    height: 40px;
-    resize: vertical;
-}
-
-.ask-box {
-    background: #fff;
-    box-shadow: 0 5px 10px 0 rgba(20, 83, 155, .05);
-    padding: 15px 15px 15px 15px;
-    border-radius: 10px;
-}
-
-.ask-input-button {
-    background: #29a58d;
-    color: #fff;
-    border-radius: 10px;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    line-height: 25px;
-    border: 0;
-    margin: 10px 0 0;
 }
 
 
@@ -720,3 +614,30 @@ a:hover {
     text-align: center;
     margin-bottom: 15px;
 }
+
+
+/* 404 */
+
+.NotFound-box {
+    padding: 70px 0;
+}
+
+.NotFound-h1 {
+    text-align: center;
+    font-size: 120px;
+    color: #29A58D;
+    font-weight: 600;
+}
+
+.NotFound-p {
+    text-align: center;
+    font-size: $font-size-big;
+    font-weight: 600;
+}
+
+.NotFound-a {
+    text-align: center;
+    margin-top: 20px;
+}
+
+@import "responsive";
