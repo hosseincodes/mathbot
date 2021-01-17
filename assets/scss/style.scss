@@ -172,14 +172,12 @@ a:hover {
 .footer {
     color: #fff;
     padding-top: 15px;
-    padding-bottom: 15px;
+    padding-bottom: 5px;
     background-color: #29a58d;
     text-align: center;
-    font-size: 18px;
     margin-top: 40px;
     a {
         color: #fff;
-        padding: 7px;
         &:hover {
             transition: all 0.3s ease;
             color: #aae68b;
@@ -543,13 +541,6 @@ a:hover {
 
 
 /* Calculator */
-
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-    font-weight: normal;
-}
 
 .calculator-grid {
     display: grid;
