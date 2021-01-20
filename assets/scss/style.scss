@@ -745,4 +745,32 @@ a:hover {
     margin-top: 20px;
 }
 
+
+/* Contact */
+
+.contact {
+    padding: 30px 200px;
+}
+
+.contact-h1 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contact-p {
+    text-align: center;
+}
+
+.contact-a {
+    color: #29a58d;
+    font-size: 28px;
+    margin: 15px;
+}
+
+.contact-div {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 40px;
+}
+
 @import "responsive";
