@@ -51,6 +51,7 @@ h3,
 h4,
 h5,
 h6,
+span,
 button {
     font-family: $font-family-IRANYekan;
 }
@@ -408,27 +409,6 @@ a:hover {
     max-width: -moz-fit-content;
 }
 
-.question-box-big-questioner {
-    font-size: $font-size-little;
-    background: #eee;
-    padding: 10px;
-    border-radius: 10px;
-    width: 150px;
-}
-
-.questioner-img {
-    width: 50px;
-    border-radius: 10px;
-}
-
-.questioner-box-1 {
-    padding: 0 15px 0 0 !important;
-}
-
-.questioner-box-2 {
-    padding: 0 0 0 15px !important;
-}
-
 .question-answer-big {
     background: #fff;
     box-shadow: 0 5px 10px 0 rgba(20, 83, 155, .05);
@@ -478,6 +458,23 @@ a:hover {
     line-height: 25px;
 }
 
+.your-answer-box {
+    background: #fff;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+.question-tag-span {
+    background: #eee;
+    padding: 5px;
+    margin-left: 5px;
+    border-radius: 5px;
+}
+
+.question-tag-box {
+    margin: 20px 0 25px 0;
+}
+
 .question-tag {
     padding: 5px 5px 5px 0px;
     max-width: max-content;
@@ -523,14 +520,17 @@ a:hover {
 
 .forum-title-view {
     width: auto !important;
+    text-align: center;
 }
 
 .forum-title-ask {
     width: auto !important;
+    text-align: center;
 }
 
 .forum-title-last-seen {
     width: auto !important;
+    text-align: center;
 }
 
 .forum-title {
