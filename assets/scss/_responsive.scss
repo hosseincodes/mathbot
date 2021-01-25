@@ -32,7 +32,9 @@
 }
 
 @media only screen and (max-width: 631px) {
-    .developers {
+    .developers,
+    .games,
+    .contact {
         padding: 70px 50px;
     }
 }
@@ -58,12 +60,6 @@
     }
     .section-header-boxs {
         margin: 20px;
-    }
-}
-
-@media only screen and (max-width: 1076px) {
-    .developers {
-        padding: 70px 150px;
     }
 }
 
