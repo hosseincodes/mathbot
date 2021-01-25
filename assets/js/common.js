@@ -9,131 +9,72 @@ $('.message a').click(function() {
 });
 
 // Calculator
-class Calculator {
-    constructor(previousOperandTextElement, currentOperandTextElement) {
-        this.previousOperandTextElement = previousOperandTextElement
-        this.currentOperandTextElement = currentOperandTextElement
-        this.clear()
-    }
 
-    clear() {
-        this.currentOperand = ''
-        this.previousOperand = ''
-        this.operation = undefined
-    }
+$(document).ready(function() {
+    var result = 0;
+    var prevEntry = 0;
+    var operation = null;
+    var currentEntry = '0';
+    updateScreen(result);
 
-    delete() {
-        this.currentOperand = this.currentOperand.slice(0, -1);
-    }
+    $('.button').on('click', function(evt) {
+        var buttonPressed = $(this).html();
+        console.log(buttonPressed);
 
-    appendNumber(number) {
-        if (number === '.' && this.currentOperand.includes('.'))
-            return;
-        this.currentOperand = this.currentOperand.toString() + number.toString();
-    }
-
-    chooseOperation(operation) {
-        if (this.currentOperand === '') return;
-        if (this.previousOperand !== '')
-            this.compute();
-        this.operation = operation;
-        this.previousOperand = this.currentOperand;
-        this.currentOperand = '';
-    }
-
-    compute() {
-        let computation;
-        let prev = parseFloat(this.previousOperand);
-        let current = parseFloat(this.currentOperand);
-
-        if (isNaN(prev) || isNaN(current)) return;
-
-        switch (this.operation) {
-            case '+':
-                computation = prev + current;
-                break;
-            case '-':
-                computation = prev - current;
-                break;
-            case '*':
-                computation = prev * current;
-                break;
-            case 'รท':
-                if (current === 0)
-                    return;
-                else
-                    computation = prev / current;
-                break;
-            default:
-                return;
+        if (buttonPressed === "C") {
+            result = 0;
+            currentEntry = '0';
+        } else if (buttonPressed === "CE") {
+            currentEntry = '0';
+        } else if (buttonPressed === "back") {
+            //currentEntry = currentEntry.substring(0, currentEntry.length-1);
+        } else if (buttonPressed === "+/-") {
+            currentEntry *= -1;
+        } else if (buttonPressed === '.') {
+            currentEntry += '.';
+        } else if (isNumber(buttonPressed)) {
+            if (currentEntry === '0') currentEntry = buttonPressed;
+            else currentEntry = currentEntry + buttonPressed;
+        } else if (isOperator(buttonPressed)) {
+            prevEntry = parseFloat(currentEntry);
+            operation = buttonPressed;
+            currentEntry = '';
+        } else if (buttonPressed === '%') {
+            currentEntry = currentEntry / 100;
+        } else if (buttonPressed === 'sqrt') {
+            currentEntry = Math.sqrt(currentEntry);
+        } else if (buttonPressed === '1/x') {
+            currentEntry = 1 / currentEntry;
+        } else if (buttonPressed === 'pi') {
+            currentEntry = Math.PI;
+        } else if (buttonPressed === '=') {
+            currentEntry = operate(prevEntry, currentEntry, operation);
+            operation = null;
         }
-        this.currentOperand = computation;
-        this.previousOperand = '';
-        this.operation = undefined;
-    }
 
-    getDisplayNumber(number) {
-        var stringNumber = number.toString();
-        var integerDigits = parseFloat(stringNumber.split('.')[0]);
-        var decimalDigits = stringNumber.split('.')[1];
+        updateScreen(currentEntry);
+    });
+});
 
-        let integerDisplay;
-        if (isNaN(integerDigits))
-            integerDisplay = '';
-        else {
-            integerDisplay = integerDigits.toLocaleString('en', { maximumFractionDigits: 0 });
-        }
-        if (decimalDigits != null)
-            return `${integerDisplay}.${decimalDigits}`;
-        else
-            return integerDisplay;
+updateScreen = function(displayValue) {
+    var displayValue = displayValue.toString();
+    $('.screen').html(displayValue.substring(0, 10));
+};
 
-
-
-    }
-    updateDisplay() {
-        this.currentOperandTextElement.innerText = this.getDisplayNumber(this.currentOperand);
-        if (this.operation != null)
-            this.previousOperandTextElement.innerText = this.getDisplayNumber(this.previousOperand) + ' ' + this.operation;
-        else
-            this.previousOperandTextElement.innerText = '';
-    }
+isNumber = function(value) {
+    return !isNaN(value);
 }
-const numberButtons = document.querySelectorAll('[data-number]')
-const operationButtons = document.querySelectorAll('[data-operation]');
-const equalsButton = document.querySelector('[data-equals]');
-const deleteButton = document.querySelector('[data-delete]');
-const allClearButton = document.querySelector('[data-all-clear]');
-const previousOperandTextElement = document.querySelector('[data-previous-operand]');
-const currentOperandTextElement = document.querySelector('[data-current-operand]');
 
-const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement);
-numberButtons.forEach(button => {
-    button.addEventListener('click', function() {
-        calculator.appendNumber(button.innerText)
-        calculator.updateDisplay()
-    })
-})
+isOperator = function(value) {
+    return value === '/' || value === '*' || value === '+' || value === '-';
+};
 
-operationButtons.forEach(button => {
-    button.addEventListener('click', function() {
-        calculator.chooseOperation(button.innerText);
-        calculator.updateDisplay();
-    })
-})
-
-equalsButton.addEventListener('click', () => {
-    console.log('equals');
-    calculator.compute();
-    calculator.updateDisplay();
-});
-
-allClearButton.addEventListener('click', () => {
-    calculator.clear();
-    calculator.updateDisplay();
-});
-
-deleteButton.addEventListener('click', () => {
-    calculator.delete();
-    calculator.updateDisplay();
-});
+operate = function(a, b, operation) {
+    a = parseFloat(a);
+    b = parseFloat(b);
+    console.log(a, b, operation);
+    if (operation === '+') return a + b;
+    if (operation === '-') return a - b;
+    if (operation === '*') return a * b;
+    if (operation === '/') return a / b;
+}
