@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Sidebar from './Sidebar';
 import Question from './Question';
+import Loading from "./Loading";
 
 class Questions extends Component {
     render () {
@@ -19,11 +20,8 @@ class Questions extends Component {
                         <Question />
                         <Question />
 
-                        <div className="col-md-12 col-xs-12">
-                            <a href="#">
-                                <div className="more">نمایش سایر</div>
-                            </a>
-                        </div>
+                        <Loading />
+
                     </div>
 
                    <Sidebar />

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ad from '../assets/images/speedlearn.png';
 
 class Sidebar extends Component {
     render () {
@@ -14,7 +15,7 @@ class Sidebar extends Component {
                     <h6>انتگرال - ریاضی نهم - ریاضی دهم - جبر - هندسه - مثلثات</h6>
                 </div>
                 <div className="forum-ad-box">
-                    {/* <a target="_blank" href="https://speed-learn.ir"><img className="forum-ad" src="../assets/images/speedlearn.png" alt="Speed Learn AD"></a> */}
+                   <a target="_blank" href="https://speed-learn.ir"><img className="forum-ad" src={ad} alt="Speed Learn AD" /></a>
                 </div>
                 <div className="forum-sidebar">
                     <h5>مشکلی دارید؟</h5>
