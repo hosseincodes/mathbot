@@ -1,12 +1,12 @@
 import Header from "./Header";
 import Footer from "./Footer";
-import Questions from "./Questions"
+import Router from "../Router"
 
 function App() {
   return (
     <div>
       <Header />
-      <Questions />
+      <Router />
       <Footer />
     </div>
   );

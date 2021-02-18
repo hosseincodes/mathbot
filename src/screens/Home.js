@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import Sidebar from './Sidebar';
-import Question from './Question';
-import Loading from "./Loading";
+import Sidebar from '../components/Sidebar';
+import QuestionMiniList from '../components/QuestionMiniList';
+import Loading from "../components/Loading";
 
-class Questions extends Component {
+class Home extends Component {
     render () {
         return (
             <div className="section">
@@ -14,11 +14,11 @@ class Questions extends Component {
                             <a className="title-a" href="https://mathbot.ir/forum">سوال خودت رو بپرس</a>
                          </div>
 
-                        <Question />
-                        <Question />
-                        <Question />
-                        <Question />
-                        <Question />
+                        <QuestionMiniList />
+                        <QuestionMiniList />
+                        <QuestionMiniList />
+                        <QuestionMiniList />
+                        <QuestionMiniList />
 
                         <Loading />
 
@@ -32,4 +32,4 @@ class Questions extends Component {
     }
 }
 
-export default Questions;
+export default Home;

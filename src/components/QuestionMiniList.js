@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class Question extends Component {
+class QuestionMiniList extends Component {
     render () {
         return (
                 <div className="col-md-12 col-xs-12">
@@ -29,4 +29,4 @@ class Question extends Component {
     }
 }
 
-export default Question;
+export default QuestionMiniList;
