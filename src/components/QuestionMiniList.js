@@ -5,7 +5,7 @@ class QuestionMiniList extends Component {
         return (
                 <div className="col-md-12 col-xs-12">
                     <div className="question-box">
-                        <a className="question-box-link" href="#">
+                        <a className="question-box-link" href="/courses?sort=name">
                             <h4>نام سوال</h4>
                             <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ ...</p>
                         </a>

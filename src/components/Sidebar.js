@@ -19,7 +19,7 @@ class Sidebar extends Component {
                 </div>
                 <div className="forum-sidebar">
                     <h5>مشکلی دارید؟</h5>
-                    <h6>ارتباط با پشتیبانی در<a href="instagram.com/mathbot.ir" style={{color: "#fff"}}> اینستاگرام</a></h6>
+                    <h6>ارتباط با پشتیبانی در<a href="https://instagram.com/mathbot.ir" style={{color: "#fff"}}> اینستاگرام</a></h6>
                 </div>
             </div>
         );

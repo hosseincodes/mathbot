@@ -11,7 +11,7 @@ class Home extends Component {
                     <div className="col-md-9">
                         <div className="forum-title">
                             <h3>پر بازدید ترین سوالات انجمن</h3>
-                            <a className="title-a" href="https://mathbot.ir/forum">سوال خودت رو بپرس</a>
+                            <a className="title-a" href="questions/ask/">سوال خودت رو بپرس</a>
                          </div>
 
                         <QuestionMiniList />
