@@ -49,7 +49,7 @@ $(document).ready(function() {
     }
 
     var help = function() {
-        alert("Do you need help?");
+        alert("به زودی");
     };
 
     var options = {

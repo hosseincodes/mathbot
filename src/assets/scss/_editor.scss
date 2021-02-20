@@ -27,10 +27,6 @@ input, select, textarea, .tag-editor {
     border: 1px solid #999;
 }
 
-textarea {
-    resize: vertical;
-}
-
 blockquote, pre {
     margin-bottom: 10px;
     background-color: #eee;
@@ -42,7 +38,7 @@ blockquote {
 }
 
 code {
-    font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+    font-family: $font-family-IRANYekan;
     overflow: auto;
 }
 
@@ -93,21 +89,36 @@ label {
 .wmd-input {
     resize: none;
     height: 300px;
-    width: 688px;
+    width: 100%;
     padding: 6px 5px 5px 5px;
+    font-family: $font-family-IRANYekan;
+    background: #f2f2f2;
+    border: 0;
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    resize: vertical;
 }
 
 .wmd-preview { 
     padding: 5px;
     margin-bottom: 20px;
     border: 2px dotted #ccc;
-    width: 688px;
+    width: 100%;
+    border-radius: 10px;
 }
 
 .wmd-button-row {
     position: relative; 
     margin-bottom: 5px;
     height: 20px;
+}
+
+#wmd-button-bar {
+    border: 10px solid #f2f2f2;
+    padding: 7px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .wmd-spacer {

@@ -307,7 +307,7 @@ a:hover {
     border-radius: 10px;
     margin: 10px 0 15px;
     height: 40px;
-    resize: vertical;
+    resize: none;
 }
 
 .ask-input-description {
@@ -335,7 +335,7 @@ a:hover {
     border-radius: 10px;
     margin: 10px 0 15px;
     height: 40px;
-    resize: vertical;
+    resize: none;
 }
 
 .ask-box {
@@ -355,6 +355,7 @@ a:hover {
     line-height: 25px;
     border: 0;
     margin: 10px 0 0;
+    font-family: $font-family-IRANYekan;
 }
 
 .question-box {
