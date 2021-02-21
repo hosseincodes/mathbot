@@ -19,31 +19,31 @@
 
     var defaultsStrings = {
         bold: "Strong <strong> Ctrl+B",
-        boldexample: "strong text",
+        boldexample: "متن بولد شده",
 
         italic: "Emphasis <em> Ctrl+I",
-        italicexample: "emphasized text",
+        italicexample: "متن تأکید شده",
 
         link: "Hyperlink <a> Ctrl+L",
-        linkdescription: "enter link description here",
-        linkdialog: "<p><b>Insert Hyperlink</b></p><p>http://example.com/ \"optional title\"</p>",
+        linkdescription: "توضیحات لینک را اینجا وارد کنید",
+        linkdialog: "<p><b>لینک را وارد کنید</b></p><p>http://example.com/ \"عنوان اختیاری\"</p>",
 
         quote: "Blockquote <blockquote> Ctrl+Q",
-        quoteexample: "Blockquote",
+        quoteexample: "نقل قول",
 
         code: "Code Sample <pre><code> Ctrl+K",
-        codeexample: "enter code here",
+        codeexample: "فرمول ریاضی را اینجا وارد کنید",
 
         image: "Image <img> Ctrl+G",
-        imagedescription: "enter image description here",
-        imagedialog: "<p><b>Insert Image</b></p><p>http://example.com/images/diagram.jpg \"optional title\"<br><br>Need <a href='http://www.google.com/search?q=free+image+hosting' target='_blank'>free image hosting?</a></p>",
+        imagedescription: "توضیحات تصویر را اینجا وارد کنید",
+        imagedialog: "<p><b>درج تصویر</b></p><p>http://example.com/images/diagram.jpg \"عنوان اختیاری\"</p>",
 
         olist: "Numbered List <ol> Ctrl+O",
         ulist: "Bulleted List <ul> Ctrl+U",
-        litem: "List item",
+        litem: "آیتم های لیست",
 
         heading: "Heading <h1>/<h2> Ctrl+H",
-        headingexample: "Heading",
+        headingexample: "عنوان",
 
         hr: "Horizontal Rule <hr> Ctrl+R",
 
@@ -51,7 +51,7 @@
         redo: "Redo - Ctrl+Y",
         redomac: "Redo - Ctrl+Shift+Z",
 
-        help: "Markdown Editing Help"
+        help: "راهنمای استفاده از ادیتور"
     };
 
 
