@@ -8,9 +8,6 @@ import Login from './screens/Login';
 import Account from './screens/Account';
 
 class Router extends Component {
-    User(props) {
-        return <h1>Hello {props.match.params.username}!</h1>;
-      }
     render () {
         return (
             <BrowserRouter>
@@ -20,7 +17,7 @@ class Router extends Component {
                     <Route path="/questions/ask" component={Ask} exact />
                     <Route path="/login" component={Login} exact />
                     <Route path="/account" component={Account} exact />
-                    <Route path="/questions/:username" component={Questions} exact />
+                    <Route path="/questions/:slug" component={Questions} exact />
                 </Switch>
             </BrowserRouter>
         );

@@ -737,12 +737,57 @@ a:hover {
 
 .account-sidebar-links {
     text-align: center;
-    padding: 5px;
+    padding: 9px;
+    transition: all 0.2s ease;
     a {
         color: #333;
     }
+    span {
+        cursor: pointer;
+        padding: 5px 10px;
+        border-radius: 10px;
+        &:hover {
+            background: #fff;
+            transition: all 0.2s ease;
+        }
+    }
 }
 
+.h5-mini-profile {
+    margin-top: 30px;
+}
+
+.score {
+    background: #eee;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.post-mini-profile {
+    padding-bottom: 5px;
+    border-bottom: 1px solid #333;
+    line-height: 30px;
+}
+
+.edit-profile-box {
+    margin-top: 15px;
+    .edit-profile-box-input {
+        border-radius: 5px;
+        width: 50%;
+        padding: 5px;
+        border: 0;
+        background: #eee;
+    }
+}
+
+.save-profile-box {
+    background: #29a58d;
+    color: #fff;
+    border: 0;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
 
 /* 404 */
 

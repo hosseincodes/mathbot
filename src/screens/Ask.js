@@ -26,13 +26,7 @@ class Ask extends Component {
 
                     </div>
                 </div>
-                {/* <Helmet>
-                <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-                    <script type="text/javascript" src="http://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
-                    
-                </Helmet> */}
             </div>
-            
         );
     }
 }
