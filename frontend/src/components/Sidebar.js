@@ -7,12 +7,15 @@ class Sidebar extends Component {
             <div className="col-md-3">
                 <div className="forum-title"></div>
                 <div className="forum-sidebar">
-                    <h5>برچسب هایی که می بینید :</h5>
-                    <h6>انتگرال - ریاضی نهم - ریاضی دهم - جبر - هندسه - مثلثات</h6>
+                    <h5>محبوب ترین سوالات</h5>
+                    <p><a href="#">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a></p>
+                    <p><a href="#">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a></p>
+                    <p><a href="#">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a></p>
+                    <p><a href="#">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a></p>
                 </div>
                 <div className="forum-sidebar">
-                    <h5>برچسب هایی که نمی بینید :</h5>
-                    <h6>انتگرال - ریاضی نهم - ریاضی دهم - جبر - هندسه - مثلثات</h6>
+                    <h5>حساب کاربری</h5>
+                    <p><a href="#">ورود</a></p>
                 </div>
                 <div className="forum-ad-box">
                    <a target="_blank" href="https://speed-learn.ir"><img className="forum-ad" src={ad} alt="Speed Learn AD" /></a>

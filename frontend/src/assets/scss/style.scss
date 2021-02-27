@@ -159,8 +159,6 @@ a:hover {
     transition: all 0.3s ease;
     font-weight: 300;
     font-size: .8em;
-    margin-top: 20px;
-    margin-bottom: 10px;
     border: 1px solid #29a58d;
     &:hover {
         background: transparent;
@@ -456,6 +454,13 @@ a:hover {
     color: #fff;
     width: 100%;
     height: auto;
+    a {
+        color: #fff;
+        line-height: 30px;
+        &:hover {
+            color: #fff;
+        }
+    }
 }
 
 .forum-sidebar h6 {
