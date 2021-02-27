@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Editor from './Editor';
+import RichEditor from './RichEditor';
 
 class AskBox extends Component {
     render () {
@@ -12,7 +12,7 @@ class AskBox extends Component {
 
                     <div classNameName="ask-description">
                         <h4>توضیحات</h4>
-                        <Editor />
+                        <RichEditor />
                     </div>
                     <div className="ask-tags">
                         <h4>برچسب ها</h4>

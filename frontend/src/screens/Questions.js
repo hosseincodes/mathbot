@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Sidebar from '../components/Sidebar';
 import QuestionBox from '../components/QuestionBox';
 import Response from '../components/Response';
-import Editor from '../components/Editor';
+import RichEditor from '../components/RichEditor';
 import QuestionHeader from '../components/QuestionHeader';
 
 class Questions extends Component {
@@ -29,7 +29,7 @@ class Questions extends Component {
                     </div>
                 
                     <div className="your-answer-box">
-                        <Editor />
+                        <RichEditor />
                         <input className="ask-input-button" type="button" value="ارسال پاسخ" />
                     </div>
 

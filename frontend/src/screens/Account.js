@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import profile from '../assets/images/hossein.png';
 import { Helmet } from 'react-helmet';
-import Editor from '../components/Editor';
+import RichEditor from '../components/RichEditor';
 
 class Account extends Component {
     constructor (props){
@@ -68,7 +68,7 @@ class Account extends Component {
                                             <span>ایمیل : </span><input className="edit-profile-box-input" type="text" value="hosseinakbari506@gmail.com" />
                                         </div>
                                         <div className="edit-profile-box">
-                                            <span>درباره من : </span><Editor />
+                                            <span>درباره من : </span><RichEditor />
                                         </div>
                                         <hr />
                                         <div className="edit-profile-box">
