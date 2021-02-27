@@ -245,14 +245,12 @@ a:hover {
     margin: 15px 0 0;
     color: #b3b3b3;
     font-size: $font-size-little;
-    a {
-        color: #29a58d;
-        text-decoration: none;
+    span {
+        cursor: pointer;
+        &:hover {
+            color: #29a58d;
+        }
     }
-}
-
-.form .register-form {
-    display: none;
 }
 
 .container-login {
