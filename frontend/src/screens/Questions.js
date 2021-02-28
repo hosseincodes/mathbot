@@ -4,41 +4,47 @@ import QuestionBox from '../components/QuestionBox';
 import Response from '../components/Response';
 import RichEditor from '../components/RichEditor';
 import QuestionHeader from '../components/QuestionHeader';
+import { Helmet } from 'react-helmet';
 
 class Questions extends Component {
     render () {
         return (
-            <div className="section">
-                <div className="container">
-                    <div className="col-md-9">
+            <div>
+                <Helmet>
+                    <title>نام سوال</title>
+                </Helmet>
+                <div className="section">
+                    <div className="container">
+                        <div className="col-md-9">
                 
-                    <QuestionHeader />
+                        <QuestionHeader />
                 
-                    <QuestionBox />
+                        <QuestionBox />
 
-                    <div className="forum-title">
-                        <h3>3 پاسخ</h3>
-                    </div>
+                        <div className="forum-title">
+                            <h3>3 پاسخ</h3>
+                        </div>
                 
-                    <Response />
-                    <Response />
-                    <Response />
+                        <Response />
+                        <Response />
+                        <Response />
 
-                    <div className="forum-title">
-                        <h3>پاسخ شما</h3>
-                    </div>
+                        <div className="forum-title">
+                            <h3>پاسخ شما</h3>
+                        </div>
                 
-                    <div className="your-answer-box">
-                        <RichEditor />
-                        <input className="ask-input-button" type="button" value="ارسال پاسخ" />
+                        <div className="your-answer-box">
+                            <RichEditor />
+                            <input className="ask-input-button" type="button" value="ارسال پاسخ" />
+                        </div>
+
                     </div>
 
+                    <Sidebar />
+
+                    </div>
                 </div>
-
-                <Sidebar />
-
             </div>
-        </div>
         );
     }
 }

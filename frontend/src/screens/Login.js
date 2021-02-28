@@ -14,7 +14,7 @@ class Login extends Component {
         return (
             <div>
                 <Helmet>
-                    <title>حساب کاربری</title>
+                    <title>ورود</title>
                 </Helmet>
                 <div class="section">
                     <div class="container-login">
