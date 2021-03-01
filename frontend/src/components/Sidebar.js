@@ -1,7 +1,17 @@
 import React, { Component } from "react";
 import ad from '../assets/images/speedlearn.png';
+import profile from '../assets/images/hossein.png';
+import { Link } from "react-router-dom";
 
 class Sidebar extends Component {
+    constructor (props){
+        super(props);
+
+        this.state = {
+            login: false
+        }
+    }
+
     render () {
         return (
             <div className="col-md-3">
@@ -14,8 +24,21 @@ class Sidebar extends Component {
                     <p><a href="#">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a></p>
                 </div>
                 <div className="forum-sidebar">
-                    <h5>حساب کاربری</h5>
-                    <p><a href="#">ورود</a></p>
+                    <div style={this.state.login ? {display: 'none'} : { }}>
+                        <h5>حساب کاربری</h5>
+                        <Link to="/login">
+                            <p>ورود</p>
+                        </Link>
+                    </div>
+                    <div style={this.state.login ? { } : { display: 'none' }}>
+                       <Link to="/account">
+                            <div className="row">
+                                <div className="col-md-5"><img src={profile} className="account-user-img-sidebar" alt="User Image" /></div>
+                                <div className="col-md-5"><span className="account-sidebar-name">حسین اکبری</span></div>
+                                <div className="col-md-2"></div>
+                            </div>
+                        </Link>
+                    </div>
                 </div>
                 <div className="forum-ad-box">
                    <a target="_blank" href="https://speed-learn.ir"><img className="forum-ad" src={ad} alt="Speed Learn AD" /></a>

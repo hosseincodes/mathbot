@@ -1,14 +1,15 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class QuestionMiniList extends Component {
     render () {
         return (
                 <div className="col-md-12 col-xs-12">
                     <div className="question-box">
-                        <a className="question-box-link" href="/courses?sort=name">
+                        <Link className="question-box-link" to="/questions/:slug">
                             <h4>نام سوال</h4>
                             <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ ...</p>
-                        </a>
+                        </Link>
                         <div className="row question-box-bottom">
                             <div className="col-lg-3 col-md-4 col-xs-12 col-sm-4">
                                 <p className="question-date">ثبت شده در 20 اردیبهشت 1399</p>

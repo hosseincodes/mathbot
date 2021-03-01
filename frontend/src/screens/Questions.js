@@ -5,14 +5,20 @@ import Response from '../components/Response';
 import RichEditor from '../components/RichEditor';
 import QuestionHeader from '../components/QuestionHeader';
 import { Helmet } from 'react-helmet';
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 class Questions extends Component {
     render () {
         return (
             <div>
+
+                <Header />
+
                 <Helmet>
                     <title>نام سوال</title>
                 </Helmet>
+
                 <div className="section">
                     <div className="container">
                         <div className="col-md-9">
@@ -44,6 +50,9 @@ class Questions extends Component {
 
                     </div>
                 </div>
+
+                <Footer />
+
             </div>
         );
     }

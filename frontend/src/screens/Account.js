@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import profile from '../assets/images/hossein.png';
 import { Helmet } from 'react-helmet';
 import RichEditor from '../components/RichEditor';
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 class Account extends Component {
     constructor (props){
@@ -15,9 +17,13 @@ class Account extends Component {
     render() {
         return (
             <div>
+
+                <Header />
+
                 <Helmet>
                     <title>حساب کاربری</title>
                 </Helmet>
+
                 <div className="section">
                     <div className="container">
                         <div className="row account">
@@ -29,6 +35,7 @@ class Account extends Component {
                                     <p style={{textAlign: "center", borderBottom: "1px solid #333", padding: "0 0 15px 0"}}>حسین اکبری</p>
                                     <div onClick={() => { this.setState ( {expand: false}) }} className="account-sidebar-links"><span style={this.state.expand ? { } : {background: "#29a58d", color: "#fff", transition: "all 0.2s ease"}}>پروفایل من</span></div>
                                     <div onClick={() => { this.setState ( {expand: true}) }} className="account-sidebar-links"><span style={this.state.expand ? {background: "#29a58d", color: "#fff", transition: "all 0.2s ease"} : { }}>ادیت پروفایل و تنظمیات</span></div>
+                                    <div className="account-sidebar-links"><span>خروج از حساب کاربری</span></div>
                                 </div>
                             </div>
                             <div className="col-md-9">
@@ -87,6 +94,9 @@ class Account extends Component {
                         </div>
                     </div>
                 </div>
+
+                <Footer />
+
             </div>
         );
     }

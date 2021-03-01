@@ -3,20 +3,26 @@ import Sidebar from '../components/Sidebar';
 import QuestionMiniList from '../components/QuestionMiniList';
 import Loading from "../components/Loading";
 import { Helmet } from 'react-helmet';
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 class Home extends Component {
     render () {
         return (
             <div>
+
+                <Header />
+
                 <Helmet>
                     <title>مث بات</title>
                     <meta name="keywords" content="مث بات , آموزش ریاضی"></meta>
                 </Helmet>
+
                 <div className="section">
                     <div className="container">
                         <div className="col-md-9">
                             <div className="forum-title">
-                                <h3>پر بازدید ترین سوالات انجمن</h3>
+                                <h3>جدید ترین سوالات انجمن</h3>
                                 <a className="title-a" href="questions/ask/">سوال خودت رو بپرس</a>
                             </div>
 
@@ -34,6 +40,9 @@ class Home extends Component {
 
                     </div>
                 </div>
+
+                <Footer />
+
             </div>
         );
     }

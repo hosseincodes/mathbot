@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 class Login extends Component {
     constructor (props){
@@ -13,9 +15,13 @@ class Login extends Component {
     render() {
         return (
             <div>
+
+                <Header />
+
                 <Helmet>
                     <title>ورود</title>
                 </Helmet>
+
                 <div class="section">
                     <div class="container-login">
                         <div class="login-page">
@@ -46,6 +52,9 @@ class Login extends Component {
                         </div>
                     </div>
                 </div>
+
+                <Footer />
+
             </div>
         );
     }

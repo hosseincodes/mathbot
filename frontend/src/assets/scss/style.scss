@@ -738,6 +738,17 @@ a:hover {
     margin-bottom: 15px;
 }
 
+.account-user-img-sidebar {
+    width: 50px;
+    border-radius: 50%;
+}
+
+.account-sidebar-name {
+    display: flex;
+    margin-top: 8px;
+    font-weight: 900;
+}
+
 .account-sidebar-links {
     text-align: center;
     padding: 9px;

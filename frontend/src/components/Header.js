@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class Header extends Component {
     render () {
@@ -8,7 +9,10 @@ class Header extends Component {
                    <div className="row">
                         <div className="col-md-5 col-xs-4"></div>
                             <div className="col-md-2 col-xs-4">
-                                <a className="logo-button" href="/"><span className="logo-button-span">م</span>ث <span className="logo-button-span">ب</span>ات</a> <span style={{fontSize: "10px"}}>(پیش آلفا)</span>
+                                <Link className="logo-button" to="/">
+                                    <span className="logo-button-span">م</span>ث <span className="logo-button-span">ب</span>ات 
+                                </Link>
+                                <span style={{fontSize: "10px"}}>(پیش آلفا)</span>
                             </div>
                         <div className="col-md-5 col-xs-4"></div>
                     </div>

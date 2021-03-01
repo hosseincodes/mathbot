@@ -1,13 +1,19 @@
 import React, { Component } from "react";
 import { Helmet } from 'react-helmet';
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 class Contact extends Component {
     render () {
         return (
             <div>
+
+                <Header />
+
                 <Helmet>
                     <title>تماس با ما</title>
                 </Helmet>
+
                 <div class="section">
                     <div class="contact">
                         <h1 class="contact-h1">تماس با ما</h1>
@@ -27,6 +33,9 @@ class Contact extends Component {
                     </div>
                     </div>
                 </div>
+
+                <Footer />
+
             </div>
         )
     }
