@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import ad from '../assets/images/speedlearn.png';
 import profile from '../assets/images/hossein.png';
 import { Link } from "react-router-dom";
 
@@ -40,9 +39,13 @@ class Sidebar extends Component {
                         </Link>
                     </div>
                 </div>
-                <div className="forum-ad-box">
-                   <a target="_blank" href="https://speed-learn.ir"><img className="forum-ad" src={ad} alt="Speed Learn AD" /></a>
-                </div>
+
+                {/* Location of ads in the sidebar */}
+
+                {/* <div className="forum-ad-box">
+                   <a target="_blank" href="#"><img className="forum-ad" src={#} /></a>
+                </div> */}
+
                 <div className="forum-sidebar">
                     <h5>مشکلی دارید؟</h5>
                     <h6>ارتباط با پشتیبانی در<a href="https://instagram.com/mathbot.ir" style={{color: "#fff"}}> اینستاگرام</a></h6>

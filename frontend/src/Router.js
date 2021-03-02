@@ -17,7 +17,7 @@ class Router extends Component {
                     <Route path="/questions/ask" component={Ask} exact />
                     <Route path="/login" component={Login} exact />
                     <Route path="/account" component={Account} exact />
-                    <Route path="/questions/:slug" component={Questions} exact />
+                    <Route path="/questions/:id" component={Questions} exact />
                 </Switch>
             </BrowserRouter>
         );
