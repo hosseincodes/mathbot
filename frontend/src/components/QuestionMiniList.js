@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 class QuestionMiniList extends Component {
     render () {
         return (
-                <div className="col-md-12 col-xs-12">
+                <div className="col-md-12 col-xs-12 responsive-box">
                     <div className="question-box">
                         <Link className="question-box-link" to="/questions/لورم-ایپسوم-متن-ساختگی">
                             <h4>نام سوال</h4>

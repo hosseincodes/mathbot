@@ -21,7 +21,7 @@ class Questions extends Component {
 
                 <div className="section">
                     <div className="container">
-                        <div className="col-md-9">
+                        <div className="col-md-9 responsive-box">
                 
                         <QuestionHeader />
                 

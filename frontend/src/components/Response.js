@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Response extends Component {
     render () {
         return (
-            <div className="col-md-12 col-xs-12">
+            <div className="col-md-12 col-xs-12 responsive-box">
                 <div className="question-answer-big">
                     <h6><a className="username-answer" href="#">حسین اکبری</a> - 30 دقیقه پیش</h6>
                     <p className="question-answer-big-p">فکر کنم پاسخ صحیح عدد 20 هست، چون باید با اولویت پرانتز ها حساب کنیم لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است

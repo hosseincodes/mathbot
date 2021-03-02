@@ -20,9 +20,9 @@ class Home extends Component {
 
                 <div className="section">
                     <div className="container">
-                        <div className="col-md-9">
+                        <div className="col-md-9 responsive-box">
                             <div className="forum-title">
-                                <h3>جدید ترین سوالات انجمن</h3>
+                                <h3>جدید ترین سوالات</h3>
                                 <a className="title-a" href="questions/ask/">سوال خودت رو بپرس</a>
                             </div>
 

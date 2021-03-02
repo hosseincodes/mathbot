@@ -18,7 +18,7 @@ class Ask extends Component {
                 
                 <div className="section">
                     <div className="container">
-                        <div className="col-md-9">
+                        <div className="col-md-9 responsive-box">
                             <div className="row ask-your-Q">
                                 <h3>سوال خودت رو بپرس</h3>
                                 <p>با ثبت سوالت در مث بات میتونی منتظر جواب سوالات از کل ایران باشی!</p>

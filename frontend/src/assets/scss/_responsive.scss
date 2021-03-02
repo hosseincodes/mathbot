@@ -13,9 +13,19 @@
         margin-top: -10px;
     }
     .forum-title h3 {
-        text-align: center;
-        line-height: 30px;
-        margin-bottom: 20px;
+        font-size: 20px;
+        padding: 2px 7px;
+    }
+    .responsive-box {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    .ask-your-Q {
+        p, h3 {
+            text-align: center;
+            padding-right: 15px;
+            padding-left: 15px;  
+        }   
     }
 }
 
@@ -25,11 +35,6 @@
     }
 }
 
-@media only screen and (max-width: 617px) {
-    .title-a {
-        display: none;
-    }
-}
 
 @media only screen and (max-width: 631px) {
     .developers,
@@ -39,7 +44,7 @@
     }
 }
 
-@media only screen and (max-width: 770px) {
+@media only screen and (max-width: 767px) {
     .section-item-1 {
         padding: 35px;
     }
@@ -51,6 +56,10 @@
     }
     .footer-bottom {
         text-align: center;
+    }
+    .account {
+        margin-left: 0px !important;
+        margin-right: 0px !important;
     }
 }
 

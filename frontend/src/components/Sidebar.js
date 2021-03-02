@@ -13,7 +13,7 @@ class Sidebar extends Component {
 
     render () {
         return (
-            <div className="col-md-3">
+            <div className="col-md-3 responsive-box">
                 <div className="forum-title"></div>
                 <div className="forum-sidebar">
                     <h5>محبوب ترین سوالات</h5>
