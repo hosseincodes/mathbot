@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet';
 import RichEditor from '../components/RichEditor';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { Link } from "react-router-dom";
 
 class Account extends Component {
     constructor (props){
@@ -30,7 +31,7 @@ class Account extends Component {
                             <div className="col-md-3">
                                 <div className="account-sidebar">
                                     <div className="account-user-img-box">
-                                        <img src={profile} className="account-user-img" alt="User Image" />
+                                        <img src={profile} className="account-user-img" alt="Hossein Akbari" />
                                     </div>
                                     <p style={{textAlign: "center", borderBottom: "1px solid #333", padding: "0 0 15px 0"}}>حسین اکبری</p>
                                     <div onClick={() => { this.setState ( {expand: false}) }} className="account-sidebar-links"><span style={this.state.expand ? { } : {background: "#29a58d", color: "#fff", transition: "all 0.2s ease"}}>پروفایل من</span></div>
@@ -50,15 +51,15 @@ class Account extends Component {
                                         </p>
                                         <div className="score">
                                             <span>امتیاز </span><span style={{fontSize: "30px"}}>42</span>
-                                            <div style={{textAlign: "left"}}><span>آخرین امتیاز : </span><a href="#"><span>انتگرال چیست؟</span></a></div>
+                                            <div style={{textAlign: "left"}}><span>آخرین امتیاز : </span><Link to="/questions/لورم-ایپسوم-متن-ساختگی"><span>انتگرال چیست؟</span></Link></div>
                                         </div>
                                         <div className="activity">
                                             <h5 className="h5-mini-profile">پاسخ های داده شده</h5>
-                                                <p><a className="post-mini-profile" href="#">جبر چیست؟</a></p>
-                                                <p><a className="post-mini-profile" href="#">چطور این فرمول را حساب کنم</a></p>
+                                                <p><Link to="/questions/لورم-ایپسوم-متن-ساختگی" className="post-mini-profile">جبر چیست؟</Link></p>
+                                                <p><Link to="/questions/لورم-ایپسوم-متن-ساختگی" className="post-mini-profile">چطور این فرمول را حساب کنم</Link></p>
                                             <h5 className="h5-mini-profile">سوالات ثبت شده</h5>
-                                                <p><a className="post-mini-profile" href="#">بهترین روش برای حل مسئله های توان دار</a></p>
-                                                <p><a className="post-mini-profile" href="#">در این مسئله مثلثات مشکل دارم و فرمول هم نیاز دارم</a></p>
+                                                <p><Link to="/questions/لورم-ایپسوم-متن-ساختگی" className="post-mini-profile">بهترین روش برای حل مسئله های توان دار</Link></p>
+                                                <p><Link to="/questions/لورم-ایپسوم-متن-ساختگی" className="post-mini-profile">در این مسئله مثلثات مشکل دارم و فرمول هم نیاز دارم</Link></p>
                                         </div>
                                     </div>
                                     <div style={this.state.expand ? { } : {display: 'none'}}>

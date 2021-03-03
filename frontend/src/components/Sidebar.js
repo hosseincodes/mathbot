@@ -17,10 +17,26 @@ class Sidebar extends Component {
                 <div className="forum-title"></div>
                 <div className="forum-sidebar">
                     <h5>محبوب ترین سوالات</h5>
-                    <p><a href="#">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a></p>
-                    <p><a href="#">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a></p>
-                    <p><a href="#">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a></p>
-                    <p><a href="#">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a></p>
+                    <p>
+                        <Link to="/questions/لورم-ایپسوم-متن-ساختگی">
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ
+                        </Link>
+                    </p>
+                    <p>
+                        <Link to="/questions/لورم-ایپسوم-متن-ساختگی">
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ
+                        </Link>
+                    </p>
+                    <p>
+                        <Link to="/questions/لورم-ایپسوم-متن-ساختگی">
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ
+                        </Link>
+                    </p>
+                    <p>
+                        <Link to="/questions/لورم-ایپسوم-متن-ساختگی">
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ
+                        </Link>
+                    </p>
                 </div>
                 <div className="forum-sidebar">
                     <div style={this.state.login ? {display: 'none'} : { }}>
@@ -32,7 +48,7 @@ class Sidebar extends Component {
                     <div style={this.state.login ? { } : { display: 'none' }}>
                        <Link to="/account">
                             <div className="row">
-                                <div className="col-md-5"><img src={profile} className="account-user-img-sidebar" alt="User Image" /></div>
+                                <div className="col-md-5"><img src={profile} className="account-user-img-sidebar" alt="Hossein Akbari" /></div>
                                 <div className="col-md-5"><span className="account-sidebar-name">حسین اکبری</span></div>
                                 <div className="col-md-2"></div>
                             </div>
