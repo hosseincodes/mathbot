@@ -7,13 +7,16 @@ import { Link } from "react-router-dom";
 class Login extends Component {
     constructor(props) {
         super(props);
+
         this.state = {
           username: '',
           password: '',
         };
     }
     
-    handleChange = (e, {name, value}) => {
+    handleChange = (e) => {
+        const value = e.target.value;
+        const name = e.target.value;
         this.setState({[name]: value});
     };
     
@@ -55,17 +58,46 @@ class Login extends Component {
                     <title>ورود</title>
                 </Helmet>
 
-                <div class="section">
-                    <div class="container-login">
-                        <div class="login-page">
-                            <div class="form">
+                <div className="section">
+                    <div className="container-login">
+                        <div className="login-page">
+                            <div className="form">
 
-                                <form class="login-form">
+                            {statusMessage}
+
+                                <form className="login-form">
+
                                     <h4 style={{marginBottom: "25px"}}>ورود به حساب کاربری</h4>
-                                    <input type="text" placeholder="نام کاربری یا ایمیل" />
-                                    <input type="password" placeholder="پسورد" />
-                                    <button>ورود</button>
-                                    <p class="message">هنوز ثبت نام نکرده اید؟ <Link to="/register">یک اکانت بسازید</Link></p>
+
+                                    <input
+                                        required
+                                        type="text"
+                                        label="Username"
+                                        name="username"
+                                        placeholder="نام کاربری"
+                                        value={this.state.username}
+                                        onChange={this.handleChange}
+                                    />
+
+                                    <input
+                                        required
+                                        type="password"
+                                        label="Password"
+                                        name="password"
+                                        placeholder="پسورد"
+                                        value={this.state.password}
+                                        onChange={this.handleChange}
+                                    />
+
+                                    <button
+                                        loading={isLoading}
+                                        disabled={isLoading}
+                                        onClick={this.handleSubmit}>
+                                        ورود
+                                    </button>
+
+                                    <p className="message">هنوز ثبت نام نکرده اید؟ <Link to="/register" onClick={showRegister}>یک اکانت بسازید</Link></p>
+
                                 </form>
 
                             </div>

@@ -7,16 +7,19 @@ import { Link } from "react-router-dom";
 class Register extends Component {
     constructor(props) {
         super(props);
+        
         this.state = {
-          username: '',
           name: '',
+          username: '',
           email: '',
           password: '',
           checked: true,
         };
     }
 
-    handleChange = (e, {name, value}) => {
+    handleChange = (e) => {
+        const value = e.target.value;
+        const name = e.target.value;
         this.setState({[name]: value});
     };
     
@@ -68,18 +71,76 @@ class Register extends Component {
                     <title>ثبت نام</title>
                 </Helmet>
 
-                <div class="section">
-                    <div class="container-login">
-                        <div class="login-page">
-                            <div class="form">
+                <div className="section">
+                    <div className="container-login">
+                        <div className="login-page">
+                            <div className="form">
 
-                                <form class="register-form">
+                            {statusMessage}
+
+                                <form className="register-form">
+
                                     <h4 style={{marginBottom: "25px"}}>ثبت نام در سایت</h4>
-                                    <input type="text" placeholder="نام و نام خانوادگی" />
-                                    <input type="text" placeholder="ایمیل" />
-                                    <input type="password" placeholder="پسورد" />
-                                    <button>ثبت نام</button>
-                                    <p class="message">قبلا ثبت نام کرده اید؟ <Link to="/login">وارد شوید</Link></p>
+
+                                    <input
+                                        required
+                                        type="text"
+                                        label="Name"
+                                        name="name"
+                                        placeholder="نام و نام خانوادگی"
+                                        value={this.state.name}
+                                        onChange={this.handleChange}
+                                    />
+
+                                    <input
+                                        required
+                                        type="text"
+                                        label="Username"
+                                        name="username"
+                                        placeholder="نام کاربری"
+                                        value={this.state.username}
+                                        onChange={this.handleChange}
+                                    />
+
+                                    <input
+                                        required
+                                        type="email"
+                                        label="Email"
+                                        name="email"
+                                        placeholder="ایمیل"
+                                        value={this.state.email}
+                                        onChange={this.handleChange}
+                                    />
+
+                                    <input
+                                        required
+                                        type="password"
+                                        label="Password"
+                                        name="password"
+                                        placeholder="پسورد"
+                                        value={this.state.password}
+                                        onChange={this.handleChange}
+                                    />
+
+                                    شرایط و قوانین را قبول دارم
+                                    <input
+                                        inline
+                                        required
+                                        type="checkbox"
+                                        name="agreement"
+                                        checked={this.state.checked}
+                                        onChange={this.handleCheckbox}
+                                    />
+
+                                    <button
+                                        loading={isLoading}
+                                        disabled={isLoading}
+                                        onClick={this.handleSubmit}>
+                                        ثبت نام
+                                    </button>
+
+                                    <p className="message">قبلا ثبت نام کرده اید؟ <Link to="/login" onClick={showLogin}>وارد شوید</Link></p>
+                                    
                                 </form>
 
                             </div>
