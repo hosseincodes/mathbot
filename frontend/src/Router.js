@@ -7,6 +7,7 @@ import Questions from './screens/Questions';
 import Login from './screens/Login';
 import Register from './screens/Register';
 import Account from './screens/Account';
+import NotFoundPage from './screens/NotFoundPage';
 
 class Router extends Component {
     render () {
@@ -20,6 +21,7 @@ class Router extends Component {
                     <Route path="/register" component={Register} exact />
                     <Route path="/account" component={Account} exact />
                     <Route path="/questions/:id" component={Questions} exact />
+                    <Route component={NotFoundPage} exact />
                 </Switch>
             </BrowserRouter>
         );

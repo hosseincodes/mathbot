@@ -889,5 +889,20 @@ a:hover {
     padding-bottom: 40px;
 }
 
+/* 404 */
+
+.not-found {
+    text-align: center;
+    line-height: 80px;
+    padding-top: 100px;
+}
+
+.not-found-btn {
+    background: #29a58d;
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+}
+
 @import "responsive";
 @import "editor";
