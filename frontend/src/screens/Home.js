@@ -37,12 +37,14 @@ class Home extends Component {
                                     <div className="row">
                                         <a href="https://test.com">
 
-                                            <div className="load">
-                                                <div className="col-md-4"><Loader /></div>
-                                            </div>
-
                                             <div className="more">
-                                                <div className="col-md-8"><p>نمایش سایر</p></div>
+
+                                                {/* This loader should only be displayed when a real loading occurs. This format will be added in the future */}
+
+                                                    {/* <Loader /> */}
+
+                                                <p>نمایش سایر</p>
+                                                
                                             </div>
                                             
                                         </a>
