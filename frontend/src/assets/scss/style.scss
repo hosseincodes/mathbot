@@ -448,7 +448,8 @@ a:hover {
 }
 
 .question-box-big-p {
-    line-height: 30px;
+    line-height: 32px;
+    font-size: 16px;
 }
 
 .question-box-big-tags {
@@ -522,14 +523,16 @@ a:hover {
 }
 
 .question-tag-span {
-    background: #eee;
-    padding: 5px;
+    background: rgb(242, 242, 242) none repeat scroll 0% 0%;
+    padding: 5px 10px;
     margin-left: 5px;
     border-radius: 5px;
+    color: rgb(117, 117, 117);
+    font-size: 13px;
 }
 
 .question-tag-box {
-    margin: 20px 0 25px 0;
+    margin: 20px 0 15px 0;
 }
 
 .question-tag {
@@ -543,7 +546,9 @@ a:hover {
     opacity: 0.7;
 }
 
-
+.username-answer {
+    color: #29a58d;
+}
 
 .forum-ad {
     width: 100%;
@@ -580,172 +585,6 @@ a:hover {
     margin-bottom: 40px;
     margin-top: 40px;
 }
-
-
-/* Calculator */
-
-.calculator {
-    padding: 30px 0 50px 0;
-}
-
-.calculator-h1 {
-    text-align: center;
-    font-size: 20px;
-    margin-bottom: 40px;
-}
-
-.calculator-box {
-    position: relative;
-    margin: 1em auto;
-    padding: 1em 0;
-    display: block-inline;
-    width: 350px;
-    background-color: #29a58d;
-    border-radius: 25px;
-    box-shadow: 0 5px 10px 0 rgba(20, 83, 155, 0.05);
-    font-family: $font-family-IRANYekan;
-    direction: ltr;
-}
-
-.calc-row {
-    text-align: center;
-}
-
-.calc-row div.screen {
-    display: table;
-    width: 88%;
-    background-color: #eee;
-    text-align: left;
-    font-size: 2em;
-    min-height: 1.2em;
-    padding-left: 0.5em;
-    color: #333;
-    font-family: $font-family-IRANYekan;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.calc-row button {
-    text-align: center;
-    display: inline-block;
-    font-weight: bold;
-    background-color: #eee;
-    padding: 10px 0;
-    margin: 7px 5px;
-    border-radius: 15px;
-    box-shadow: 0 5px 10px 0 rgba(20, 83, 155, 0.05);
-    width: 50px;
-    border: 0;
-}
-
-.calc-row div {
-    text-align: center;
-    display: inline-block;
-    font-weight: bold;
-    background-color: #eee;
-    padding: 10px 0;
-    margin: 7px 5px;
-    border-radius: 15px;
-    box-shadow: 0 5px 10px 0 rgba(20, 83, 155, 0.05);
-    width: 50px;
-    border: 0;
-}
-
-.calc-row button.zero {
-    width: 112px;
-}
-
-.calc-row button.zero {
-    margin-right: 5px;
-}
-
-
-/* Games */
-
-.games-h1 {
-    text-align: center;
-    font-size: 20px;
-    margin-bottom: 80px;
-}
-
-.games {
-    padding: 30px 200px;
-}
-
-.games-background-box {
-    background: #fff;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 5px 10px 0 rgba(20, 83, 155, .05);
-    margin-bottom: 30px;
-    transition: all 0.3s ease;
-    &:hover {
-        box-shadow: 0 20px 30px 0 rgba(20, 83, 155, .08);
-        -webkit-transform: translateY(-6px);
-        transform: translateY(-6px);
-        transition: all 0.3s ease;
-    }
-}
-
-.games-play-background-box {
-    background: #fff;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 5px 10px 0 rgba(20, 83, 155, .05);
-    margin-bottom: 30px;
-    text-align: center;
-    width: min-content;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-.games-iframe {
-    border-radius: 10px;
-}
-
-.games-name {
-    margin: 20px 0;
-}
-
-.games-start {
-    margin: 0 0;
-}
-
-.games-img {
-    width: 100%;
-    height: 100px;
-    border-radius: 10px;
-}
-
-
-/* Developers */
-
-.developers {
-    padding: 30px 200px;
-}
-
-.developer {
-    background: #fff;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 5px 10px 0 rgba(20, 83, 155, .05);
-    margin-bottom: 30px;
-}
-
-.dev-img {
-    width: 100px;
-    border-radius: 50%;
-}
-
-.dev-h1 {
-    margin-bottom: 80px;
-    text-align: center;
-}
-
-.dev-p {
-    margin: 20px 0;
-}
-
 
 /* Account */
 
