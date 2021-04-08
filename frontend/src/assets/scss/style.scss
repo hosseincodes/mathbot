@@ -67,16 +67,19 @@ a:hover {
 /* Header */
 
 .header {
-    padding: 20px 0 20px 0;
+    padding: 15px 0 15px 0;
     text-align: center;
     background: #fff;
     box-shadow: rgba(0, 0, 0, .07) 0 0 30px;
 }
 
 .logo-button {
-    color: #333;
     font-size: 16px;
     font-weight: 900;
+    padding: 5px 15px;
+    a {
+        color: #333;
+    }
 }
 
 .logo-button-span {
@@ -89,6 +92,10 @@ a:hover {
     font-size: 16px;
     padding: 5px 15px;
     border-radius: 5px;
+    width: min-content;
+    a {
+        color: #fff;
+    }
 }
 
 .search-box {
@@ -101,6 +108,13 @@ a:hover {
     .search-btn {
         margin-left: 7px;
     }
+    span {
+        font-size: 12px;
+    }
+}
+
+.search-box-big {
+    text-align: left;
 }
 
 /* Homepage */
