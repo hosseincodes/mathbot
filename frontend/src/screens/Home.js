@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Sidebar from '../components/Sidebar';
 import QuestionMiniList from '../components/QuestionMiniList';
 import { Helmet } from 'react-helmet';
 import Header from "../components/Header";
@@ -20,7 +19,7 @@ class Home extends Component {
 
                 <div className="section">
                     <div className="container">
-                        <div className="col-md-9 responsive-box">
+                        <div className="col-md-12 responsive-box">
                             <div className="forum-title">
                                 <h3>جدید ترین سوالات</h3>
                                 <a className="title-a" href="questions/ask/">سوال خودت رو بپرس</a>
@@ -53,8 +52,6 @@ class Home extends Component {
                             </div>
 
                         </div>
-
-                        <Sidebar />
 
                     </div>
                 </div>

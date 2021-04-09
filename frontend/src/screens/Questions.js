@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Sidebar from '../components/Sidebar';
 import QuestionBox from '../components/QuestionBox';
 import Response from '../components/Response';
 import RichEditor from '../components/RichEditor';
@@ -21,7 +20,7 @@ class Questions extends Component {
 
                 <div className="section">
                     <div className="container">
-                        <div className="col-md-9 responsive-box">
+                        <div className="col-md-12 responsive-box">
                 
                         <QuestionHeader />
                 
@@ -45,8 +44,6 @@ class Questions extends Component {
                         </div>
 
                     </div>
-
-                    <Sidebar />
 
                     </div>
                 </div>
