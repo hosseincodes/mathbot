@@ -8,34 +8,32 @@ class Header extends Component {
                 <div className="row"> 
 
                     <div className="col-md-4 col-xs-9">
-
                         <div className="logo-button">
-                        <Link to="/">
-                            <span>انجمن پرسش و پاسخ ریاضی <span className="logo-button-span">م</span>ث <span className="logo-button-span">ب</span>ات</span>
-                        </Link>
+                            <Link to="/">
+                                <span>انجمن پرسش و پاسخ ریاضی <span className="logo-button-span">م</span>ث <span className="logo-button-span">ب</span>ات</span>
+                            </Link>
                         </div>
-
                     </div>
 
                     <div className="col-md-6">
-
                         <div className="search-box-big">
-                            {/* Fake Search Box */}
-                        <div className="search-box">
-                            <i class="fas fa-search search-btn"></i><span>جستجو در سایت</span>
+                            <div className="wrap">
+                                <div className="search">
+                                    <input type="text" className="searchTerm" placeholder="جستجو در سایت..."/>
+                                    <button type="submit" className="searchButton">
+                                        <i className="fa fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                        </div>
-
                     </div>
 
                     <div className="col-md-2 col-xs-3">
-
                         <div className="login-button">
-                        <Link to="/login">
-                            <span>ورود</span>
-                        </Link>
+                            <Link to="/login">
+                                <span>ورود</span>
+                            </Link>
                         </div>
-
                     </div>
 
                 </div>
