@@ -68,7 +68,7 @@ class Register extends Component {
                 <Header />
 
                 <Helmet>
-                    <title>ثبت نام</title>
+                    <title>Register</title>
                 </Helmet>
 
                 <div className="section">

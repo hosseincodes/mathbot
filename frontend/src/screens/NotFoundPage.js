@@ -11,7 +11,7 @@ class NotFoundPage extends Component {
                 <Header />
 
                 <Helmet>
-                    <title>صفحه یافت نشد</title>
+                    <title>404</title>
                 </Helmet>
             
                 <div className="section">

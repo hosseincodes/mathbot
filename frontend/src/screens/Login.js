@@ -55,7 +55,7 @@ class Login extends Component {
                 <Header />
 
                 <Helmet>
-                    <title>ورود</title>
+                    <title>Login</title>
                 </Helmet>
 
                 <div className="section">

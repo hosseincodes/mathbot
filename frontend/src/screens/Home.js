@@ -13,8 +13,8 @@ class Home extends Component {
                 <Header />
 
                 <Helmet>
-                    <title>مث بات</title>
-                    <meta name="keywords" content="مث بات , آموزش ریاضی"></meta>
+                    <title>mathbot - question and answer math forum</title>
+                    <meta name="keywords" content="مث بات, mathbot"></meta>
                 </Helmet>
 
                 <div className="section">

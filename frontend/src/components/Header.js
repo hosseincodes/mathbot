@@ -19,10 +19,11 @@ class Header extends Component {
                         <div className="search-box-big">
                             <div className="wrap">
                                 <div className="search">
-                                    <input type="text" className="searchTerm" placeholder="جستجو در سایت..."/>
-                                    <button type="submit" className="searchButton">
-                                        <i className="fa fa-search"></i>
-                                    </button>
+                                    <div className="searchTerm">
+                                    <span><i className="fa fa-search search-icon"></i></span>
+                                    <input type="text" placeholder="Search"/>
+                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>

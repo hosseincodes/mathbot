@@ -111,31 +111,31 @@ a:hover {
 .searchTerm {
     width: 100%;
     border: 0;
-    border: 1px solid #29a58d;
-    padding: 4.5px 15px;
-    border-radius: 0 5px 5px 0;
-    outline: none;
+    border: solid 1px rgba(var(--b6a,219,219,219),1);
+    background: rgba(var(--b3f,250,250,250),1);
+    padding: 5px 10px;
+    border-radius: 4px;
     color: #29a58d;
     font-size: 14px;
+    direction: ltr;
 }
   
 .searchTerm:focus{
     color: #29a58d
 }
-  
-.searchButton {
-    border: 1px solid #29a58d;
-    text-align: center;
-    color: #29a58d;
-    border-radius: 5px 0 0 5px;
-    cursor: pointer;
-    font-size: 14px;
-    padding: 0 10px;
-    border-right: 0;
+
+.searchTerm input {
     background: transparent;
+    border: 0;
+    outline: none;
+    width: 95%;
 }
-  
-  /*Resize the wrap to see the search bar change!*/
+
+.search-icon {
+    color: #777;
+    margin-right: 5px;
+}
+
 .wrap{
     width: 90%;
     position: absolute;

@@ -11,7 +11,7 @@ class Contact extends Component {
                 <Header />
 
                 <Helmet>
-                    <title>تماس با ما</title>
+                    <title>mathbot Contact</title>
                 </Helmet>
 
                 <div class="section">
