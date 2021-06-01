@@ -1,7 +1,6 @@
 /* SCSS Codes */
 
 $font-family-IRANYekan: "IRANYekanWebFn-Light" !important;
-$font-family-Cinema: "Cinema" !important;
 $font-size-medium: 14px;
 $font-size-little: 12px;
 $font-size-big: 28px;
@@ -18,21 +17,6 @@ $font-size-big: 28px;
     url("../fonts/iranyekanweblightfanum.ttf") format("truetype"), /* Safari, Android, iOS */
     url("../fonts/iranyekanweblightfanum.woff") format("woff"), /* Modern Browsers */
     url("../fonts/iranyekanweblightfanum.woff2") format("woff2");
-    /* Modern Browsers */
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Cinema";
-    src: url("../fonts/CinemaFull.eot");
-    /* IE9 Compat Modes */
-    src: url("../fonts/CinemaFull.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-    url("../fonts/CinemaFull.otf") format("opentype"), /* Open Type Font */
-    url("../fonts/CinemaFull.svg") format("svg"), /* Legacy iOS */
-    url("../fonts/CinemaFull.ttf") format("truetype"), /* Safari, Android, iOS */
-    url("../fonts/CinemaFull.woff") format("woff"), /* Modern Browsers */
-    url("../fonts/CinemaFull.woff2") format("woff2");
     /* Modern Browsers */
     font-weight: normal;
     font-style: normal;
