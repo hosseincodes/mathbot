@@ -8,13 +8,45 @@ class Header extends Component {
             <div className="header">
                 <div className="row">
 
-                    <div className="col-md-3 col-xs-3">
-                        <div className="login-button">
-                            <Link to="/login">
-                                <span>ورود به حساب کاربری</span>
-                            </Link>
-                        </div>
-                    </div> 
+                    <div className="col-md-3 col-xs-3 header-icons-box">
+                        
+                        <Link to="/login">
+                            <div className="header-buttons">       
+                                Login <i class="fas fa-sign-in-alt header-buttons-ico"></i>
+                            </div>
+                        </Link>
+                        
+                        <Link title="Notifications" to="/"> 
+                            <div className="header-buttons">
+                                <i class="fas fa-bullhorn header-buttons-ico"></i>
+                            </div>
+                        </Link>
+
+                        <Link title="Guide" to="/">
+                            <div className="header-buttons">
+                                <i class="fas fa-question header-buttons-ico"></i>
+                            </div>
+                        </Link>
+
+                        <Link title="Create Post" to="/questions/ask">
+                            <div className="header-buttons">
+                                <i class="fas fa-plus header-buttons-ico"></i>
+                            </div>
+                        </Link>
+
+                        <Link title="Popular" to="/">
+                            <div className="header-buttons">
+                                <i class="fas fa-fire-alt header-buttons-ico"></i>
+                            </div>
+                        </Link>
+
+                        <Link title="Calculator" to="/">
+                            <div className="header-buttons">
+                                <i class="fas fa-calculator header-buttons-ico"></i>
+                            </div>
+                        </Link>
+
+                    </div>
 
                     <div className="col-md-7">
                         <div className="search-box-big">
@@ -36,8 +68,8 @@ class Header extends Component {
                             </Link>
                         </div>
                     </div>
-
-                </div>
+                    
+                 </div>
             </div>
         );
     }
