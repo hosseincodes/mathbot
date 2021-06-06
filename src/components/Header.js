@@ -11,18 +11,18 @@ class Header extends Component {
                     <div className="col-md-3 col-xs-3 header-icons-box">
                         
                         <Link to="/login">
-                            <div className="header-buttons">       
+                            <div className="header-buttons header-buttons-login">       
                                 Login <i class="fas fa-sign-in-alt header-buttons-ico"></i>
                             </div>
                         </Link>
                         
-                        <Link title="Notifications" to="/"> 
+                        <Link title="Notifications" to="/notifications"> 
                             <div className="header-buttons">
-                                <i class="fas fa-bullhorn header-buttons-ico"></i>
+                                <i class="fas fa-bell header-buttons-ico"></i>
                             </div>
                         </Link>
 
-                        <Link title="Guide" to="/">
+                        <Link title="Help" to="/help">
                             <div className="header-buttons">
                                 <i class="fas fa-question header-buttons-ico"></i>
                             </div>
@@ -34,15 +34,9 @@ class Header extends Component {
                             </div>
                         </Link>
 
-                        <Link title="Popular" to="/">
+                        <Link title="Popular" to="/questions/popular">
                             <div className="header-buttons">
                                 <i class="fas fa-fire-alt header-buttons-ico"></i>
-                            </div>
-                        </Link>
-
-                        <Link title="Calculator" to="/">
-                            <div className="header-buttons">
-                                <i class="fas fa-calculator header-buttons-ico"></i>
                             </div>
                         </Link>
 

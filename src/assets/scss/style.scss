@@ -43,8 +43,8 @@ button {
     font-family: $font-family-IRANYekan;
 }
 
-a:hover {
-    text-decoration: none;
+a {
+    text-decoration: none !important;
 }
 
 
@@ -67,12 +67,22 @@ a:hover {
     padding: 5px 8px 2px 8px;
     width: max-content;
     margin: 0 7px;
+    border-radius: 3px;
     a {
         color: #29a58d;
     }
     &:hover {
         background: #eee;
-        border-radius: 3px;
+    }
+}
+
+.header-buttons-login {
+    border: 1px solid #29a58d;
+    border-radius: 5px;
+    padding-bottom: 3px;
+    &:hover {
+        background: #29a58d !important;
+        color: #fff;
     }
 }
 
@@ -262,6 +272,10 @@ a:hover {
     transition: all 0.2 ease;
     cursor: pointer;
     border-radius: 10px;
+}
+
+.terms {
+    margin-bottom: 15px;
 }
 
 .form button:hover,

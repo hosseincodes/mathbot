@@ -122,16 +122,22 @@ class Register extends Component {
                                         onChange={this.handleChange}
                                     />
 
-                                    شرایط و قوانین را قبول دارم
-                                    <input
-                                        inline
-                                        required
-                                        type="checkbox"
-                                        name="agreement"
-                                        checked={this.state.checked}
-                                        onChange={this.handleCheckbox}
-                                    />
-
+                                    <div className="row terms">
+                                        <div className="col-md-8">
+                                            <span>شرایط و قوانین را قبول دارم</span>
+                                        </div>
+                                        <div className="col-md-4">
+                                            <input
+                                                inline
+                                                required
+                                                type="checkbox"
+                                                name="agreement"
+                                                checked={this.state.checked}
+                                                onChange={this.handleCheckbox}
+                                            />
+                                        </div>
+                                    </div>
+                                    
                                     <button
                                         loading={isLoading}
                                         disabled={isLoading}
