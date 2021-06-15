@@ -22,7 +22,7 @@ class Account extends Component {
                 <Header />
 
                 <Helmet>
-                    <title>حساب کاربری</title>
+                    <title>Account</title>
                 </Helmet>
 
                 <div className="section">

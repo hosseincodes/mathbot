@@ -12,7 +12,7 @@ class Ask extends Component {
                 <Header />
 
                 <Helmet>
-                    <title>سوال خودت رو بپرس</title>
+                    <title>Ask</title>
                 </Helmet>
                 
                 <div className="section">

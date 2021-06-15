@@ -20,7 +20,7 @@ class Popular extends Component {
                     <div className="container">
                         <div className="col-md-12 responsive-box">
                             <div className="forum-title">
-                                <h3>محبوب ترین سوالات پرسیده شده در مث بات</h3>
+                                <h3><i style={{color: "red"}} class="fas fa-fire-alt"></i> محبوب ترین سوالات پرسیده شده در مث بات</h3>
                             </div>
 
                             <QuestionMiniList />
@@ -28,26 +28,12 @@ class Popular extends Component {
                             <QuestionMiniList />
                             <QuestionMiniList />
                             <QuestionMiniList />
-
-                            <div className="col-md-12 col-xs-12">
-                                <div className="loader-box">
-                                    <div className="row">
-                                        <a href="https://test.com">
-
-                                            <div className="more">
-
-                                                {/* This loader should only be displayed when a real loading occurs. This format will be added in the future */}
-
-                                                    {/* <Loader /> */}
-
-                                                <p>نمایش سایر</p>
-                                                
-                                            </div>
-                                            
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
+                            <QuestionMiniList />
+                            <QuestionMiniList />
+                            <QuestionMiniList />
+                            <QuestionMiniList />
+                            <QuestionMiniList />
+                            <QuestionMiniList />
 
                         </div>
 

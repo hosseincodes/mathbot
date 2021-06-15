@@ -13,7 +13,7 @@ class Home extends Component {
                 <Header />
 
                 <Helmet>
-                    <title>mathbot - question and answer math forum</title>
+                    <title>Home / mathbot</title>
                     <meta name="keywords" content="مث بات, mathbot"></meta>
                 </Helmet>
 
@@ -22,7 +22,7 @@ class Home extends Component {
                         <div className="col-md-12 responsive-box">
                             <div className="forum-title">
                                 <h3>جدید ترین سوالات</h3>
-                                <a className="title-a" href="questions/ask/">سوال خودت رو بپرس</a>
+                                <a className="title-a" href="questions/ask/">طرح پرسش جدید</a>
                             </div>
 
                             <QuestionMiniList />

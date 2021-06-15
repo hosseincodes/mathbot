@@ -15,7 +15,7 @@ class Questions extends Component {
                 <Header />
 
                 <Helmet>
-                    <title>نام سوال</title>
+                    <title>Question name (fake)</title>
                 </Helmet>
 
                 <div className="section">
@@ -26,7 +26,7 @@ class Questions extends Component {
                 
                         <QuestionBox />
 
-                        <div className="forum-title">
+                        <div className="forum-title-questions">
                             <h3>3 پاسخ</h3>
                         </div>
                 
@@ -34,7 +34,7 @@ class Questions extends Component {
                         <Response />
                         <Response />
 
-                        <div className="forum-title">
+                        <div className="forum-title-questions">
                             <h3>پاسخ شما</h3>
                         </div>
                 
