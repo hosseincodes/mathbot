@@ -12,13 +12,7 @@ class Header extends Component {
                         
                         <Link to="/login">
                             <div className="header-buttons header-buttons-login">       
-                                Login <i class="fas fa-sign-in-alt header-buttons-ico"></i>
-                            </div>
-                        </Link>
-                        
-                        <Link title="Notifications" to="/notifications"> 
-                            <div className="header-buttons">
-                                <i class="fas fa-bell header-buttons-ico"></i>
+                                ورود
                             </div>
                         </Link>
 
@@ -48,7 +42,7 @@ class Header extends Component {
                                 <div className="search">
                                     <div className="searchTerm">
                                         <span><i className="fa fa-search search-icon"></i></span>
-                                        <input type="text" placeholder="Search"/>
+                                        <input type="text" placeholder="جستجو در سوالات ثبت شده..."/>
                                     </div> 
                                 </div>
                             </div>

@@ -51,7 +51,7 @@ a {
 /* Header */
 
 .header {
-    padding: 11px 4rem 11px 4rem;
+    padding: 20px 4rem 20px 4rem;
     text-align: center;
     background: #fff;
     box-shadow: rgba(0, 0, 0, .07) 0 0 30px;
@@ -59,12 +59,12 @@ a {
 
 .logo-img {
     max-width: 100%;
-    height: 34px;
+    height: 40px;
 }
 
 .header-buttons {
     color: #29a58d;
-    padding: 5px 8px 2px 8px;
+    padding: 8px 8px 2px 8px;
     width: max-content;
     margin: 0 7px;
     border-radius: 3px;
@@ -79,7 +79,7 @@ a {
 .header-buttons-login {
     border: 1px solid #29a58d;
     border-radius: 5px;
-    padding-bottom: 3px;
+    padding: 5px 15px 8px 15px;
     &:hover {
         background: #29a58d !important;
         color: #fff;
@@ -109,11 +109,10 @@ a {
     border: 0;
     border: solid 1px rgba(var(--b6a,219,219,219),1);
     background: rgba(var(--b3f,250,250,250),1);
-    padding: 5px 10px;
+    padding: 8px 0px 8px 10px;
     border-radius: 5px;
     color: #29a58d;
     font-size: 14px;
-    direction: ltr;
 }
   
 .searchTerm:focus{
@@ -125,6 +124,7 @@ a {
     border: 0;
     outline: none;
     width: 95%;
+    margin-right: 5px;
 }
 
 .search-icon {
@@ -138,7 +138,7 @@ a {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    margin-top: 15px;
+    margin-top: 18px;
 }
 
 /* Homepage */
