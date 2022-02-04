@@ -447,6 +447,14 @@ a {
     font-family: $font-family-IRANYekan;
 }
 
+.breadcrumb {
+    padding: 1px 15px 1px 15px !important;
+}
+
+.breadcrumb a {
+    color: #333;
+}
+
 .question-box {
     background: #fff;
     box-shadow: 0 5px 10px 0 rgba(20, 83, 155, .05);

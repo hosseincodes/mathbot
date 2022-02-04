@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import QuestionBox from '../components/QuestionBox';
 import Response from '../components/Response';
 import RichEditor from '../components/RichEditor';
+import { Link } from "react-router-dom";
 import { Helmet } from 'react-helmet';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -20,6 +21,10 @@ class Questions extends Component {
                 <div className="section">
                     <div className="container">
                         <div className="col-md-12 responsive-box">
+
+                        <div className="breadcrumb">
+                            <h6><Link to="/">صفحه اصلی</Link> / <Link to="/">انجمن</Link> / <Link to="/questions/لورم-ایپسوم-متن-ساختگی">کمترین تعداد علامت جمع مورد نیاز برای نمایش حاصل عددی عبارت کدام است؟</Link></h6>
+                        </div>
                 
                         <QuestionBox />
 
