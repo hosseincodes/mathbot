@@ -482,7 +482,7 @@ a {
 .question-box-big {
     background: #fff;
     box-shadow: 0 5px 10px 0 rgba(20, 83, 155, .05);
-    padding: 15px 15px 10px 15px;
+    padding: 5px 25px 10px 25px;
     border-radius: 10px;
     margin-bottom: 20px;
 }
@@ -511,6 +511,7 @@ a {
 
 .question-answer-big-p {
     line-height: 30px;
+    margin-top: 15px;
 }
 
 .answer-again {
@@ -603,6 +604,16 @@ a {
     margin-bottom: 40px;
 }
 
+.forum-title-QuestionBox {
+    position: relative;
+    margin-bottom: 20px;
+    border-bottom: 1px #eee solid;
+}
+
+.forum-title-QuestionBox h3 {
+    line-height: 30px;
+}
+
 .forum-title-questions {
     position: relative;
     margin-bottom: 40px;
@@ -632,7 +643,21 @@ a {
 
 .account-user-img-box {
     text-align: center;
+    float: right;
+}
+
+.question-box-big-details {
     margin-bottom: 15px;
+}
+
+.forum-title-ask h6 {
+    float: right;
+    margin-right: 8px;
+}
+
+.account-user-img-little {
+    border-radius: 50%;
+    width: 30px;
 }
 
 .account-user-img-sidebar {
