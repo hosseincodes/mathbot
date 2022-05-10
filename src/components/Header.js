@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import logo from '../assets/images/logo.png';
+import SearchBox from "./SearchBox";
 
 class Header extends Component {
     render () {
@@ -37,16 +38,7 @@ class Header extends Component {
                     </div>
 
                     <div className="col-md-7">
-                        <div className="search-box-big">
-                            <div className="wrap">
-                                <div className="search">
-                                    <div className="searchTerm">
-                                        <span><i className="fa fa-search search-icon"></i></span>
-                                        <input type="text" placeholder="جستجو در سوالات ثبت شده..."/>
-                                    </div> 
-                                </div>
-                            </div>
-                        </div>
+                        <SearchBox />
                     </div>
 
                     <div className="col-md-2 col-xs-9">
