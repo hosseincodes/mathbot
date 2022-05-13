@@ -26,10 +26,6 @@ class Home extends Component {
                             </div>
 
                             <QuestionMiniList />
-                            <QuestionMiniList />
-                            <QuestionMiniList />
-                            <QuestionMiniList />
-                            <QuestionMiniList />
 
                             <div className="col-md-12 col-xs-12">
                                 <div className="loader-box">
