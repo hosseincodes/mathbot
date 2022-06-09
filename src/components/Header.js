@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import logo from '../assets/images/logo.png';
-import SearchBox from "./SearchBox";
 
 class Header extends Component {
     render () {
@@ -35,11 +34,15 @@ class Header extends Component {
                             </div>
                         </Link>
 
+                        <Link title="Search" to="/search">
+                            <div className="header-buttons">
+                                <i class="fas fa-search header-buttons-ico"></i>
+                            </div>
+                        </Link>
+
                     </div>
 
-                    <div className="col-md-7">
-                        <SearchBox />
-                    </div>
+                    <div className="col-md-7"></div>
 
                     <div className="col-md-2 col-xs-9">
                         <div className="logo-button">
