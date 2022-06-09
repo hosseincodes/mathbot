@@ -24,16 +24,6 @@ class Popular extends Component {
                             </div>
 
                             <QuestionMiniList />
-                            <QuestionMiniList />
-                            <QuestionMiniList />
-                            <QuestionMiniList />
-                            <QuestionMiniList />
-                            <QuestionMiniList />
-                            <QuestionMiniList />
-                            <QuestionMiniList />
-                            <QuestionMiniList />
-                            <QuestionMiniList />
-                            <QuestionMiniList />
 
                         </div>
 
