@@ -28,7 +28,7 @@ class Header extends Component {
                             </div>
                         </Link>
 
-                        <Link title="Popular" to="/questions/popular">
+                        <Link title="The Best" to="/TheBest">
                             <div className="header-buttons">
                                 <i class="fas fa-fire-alt header-buttons-ico"></i>
                             </div>
