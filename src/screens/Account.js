@@ -30,7 +30,7 @@ class Account extends Component {
                         <div className="row account">
                             <div className="col-md-3">
                                 <div className="account-sidebar">
-                                    <div className="account-user-img-box">
+                                    <div className="account-user-img-box-large">
                                         <img src={profile} className="account-user-img" alt="Hossein Akbari" />
                                     </div>
                                     <p style={{textAlign: "center", padding: "15px 0px 0px 0px"}}>حسین اکبری</p>
