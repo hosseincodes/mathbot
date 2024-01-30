@@ -678,6 +678,7 @@ a {
     padding: 15px;
     border-radius: 10px;
     background: #eee;
+    margin-bottom: 15px;
 }
 
 .account-user-img {
@@ -687,7 +688,6 @@ a {
 
 .account-user-img-box {
     text-align: center;
-    float: right;
 }
 
 .question-box-big-details {
@@ -725,7 +725,6 @@ a {
 }
 
 .account-sidebar-links {
-    text-align: center;
     padding: 9px;
     transition: all 0.2s ease;
     a {

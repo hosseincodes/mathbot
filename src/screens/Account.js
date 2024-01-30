@@ -33,16 +33,19 @@ class Account extends Component {
                                     <div className="account-user-img-box">
                                         <img src={profile} className="account-user-img" alt="Hossein Akbari" />
                                     </div>
-                                    <p style={{textAlign: "center", borderBottom: "1px solid #333", padding: "0 0 15px 0"}}>حسین اکبری</p>
-                                    <div onClick={() => { this.setState ( {expand: false}) }} className="account-sidebar-links"><span style={this.state.expand ? { } : {background: "#29a58d", color: "#fff", transition: "all 0.2s ease"}}>پروفایل من</span></div>
-                                    <div onClick={() => { this.setState ( {expand: true}) }} className="account-sidebar-links"><span style={this.state.expand ? {background: "#29a58d", color: "#fff", transition: "all 0.2s ease"} : { }}>ادیت پروفایل و تنظمیات</span></div>
-                                    <div className="account-sidebar-links"><span>خروج از حساب کاربری</span></div>
+                                    <p style={{textAlign: "center", padding: "15px 0px 0px 0px"}}>حسین اکبری</p>
+                                    
                                 </div>
+
+                                <div onClick={() => { this.setState ( {expand: false}) }} className="account-sidebar-links"><span style={this.state.expand ? { } : {background: "#29a58d", color: "#fff", transition: "all 0.2s ease"}}>پروفایل من</span></div>
+                                <div onClick={() => { this.setState ( {expand: true}) }} className="account-sidebar-links"><span style={this.state.expand ? {background: "#29a58d", color: "#fff", transition: "all 0.2s ease"} : { }}>ادیت پروفایل و تنظمیات</span></div>
+                                <div className="account-sidebar-links"><span>خروج از حساب کاربری</span></div>
+
                             </div>
                             <div className="col-md-9">
                                 <div className="account-section">
                                     <div style={this.state.expand ? {display: 'none'} : { }}>
-                                        <h4>حسین اکبری</h4>
+                                        <h4 style={{fontWeight: "900"}}>حسین اکبری</h4>
                                         <p>توسعه دهنده نرم افزار های تحت وب</p>
                                         <p style={{lineHeight: "30px"}}>
                                             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
