@@ -1,5 +1,5 @@
-<p align="center">
-  <img src="mathbot.jpg" alt="mathbot logo" />
+<p style="width: 200px" align="center">
+  <img style="border-radius: 50%" src="mathbot.jpg" alt="mathbot logo" />
 </p>
 
 # mathbot
