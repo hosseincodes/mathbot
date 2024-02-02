@@ -10,6 +10,7 @@ import Account from './screens/Account';
 import NotFoundPage from './screens/NotFoundPage';
 import TheBest from './screens/TheBest';
 import Search from './screens/Search';
+import Users from './screens/Users';
 
 class Router extends Component {
     render () {
@@ -24,6 +25,7 @@ class Router extends Component {
                     <Route path="/register" component={Register} exact />
                     <Route path="/account" component={Account} exact />
                     <Route path="/Search" component={Search} exact />
+                    <Route path="/users/:id" component={Users} exact />
                     <Route path="/questions/:id" component={Questions} exact />
                     <Route component={NotFoundPage} exact />
                 </Switch>
