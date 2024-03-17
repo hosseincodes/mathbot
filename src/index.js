@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Provider} from 'react-redux';
-import {PersistGate} from 'redux-persist/integration/react';
+// import {Provider} from 'react-redux';
+// import {PersistGate} from 'redux-persist/integration/react';
 import './assets/css/style.css';
 import './assets/css/bootstrap-rtl.css';
-import Loader from './components/Loader';
+// import Loader from './components/Loader';
 import App from './components/App';
 
 ReactDOM.render(

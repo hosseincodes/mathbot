@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import JSONDATA from '../api/QUESTIONS_DATA.json';
@@ -24,11 +24,12 @@ function SearchBox() {
                 <div className="row">
                     <div className="question-search-box">
                         {JSONDATA.filter((val)=>{
-                            if (searchTerm == "") {
+                            if (searchTerm === "") {
                                 return val
                             } else if (val.question_name.toLowerCase().includes(searchTerm.toLowerCase())) {
                                 return val
                             }
+                            return val
                         }).map((val, key)=>{
                             return (
                                 <div key={key}>

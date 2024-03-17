@@ -47,7 +47,7 @@ class Header extends Component {
                     <div className="col-md-2 col-xs-9">
                         <div className="logo-button">
                             <Link to="/">
-                                <img src={logo} class="logo-img" alt="Image" />
+                                <img src={logo} class="logo-img" alt="mathbot logo" />
                             </Link>
                         </div>
                     </div>
