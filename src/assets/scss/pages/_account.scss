@@ -1,0 +1,117 @@
+/* Account */
+
+.account {
+    background: #fff;
+    padding: 15px 0px 15px 0px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px 0 rgba(20, 83, 155, .05);
+    margin-bottom: 30px;
+}
+
+.account-sidebar {
+    padding: 15px;
+    border-radius: 10px;
+    background: #eee;
+    margin-bottom: 15px;
+}
+
+.account-user-img {
+    width: 100px;
+    border-radius: 50%;
+}
+
+.account-user-img-box {
+    text-align: center;
+    float: right;
+}
+
+.account-user-img-box-large {
+    text-align: center;
+}
+
+.question-box-big-details {
+    margin-bottom: 15px;
+}
+
+.forum-title-ask h6 {
+    float: right;
+    margin-right: 8px;
+}
+
+.account-user-img-little {
+    border-radius: 50%;
+    width: 30px;
+}
+
+.the-lost-boy-img {
+    width: 250px;
+}
+
+.account-user-img-big {
+    border-radius: 50%;
+    width: 100px;
+}
+
+.account-user-img-sidebar {
+    width: 50px;
+    border-radius: 50%;
+}
+
+.account-sidebar-name {
+    display: flex;
+    margin-top: 8px;
+    font-weight: 900;
+}
+
+.account-sidebar-links {
+    padding: 9px;
+    transition: all 0.2s ease;
+    a {
+        color: #333;
+    }
+    span {
+        cursor: pointer;
+        padding: 5px 10px;
+        border-radius: 10px;
+        &:hover {
+            background: #fff;
+            transition: all 0.2s ease;
+        }
+    }
+}
+
+.h5-mini-profile {
+    margin-top: 30px;
+}
+
+.score {
+    background: #eee;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.post-mini-profile {
+    padding-bottom: 5px;
+    border-bottom: 1px solid #333;
+    line-height: 30px;
+}
+
+.edit-profile-box {
+    margin-top: 15px;
+    .edit-profile-box-input {
+        border-radius: 5px;
+        width: 50%;
+        padding: 5px;
+        border: 0;
+        background: #eee;
+    }
+}
+
+.save-profile-box {
+    background: #29a58d;
+    color: #fff;
+    border: 0;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+}

@@ -1,0 +1,38 @@
+$font-size-big: 28px;
+
+/* 404 */
+
+.NotFound-box {
+    padding: 70px 0;
+}
+
+.NotFound-h1 {
+    text-align: center;
+    font-size: 120px;
+    color: #29A58D;
+    font-weight: 600;
+}
+
+.NotFound-p {
+    text-align: center;
+    font-size: $font-size-big;
+    font-weight: 600;
+}
+
+.NotFound-a {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.not-found {
+    text-align: center;
+    line-height: 80px;
+    padding-top: 20px;
+}
+
+.not-found-btn {
+    background: #29a58d;
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+}
