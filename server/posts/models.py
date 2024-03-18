@@ -12,3 +12,6 @@ class Post(models.Model):
         User,
         on_delete=models.CASCADE
     )
+
+    class Meta:
+        ordering = ['created_at']
