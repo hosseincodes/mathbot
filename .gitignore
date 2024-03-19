@@ -22,3 +22,18 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# virtual environment
+server/venv
+
+# migrations and cache
+server/comments/migrations
+server/comments/__pycache__
+server/posts/migrations
+server/posts/__pycache__
+server/accounts/migrations
+server/accounts/__pycache__
+server/server/__pycache__
+
+# database
+server/db.sqlite3
