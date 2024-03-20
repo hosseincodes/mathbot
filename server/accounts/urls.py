@@ -1,11 +1,12 @@
 from django.urls import path
+from . import views
 
 urlpatterns = [
-    path('', UserListAPIView.as_view(), name='user-list'),
-    path('register/', UserCreateAPIView.as_view(), name='user-register'),
-    path('login/', UserLoginAPIView.as_view(), name='user-login'),
-    path('logout/', UserLogoutAPIView.as_view(), name='user-logout'),
-    path('<slug:username>/', UserDetailAPIView.as_view(), name='user-detail'),
-    path('<slug:username>/edit/', UserUpdateAPIView.as_view(), name='user-update'),
-    path('<slug:username>/delete/', UserDeleteAPIView.as_view(), name='user-delete'),
+    path('', views.UserListAPIView.as_view(), name='user-list'),
+    path('register/', views.UserCreateAPIView.as_view(), name='user-register'),
+    path('login/', views.UserLoginAPIView.as_view(), name='user-login'),
+    path('logout/', views.UserLogoutAPIView.as_view(), name='user-logout'),
+    path('<slug:username>/', views.UserDetailAPIView.as_view(), name='user-detail'),
+    path('<slug:username>/edit/', views.UserUpdateAPIView.as_view(), name='user-update'),
+    path('<slug:username>/delete/', views.UserDeleteAPIView.as_view(), name='user-delete'),
 ]

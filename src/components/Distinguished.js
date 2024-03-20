@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import JSONDATA from '../api/QUESTIONS_DATA.json';
+// import JSONDATA from '../api/QUESTIONS_DATA.json';
 import profile from '../assets/images/hossein.png';
 
 class Distinguished extends Component {
     render () {
         return (
             <div>
-                {JSONDATA.map((val, key) => {
+                {/* {JSONDATA.map((val, key) => {
                     return <div className="col-md-3 col-xs-6 responsive-box">
                                 <div className="the-best-box">
                                     <Link className="question-box-link" to="/users/ali">
@@ -18,7 +18,7 @@ class Distinguished extends Component {
                                     </Link>
                                 </div>
                             </div>
-                })}
+                })} */}
             </div>
         );
     }

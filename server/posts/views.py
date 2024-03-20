@@ -5,14 +5,19 @@ from .serializers import PostSerializer, UserSerialzier
 
 User = get_user_model()
 
-class PostsApiView(generics.ListCreateAPIView):
+class PostsListAPIView(generics.ListAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
-    # authentication_classes = [BasicAuthentication]
-    # permission_classes = [IsAuthenticated]
 
+class PostsCreateAPIView(generics.CreateAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
 
-class PostsDetailView(generics.RetrieveUpdateDestroyAPIView):
+class PostsDetailAPIView(generics.RetrieveAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+
+class PostsDeleteAPIView(generics.DestroyAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
 
