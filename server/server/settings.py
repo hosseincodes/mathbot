@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-%jiff7^r%l6ye34nez)of*sg0j%zn4p6mxaapb72l08v^j6a2&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['server.mathbot.ir', 'www.server.mathbot.ir']
 
 
 # Application definition

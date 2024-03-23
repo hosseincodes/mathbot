@@ -8,9 +8,9 @@ import './assets/css/bootstrap-rtl.css';
 import App from './components/App';
 
 ReactDOM.render(
-  // <React.StrictMode>
+  <React.StrictMode>
     <App />
-  // </React.StrictMode>
+  </React.StrictMode>
   ,
   document.getElementById('root')
 );

@@ -24,19 +24,19 @@ class Home extends Component {
                                 <h3>جدید ترین سوالات</h3>
                                 <a className="title-a" href="questions/ask/">طرح پرسش جدید</a>
                             </div>
-
+                            
                             <QuestionMiniList />
 
-                            <div className="col-md-12 col-xs-12">
+                            {/* <div className="col-md-12 col-xs-12">
                                 <div className="loader-box">
                                     <div className="row">
                                         <a href="https://test.com">
 
                                             <div className="more">
 
-                                                {/* This loader should only be displayed when a real loading occurs. This format will be added in the future */}
+                                                This loader should only be displayed when a real loading occurs. This format will be added in the future
 
-                                                    {/* <Loader /> */}
+                                                    <Loader />
 
                                                 <p>نمایش سایر</p>
                                                 
@@ -45,7 +45,7 @@ class Home extends Component {
                                         </a>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
 
                         </div>
 
