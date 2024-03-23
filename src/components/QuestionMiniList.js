@@ -1,15 +1,16 @@
-import React, { Component, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-function QuestionMiniList() {
+function QuestionMiniList(props) {
 
+    const id = props.id
     const [lisitng, setListing] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch('https://server.mathbot.ir/api/posts/');
+            const response = await fetch('https://server.mathbot.ir/api/posts/?page=' + id);
             const json = await response.json();
-            setListing(json);
+            setListing(json.results);
           };
       
           fetchData();
