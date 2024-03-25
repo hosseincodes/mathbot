@@ -8,7 +8,7 @@ class Header extends Component {
             <div className="header">
                 <div className="row">
 
-                    <div className="col-md-3 col-xs-3 header-icons-box">
+                    <div className="col-md-3 header-responsive header-icons-box">
                         
                         <Link to="/login">
                             <div className="header-buttons header-buttons-login">       
@@ -36,9 +36,9 @@ class Header extends Component {
 
                     </div>
 
-                    <div className="col-md-7"></div>
+                    <div className="col-md-7 header-responsive"></div>
 
-                    <div className="col-md-2 col-xs-9">
+                    <div className="col-md-2">
                         <div className="logo-button">
                             <Link to="/">
                                 <img src={logo} class="logo-img" alt="mathbot logo" />
@@ -46,7 +46,7 @@ class Header extends Component {
                         </div>
                     </div>
                     
-                 </div>
+                </div>
             </div>
         );
     }

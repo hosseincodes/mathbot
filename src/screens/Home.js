@@ -3,6 +3,7 @@ import QuestionMiniList from '../components/QuestionMiniList';
 import { Helmet } from 'react-helmet';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { Link } from "react-router-dom";
 
 function Home() {
 
@@ -36,7 +37,9 @@ function Home() {
                         <div className="forum-title">
                             <h3 style={flag === true ? {} : {display: 'none'}}>جدید ترین سوالات</h3>
                             <h3 style={flag === true ? {display: 'none'} : {}}>صفحه دوم سوالات</h3>
-                            <a className="title-a" href="questions/ask">طرح پرسش جدید</a>
+                            <Link className="title-a" to="questions/ask">
+                                <h6>طرح پرسش جدید</h6>
+                            </Link>
                         </div>
 
                         
