@@ -2,15 +2,16 @@ import React, { useEffect, useState } from 'react';
 // import { Link } from "react-router-dom";
 // import profile from '../assets/images/hossein.png';
 import axios from 'axios';
+import {useParams} from 'react-router-dom';
 
 function QuestionBox(props) {
 
-    // const id = props.id
+    const {id} = useParams();    
 
     const [data, setdata] = useState([])
 
     useEffect(() => {
-        axios.get("https://server.mathbot.ir/api/posts/" + 1).then((res) => {
+        axios.get("https://server.mathbot.ir/api/posts/" + id + "/").then((res) => {
             setdata(res.data)
         })
     })

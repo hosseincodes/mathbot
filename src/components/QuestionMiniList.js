@@ -21,7 +21,7 @@ function QuestionMiniList(props) {
             {lisitng.map((data) =>
                 <div className="col-md-12 col-xs-12 responsive-box">
                     <div className="question-box">
-                        <Link className="question-box-link" to="/questions/لورم-ایپسوم-متن-ساختگی">
+                        <Link className="question-box-link" to={`/questions/${data.id}`}>
                             <h4>{data.title}</h4>
                             <p>{data.content}</p>
                         </Link>

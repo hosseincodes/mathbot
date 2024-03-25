@@ -73,7 +73,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    'https://mathbot.ir/', 'http://localhost:3000/'
+    'https://mathbot.ir', 'http://localhost:3000'
 ]
 
 ROOT_URLCONF = 'server.urls'
