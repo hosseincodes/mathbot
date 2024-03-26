@@ -38,6 +38,20 @@ $font-size-little: 12px;
     resize: vertical;
 }
 
+.ask-description-textarea {
+    font-family: "IRANYekanWebFn-Light" !important;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    padding: 8px;
+    box-sizing: border-box;
+    font-size: 14px;
+    border-radius: 10px;
+    margin: 10px 0 15px;
+    height: 200px;
+    resize: none;
+}
+
 .ask-input-tags {
     font-family: $font-family-IRANYekan;
     background: #f2f2f2;
