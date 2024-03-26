@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
-// import { Link } from "react-router-dom";
 // import profile from '../assets/images/hossein.png';
 import axios from 'axios';
-import {useParams} from 'react-router-dom';
+import {useParams , Link} from 'react-router-dom';
 
 function QuestionBox(props) {
 
@@ -15,6 +14,17 @@ function QuestionBox(props) {
             setdata(res.data)
         })
     })
+
+    function deletePost() {
+        axios.delete("https://server.mathbot.ir/api/posts/" + id + "/delete/").then(response => {
+            console.log('Resource deleted successfully:', response.data);
+            alert("پست با موفقیت پاک شد");
+          })
+          .catch(error => {
+            console.error('Error deleting resource:', error);
+            alert("پست پاک نشد! یه مشکلی وجود داره");
+          })
+    }
     
     return (
         <div className="col-md-12 col-xs-12 responsive-box">
@@ -36,7 +46,9 @@ function QuestionBox(props) {
                         {/* <div className="col-md-2 col-sm-4 col-xs-4 forum-title-last-seen">
                             <h6>3000 بازدید</h6>
                         </div> */}
-                        <div className="col-md-4 col-xs-12"></div>
+                        <div className="col-md-4 col-xs-12">
+                            <Link to="/" className="title-a" onClick={deletePost}><i class="fa fa-trash"></i> پاک کردن پست</Link>
+                        </div>
                     </div>
                 </div>
                 <p className="question-box-big-p">{data.content}</p>
