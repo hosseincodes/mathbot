@@ -5,6 +5,7 @@ from posts.models import Post
 User = get_user_model()
 
 class Comment(models.Model):
+    id = models.AutoField(primary_key=True, editable=False)
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     creator = models.ForeignKey(

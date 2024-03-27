@@ -18,7 +18,7 @@ function Questions() {
         axios.get("https://server.mathbot.ir/api/posts/" + id + "/").then((res) => {
             setdata(res.data)
         })
-    })
+    },[id])
 
     function deletePost() {
         axios.delete("https://server.mathbot.ir/api/posts/" + id + "/delete/").then(response => {
@@ -80,12 +80,10 @@ function Questions() {
                     </div>
 
                     <div className="forum-title-questions">
-                        <h3>3 پاسخ</h3>
+                        <h3>پاسخ ها</h3>
                     </div>
-            
-                    <Response />
-                    <Response />
-                    <Response />
+
+                    <Response id = {data.id} />
 
                     <div className="forum-title-questions">
                         <h3>پاسخ شما</h3>

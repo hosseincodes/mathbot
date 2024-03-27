@@ -5,14 +5,19 @@ from .serializers import CommentSerializer, UserSerialzier
 
 User = get_user_model()
 
-class CommentsApiView(generics.ListCreateAPIView):
+class CommentsListAPIView(generics.ListAPIView):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
-    # authentication_classes = [BasicAuthentication]
-    # permission_classes = [IsAuthenticated]
 
+class CommentsCreateAPIView(generics.CreateAPIView):
+    queryset = Comment.objects.all()
+    serializer_class = CommentSerializer
 
-class CommentsDetailView(generics.RetrieveUpdateDestroyAPIView):
+class CommentsDetailAPIView(generics.RetrieveAPIView):
+    queryset = Comment.objects.all()
+    serializer_class = CommentSerializer
+
+class CommentsDeleteAPIView(generics.DestroyAPIView):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
 

@@ -14,7 +14,7 @@ function QuestionMiniList(props) {
           };
       
           fetchData();
-    })
+    },[id])
 
     return (
         <div>
