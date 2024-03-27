@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
+import axios from 'axios';
 // import profile from '../assets/images/hossein.png';
 
 function Response(props) {
@@ -18,6 +19,18 @@ function Response(props) {
         
     },[])
 
+    function deleteComment(CommentId) {
+        axios.delete("https://server.mathbot.ir/api/comments/" + CommentId + "/delete/").then(response => {
+            console.log('Resource deleted successfully:', response.data);
+            alert("کامنت با موفقیت پاک شد");
+            window.location.reload();
+          })
+          .catch(error => {
+            console.error('Error deleting resource:', error);
+            alert("کامنت پاک نشد! یه مشکلی وجود داره");
+          })
+    }
+
     return (
         <div>
             {data.map((nextdata) =>
@@ -35,6 +48,7 @@ function Response(props) {
                                 </Link>
                                 <h6>&nbsp; {nextdata.created_at}</h6>
                                 <p className="question-answer-big-p">{nextdata.content}</p>
+                                <span className="delete-comment-button" onClick={() => deleteComment(nextdata.id)}><i class="fa fa-trash"></i> پاک کردن پاسخ</span>
                             </div>
                         </div>
                     )     

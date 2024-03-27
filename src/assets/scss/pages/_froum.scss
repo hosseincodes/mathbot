@@ -270,3 +270,24 @@ $font-size-little: 12px;
     margin-bottom: 40px;
     margin-top: 40px;
 }
+
+.delete-comment-button {
+    background: transparent;
+    color: #29a58d;
+    border-radius: 5px;
+    padding: 2px 7px;
+    text-align: center;
+    text-decoration: none;
+    line-height: 30px;
+    transition: all 0.3s ease;
+    font-weight: 300;
+    font-size: 13px;
+    border: 1px solid #29a58d;
+    &:hover {
+        background: transparent;
+        color: #aae68b;
+        transition: all 0.3s ease;
+        border: 1px solid #aae68b;
+        cursor: pointer;
+    }
+}
