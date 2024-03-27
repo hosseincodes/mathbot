@@ -7,6 +7,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 // import profile from '../assets/images/hossein.png';
 import axios from 'axios';
+import UploadComment from '../components/UploadComment';
 
 function Questions() {
 
@@ -89,10 +90,7 @@ function Questions() {
                         <h3>پاسخ شما</h3>
                     </div>
             
-                    <div className="your-answer-box">
-                        <RichEditor />
-                        <input className="ask-input-button" type="button" value="ارسال پاسخ" />
-                    </div>
+                    <UploadComment postId={id} />
 
                 </div>
 
