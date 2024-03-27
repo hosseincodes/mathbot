@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'posts',
 
     "corsheaders",
+    "django_jalali"
 ]
 
 # REST_FRAMEWORK
@@ -130,9 +131,12 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+TIME_ZONE = 'Asia/Tehran'
 
-TIME_ZONE = 'UTC'
+LANGUAGE_CODE = 'fa-ir'
+import locale
+import jdatetime
+locale.setlocale(locale.LC_ALL, jdatetime.FA_LOCALE)
 
 USE_I18N = True
 

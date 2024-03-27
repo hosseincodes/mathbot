@@ -45,7 +45,7 @@ function Questions() {
                     <div className="col-md-12 responsive-box">
 
                     <div className="breadcrumb">
-                        <h6><Link to="/">صفحه اصلی</Link> / <Link to="/">انجمن</Link> / <Link to="/questions/لورم-ایپسوم-متن-ساختگی">کمترین تعداد علامت جمع مورد نیاز برای نمایش حاصل عددی عبارت کدام است؟</Link></h6>
+                        <h6><Link to="/">انجمن</Link> / <Link to={`/questions/${data.id}`}>{data.title}</Link></h6>
                     </div>
             
                     <div className="col-md-12 col-xs-12 responsive-box">
