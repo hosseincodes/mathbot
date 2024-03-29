@@ -14,7 +14,7 @@ class LargeResultsSetPagination(PageNumberPagination):
     max_page_size = 30
 
 class PostsListAPIView(generics.ListAPIView):
-    queryset = Post.objects.all()
+    queryset = Post.objects.all().order_by('-created_at')
     serializer_class = PostSerializer
     pagination_class = LargeResultsSetPagination
 

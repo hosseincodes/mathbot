@@ -8,7 +8,7 @@ from rest_framework_simplejwt.authentication import JWTAuthentication
 User = get_user_model()
 
 class CommentsListAPIView(generics.ListAPIView):
-    queryset = Comment.objects.all()
+    queryset = Comment.objects.all().order_by('-created_at')
     serializer_class = CommentSerializer
 
 class CommentsCreateAPIView(generics.CreateAPIView):

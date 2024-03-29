@@ -17,6 +17,3 @@ class Comment(models.Model):
         Post,
         on_delete = models.CASCADE
     )
-
-    class Meta:
-        ordering = ['created_at']
