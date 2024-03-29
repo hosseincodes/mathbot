@@ -48,9 +48,8 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
 ]
 
-# REST_FRAMEWORK
 REST_FRAMEWORK = {
-
+    'DATETIME_FORMAT': "%Y/%m/%d %H:%M:%S",
 }
 
 from datetime import timedelta
@@ -133,9 +132,6 @@ AUTH_PASSWORD_VALIDATORS = [
 TIME_ZONE = 'Asia/Tehran'
 
 LANGUAGE_CODE = 'fa-ir'
-import locale
-import jdatetime
-locale.setlocale(locale.LC_ALL, jdatetime.FA_LOCALE)
 
 USE_I18N = True
 
