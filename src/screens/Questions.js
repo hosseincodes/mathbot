@@ -8,16 +8,19 @@ import Footer from "../components/Footer";
 // import profile from '../assets/images/hossein.png';
 import axios from 'axios';
 import UploadComment from '../components/UploadComment';
+import Loader from "../components/Loader";
 
 function Questions() {
 
     const {id} = useParams();    
 
     const [data, setdata] = useState([])
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         axios.get("https://server.mathbot.ir/api/posts/" + id + "/").then((res) => {
             setdata(res.data)
+            setIsLoading(false);
         })
     },[id])
 
@@ -30,6 +33,14 @@ function Questions() {
             console.error('Error deleting resource:', error);
             alert("پست پاک نشد! یه مشکلی وجود داره");
           })
+    }
+
+    function loaderbox(){
+        if (isLoading) {
+            return <Loader />;
+        } else {
+            return <span>{data.content}</span>
+        }
     }
 
     return (
@@ -65,15 +76,18 @@ function Questions() {
                                     <div className="col-md-2 col-sm-4 col-xs-4 forum-title-view">
                                         <h6>{data.created_at}</h6>
                                     </div>
-                                    {/* <div className="col-md-2 col-sm-4 col-xs-4 forum-title-last-seen">
-                                        <h6>3000 بازدید</h6>
-                                    </div> */}
+                                    <div className="col-md-2 col-sm-4 col-xs-4 forum-title-last-seen">
+                                        <h6>???? بازدید</h6>
+                                    </div>
                                     <div className="col-md-4 col-xs-12">
                                         <Link to="/" className="title-a" onClick={deletePost}><i class="fa fa-trash"></i> پاک کردن پست</Link>
                                     </div>
                                 </div>
                             </div>
-                            <p className="question-box-big-p">{data.content}</p>
+                            <p className="question-box-big-p">{loaderbox()
+                                
+                            }</p>
+                            
                             {/* <div className="question-tag-box">
                                 <p><span className="question-tag-span">انتگرال</span><span className="question-tag-span">جبر</span><span className="question-tag-span">هندسه</span><span className="question-tag-span">متوسطه اول</span></p>
                             </div> */}

@@ -1,20 +1,27 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Loader from "./Loader";
 
 function QuestionMiniList(props) {
 
     const id = props.id
     const [lisitng, setListing] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         const fetchData = async () => {
             const response = await fetch('https://server.mathbot.ir/api/posts/?page=' + id);
             const json = await response.json();
+            setIsLoading(false);
             setListing(json.results);
           };
       
           fetchData();
     },[id])
+
+    if (isLoading) {
+        return <Loader />;
+    }
 
     return (
         <div>

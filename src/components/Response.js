@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
+import Loader from "./Loader";
 import axios from 'axios';
 // import profile from '../assets/images/hossein.png';
 
@@ -7,11 +8,13 @@ function Response(props) {
 
     const id = props.id
     const [data, setdata] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
     
     useEffect(() => {
         const fetchData = async () => {
             const response = await fetch('https://server.mathbot.ir/api/comments/');
             const json = await response.json();
+            setIsLoading(false);
             setdata(json);
         };
       
@@ -29,6 +32,10 @@ function Response(props) {
             console.error('Error deleting resource:', error);
             alert("کامنت پاک نشد! یه مشکلی وجود داره");
           })
+    }
+
+    if (isLoading) {
+        return <Loader />;
     }
 
     return (
