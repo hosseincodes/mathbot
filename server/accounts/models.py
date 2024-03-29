@@ -12,11 +12,6 @@ class UserProfile(models.Model):
         blank=True,
         default=''
     )
-    username = models.TextField()
-    email = models.EmailField()
-    description = models.TextField(blank=True, default='')
-    # we use URL instead of imagefield because we'll use 3rd party img hosting later on
-    avatar = models.URLField(default='', blank=True)
     name = models.CharField(max_length=32, default='')
 
     def __str__(self):

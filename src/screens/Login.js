@@ -1,113 +1,92 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
 import { Helmet } from 'react-helmet';
 import Header from "../components/Header";
-import StatusMessage from "../components/StatusMessage"
 import { Link } from "react-router-dom";
 
-class Login extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-          username: '',
-          password: '',
-        };
-    }
+function Login() {
     
-    handleChange = (e) => {
-        const value = e.target.value;
-        const name = e.target.value;
-        this.setState({[name]: value});
-    };
+    const [credentials, setCredentials] = useState({
+        username: '',
+        password: ''
+      });
     
-    isFormValid = () => {
-        const {username, password} = this.state;
+      const handleChange = (e) => {
+        setCredentials({
+          ...credentials,
+          [e.target.name]: e.target.value
+        });
+      };
     
-        let isFormValid = true;
-        if (!username || !password) {
-          isFormValid = false;
+      const handleSubmit = async (e) => {
+        e.preventDefault();
+    
+        try {
+          const response = await axios.post('https://server.mathbot.ir/api/token/', credentials);
+          const { token, refreshToken } = response.data;
+    
+          // Store the tokens in localStorage or secure cookie for later use
+          localStorage.setItem('token', token);
+          localStorage.setItem('refreshToken', refreshToken);
+    
+        } catch (error) {
+            console.log(error)
         }
-        return isFormValid;
-    };
+      };
     
-    handleSubmit = e => {
-        if (this.isFormValid()) {
-          this.props.handleLogin(this.state.username, this.state.password);
-        }
-    };
-
-    render() {
-        let {isLoading, error, showRegister} = this.props;
-
-        const statusMessage = (
-            <StatusMessage
-                error={error}
-                errorMessage={error || 'Login Error'}
-                loading={isLoading}
-                loadingMessage={'Signing in'}
-                type="modal"
-            />
-        );
         
-        return (
-            <div>
+    return (
+        <div>
 
-                <Header />
+            <Header />
 
-                <Helmet>
-                    <title>Login</title>
-                </Helmet>
+            <Helmet>
+                <title>Login</title>
+            </Helmet>
 
-                <div className="section">
-                    <div className="container-login">
-                        <div className="login-page">
-                            <div className="form">
+            <div className="section">
+                <div className="container-login">
+                    <div className="login-page">
+                        <div className="form">
 
-                            {statusMessage}
+                            <form className="login-form" onSubmit={handleSubmit}>
 
-                                <form className="login-form">
+                                <h4 style={{marginBottom: "25px"}}>ورود به حساب کاربری</h4>
 
-                                    <h4 style={{marginBottom: "25px"}}>ورود به حساب کاربری</h4>
+                                <input
+                                    required
+                                    type="text"
+                                    label="Username"
+                                    name="username"
+                                    placeholder="نام کاربری"
+                                    value={credentials.email}
+                                    onChange={handleChange}
+                                />
 
-                                    <input
-                                        required
-                                        type="text"
-                                        label="Username"
-                                        name="username"
-                                        placeholder="نام کاربری"
-                                        value={this.state.username}
-                                        onChange={this.handleChange}
-                                    />
+                                <input
+                                    required
+                                    type="password"
+                                    label="Password"
+                                    name="password"
+                                    placeholder="پسورد"
+                                    value={credentials.password}
+                                    onChange={handleChange}
+                                />
 
-                                    <input
-                                        required
-                                        type="password"
-                                        label="Password"
-                                        name="password"
-                                        placeholder="پسورد"
-                                        value={this.state.password}
-                                        onChange={this.handleChange}
-                                    />
+                                <button type="submit">ورود</button>
 
-                                    <button
-                                        loading={isLoading}
-                                        disabled={isLoading}
-                                        onClick={this.handleSubmit}>
-                                        ورود
-                                    </button>
+                                <p className="message">هنوز ثبت نام نکرده اید؟ <Link to="/register">یک اکانت بسازید</Link></p>
 
-                                    <p className="message">هنوز ثبت نام نکرده اید؟ <Link to="/register" onClick={showRegister}>یک اکانت بسازید</Link></p>
+                            </form>
 
-                                </form>
-
-                            </div>
                         </div>
                     </div>
                 </div>
-                
             </div>
-        );
-    }
+            
+        </div>
+    );
+    
 }
 
 export default Login;

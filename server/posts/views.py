@@ -3,6 +3,8 @@ from .models import Post
 from django.contrib.auth import get_user_model
 from .serializers import PostSerializer, UserSerialzier
 from rest_framework.pagination import PageNumberPagination
+from rest_framework.permissions import IsAuthenticated
+from rest_framework_simplejwt.authentication import JWTAuthentication
 
 User = get_user_model()
 
@@ -19,6 +21,8 @@ class PostsListAPIView(generics.ListAPIView):
 class PostsCreateAPIView(generics.CreateAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
+    permission_classes = [IsAuthenticated]
+    authentication_classes = [JWTAuthentication]
 
 class PostsDetailAPIView(generics.RetrieveAPIView):
     queryset = Post.objects.all()
@@ -27,6 +31,8 @@ class PostsDetailAPIView(generics.RetrieveAPIView):
 class PostsDeleteAPIView(generics.DestroyAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
+    permission_classes = [IsAuthenticated]
+    authentication_classes = [JWTAuthentication]
 
 class UsersApiView(generics.ListAPIView):
     queryset = User.objects.all()
