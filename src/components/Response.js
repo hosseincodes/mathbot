@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Loader from "./Loader";
 import axios from 'axios';
 // import profile from '../assets/images/hossein.png';
+import renderHTML from 'react-render-html'; 
 
 function Response(props) {
 
@@ -54,7 +55,7 @@ function Response(props) {
                                     </div> */}
                                 </Link>
                                 <h6>&nbsp; {nextdata.created_at}</h6>
-                                <p className="question-answer-big-p">{nextdata.content}</p>
+                                <p className="question-answer-big-p">{renderHTML(nextdata.content)}</p>
                                 <span className="delete-comment-button" onClick={() => deleteComment(nextdata.id)}><i class="fa fa-trash"></i> پاک کردن پاسخ</span>
                             </div>
                         </div>

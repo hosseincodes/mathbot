@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import profile from '../assets/images/hossein.png';
 import { Helmet } from 'react-helmet';
-import RichEditor from '../components/RichEditor';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
@@ -79,7 +78,8 @@ class Account extends Component {
                                             <span>ایمیل : </span><input className="edit-profile-box-input" type="text" value="hosseinakbari506@gmail.com" />
                                         </div>
                                         <div className="edit-profile-box">
-                                            <span>درباره من : </span><RichEditor />
+                                            <span>درباره من : </span>
+                                                {/* <RichEditor /> */}
                                         </div>
                                         <hr />
                                         <div className="edit-profile-box">

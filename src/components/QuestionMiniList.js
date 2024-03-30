@@ -30,7 +30,6 @@ function QuestionMiniList(props) {
                     <div className="question-box">
                         <Link className="question-box-link" to={`/questions/${data.id}`}>
                             <h4>{data.title}</h4>
-                            <p>{data.content}</p>
                         </Link>
                         <div className="row question-box-bottom">
                             <div className="col-lg-3 col-md-4 col-xs-12 col-sm-4">

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Response from '../components/Response';
-import RichEditor from '../components/RichEditor';
 import { useParams , Link } from "react-router-dom";
 import { Helmet } from 'react-helmet';
 import Header from "../components/Header";
@@ -9,6 +8,7 @@ import Footer from "../components/Footer";
 import axios from 'axios';
 import UploadComment from '../components/UploadComment';
 import Loader from "../components/Loader";
+import renderHTML from 'react-render-html'; 
 
 function Questions() {
 
@@ -39,7 +39,7 @@ function Questions() {
         if (isLoading) {
             return <Loader />;
         } else {
-            return <span>{data.content}</span>
+            return <span>{renderHTML(data.content)}</span>
         }
     }
 
@@ -84,9 +84,7 @@ function Questions() {
                                     </div>
                                 </div>
                             </div>
-                            <p className="question-box-big-p">{loaderbox()
-                                
-                            }</p>
+                            <p className="question-box-big-p">{loaderbox()}</p>
                             
                             {/* <div className="question-tag-box">
                                 <p><span className="question-tag-span">انتگرال</span><span className="question-tag-span">جبر</span><span className="question-tag-span">هندسه</span><span className="question-tag-span">متوسطه اول</span></p>
