@@ -22,7 +22,7 @@ function AskBox() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post("http://127.0.0.1:8000/api/posts/create/", {
+            const response = await axios.post("https://server.mathbot.ir/api/posts/create/", {
                 title: title,
                 content: content
             }, {

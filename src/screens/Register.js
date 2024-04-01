@@ -23,7 +23,7 @@ function Register() {
       const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-          const response = await axios.post("https://server.mathbot.ir/api/register/", formData);
+          const response = await axios.post("https://server.mathbot.ir/api/accounts/register/", formData);
           console.log("Post created:", response.data);
           alert("اکانت با موفقیت ساخته شد");
           window.location.replace("/login");

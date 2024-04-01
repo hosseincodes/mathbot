@@ -22,7 +22,7 @@ function Login() {
         e.preventDefault();
     
         try {
-          const response = await axios.post('http://127.0.0.1:8000/api/token/', credentials);
+          const response = await axios.post('https://server.mathbot.ir/api/token/', credentials);
           const { access, refresh } = response.data;
     
           // Store the tokens in localStorage or secure cookie for later use

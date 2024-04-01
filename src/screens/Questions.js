@@ -4,7 +4,7 @@ import { useParams , Link } from "react-router-dom";
 import { Helmet } from 'react-helmet';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-// import profile from '../assets/images/hossein.png';
+import profile from '../assets/images/hossein.png';
 import axios from 'axios';
 import UploadComment from '../components/UploadComment';
 import Loader from "../components/Loader";
@@ -15,14 +15,20 @@ function Questions() {
     const {id} = useParams();    
 
     const [data, setdata] = useState([])
+    const [creator, setcreator] = useState([])
+    const [creatorlink, setcreatorlink] = useState([])
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        axios.get("https://server.mathbot.ir/api/posts/" + id + "/").then((res) => {
-            setdata(res.data)
-            setIsLoading(false);
-        })
-    },[id])
+            axios.get("https://server.mathbot.ir/api/posts/" + id + "/").then((res) => {
+                setdata(res.data)
+                setcreatorlink(res.data.creator)
+                setIsLoading(false);
+            })
+            axios.get(creatorlink).then((res) => {
+                setcreator(res.data)
+            })
+    },[id, creatorlink])
 
     function deletePost() {
         axios.delete("https://server.mathbot.ir/api/posts/" + id + "/delete/").then(response => {
@@ -65,14 +71,14 @@ function Questions() {
                             <div className="forum-title-QuestionBox">
                                 <h3>{data.title}</h3>
                                 <div className="row question-box-big-details">
-                                    {/* <Link className="username-answer" to="/users/ali">
+                                    <Link className="username-answer" to={`/users/${creator.username}`}>
                                         <div className="col-md-4 col-sm-4 col-xs-4 forum-title-ask">
                                             <div className="account-user-img-box">
-                                                <img src={profile} className="account-user-img-little" alt="Hossein Akbari" />
+                                                <img src={profile} className="account-user-img-little" alt={creator.name} />
                                             </div>
-                                            <h6>علی اکبری</h6>
+                                            <h6>{creator.name}</h6>
                                         </div>
-                                    </Link> */}
+                                    </Link>
                                     <div className="col-md-2 col-sm-4 col-xs-4 forum-title-view">
                                         <h6>{data.created_at}</h6>
                                     </div>
