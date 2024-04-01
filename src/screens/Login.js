@@ -22,12 +22,14 @@ function Login() {
         e.preventDefault();
     
         try {
-          const response = await axios.post('https://server.mathbot.ir/api/token/', credentials);
-          const { token, refreshToken } = response.data;
+          const response = await axios.post('http://127.0.0.1:8000/api/token/', credentials);
+          const { access, refresh } = response.data;
     
           // Store the tokens in localStorage or secure cookie for later use
-          localStorage.setItem('token', token);
-          localStorage.setItem('refreshToken', refreshToken);
+          localStorage.setItem('token', access);
+          localStorage.setItem('refreshToken', refresh);
+
+          alert("موفقیت")
     
         } catch (error) {
             console.log(error)

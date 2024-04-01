@@ -1,12 +1,9 @@
 from rest_framework import generics
 from .models import Post
-from django.contrib.auth import get_user_model
-from .serializers import PostSerializer, UserSerialzier
+from .serializers import PostSerializer, PostCreateSerializer
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.authentication import JWTAuthentication
-
-User = get_user_model()
 
 class LargeResultsSetPagination(PageNumberPagination):
     page_size = 30
@@ -20,7 +17,7 @@ class PostsListAPIView(generics.ListAPIView):
 
 class PostsCreateAPIView(generics.CreateAPIView):
     queryset = Post.objects.all()
-    serializer_class = PostSerializer
+    serializer_class = PostCreateSerializer
     permission_classes = [IsAuthenticated]
     authentication_classes = [JWTAuthentication]
 
@@ -33,7 +30,3 @@ class PostsDeleteAPIView(generics.DestroyAPIView):
     serializer_class = PostSerializer
     permission_classes = [IsAuthenticated]
     authentication_classes = [JWTAuthentication]
-
-class UsersApiView(generics.ListAPIView):
-    queryset = User.objects.all()
-    serializer_class = UserSerialzier

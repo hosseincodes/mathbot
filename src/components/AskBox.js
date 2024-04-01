@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
@@ -7,20 +7,29 @@ function AskBox() {
 
     const [title, setTitle] = useState("")
     const [content, setContent] = useState()
+    const [token, setToken] = useState()
     
     // Function to handle form input changes
     const handleChange = (e) => {
         setTitle(e.target.value);
     };
 
+    useEffect(() => {
+        setToken(localStorage.getItem('token'))
+    },[])
+
     // Function to submit the form data using Axios
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post("https://server.mathbot.ir/api/posts/create/", {
+            const response = await axios.post("http://127.0.0.1:8000/api/posts/create/", {
                 title: title,
                 content: content
-            });
+            }, {
+                headers: {
+                  'Authorization': `Bearer ${token}` 
+                }
+              });
             console.log("Post created:", response.data);
             alert("پست با موفقیت آپلود شد");
         } catch (error) {

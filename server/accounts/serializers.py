@@ -65,3 +65,19 @@ class UserCreateSerializer(serializers.ModelSerializer):
         )
         profile.save()
         return user
+    
+class UserDetailSerializer(serializers.ModelSerializer):
+
+    posts = serializers.HyperlinkedRelatedField(
+        many=True,
+        read_only=True,
+        view_name='post-detail',
+        lookup_field='pk'
+    )
+    
+    bio = serializers.CharField(source='profile.bio')
+    name = serializers.CharField(source='profile.name')
+    class Meta:
+        model = User
+        fields = '__all__'
+        lookup_field = 'username'
