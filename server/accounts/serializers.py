@@ -74,6 +74,13 @@ class UserDetailSerializer(serializers.ModelSerializer):
         view_name='post-detail',
         lookup_field='pk'
     )
+
+    comments = serializers.HyperlinkedRelatedField(
+        many=True,
+        read_only=True,
+        view_name='comment-detail',
+        lookup_field='pk'
+    )
     
     bio = serializers.CharField(source='profile.bio')
     name = serializers.CharField(source='profile.name')

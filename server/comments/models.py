@@ -11,9 +11,11 @@ class Comment(models.Model):
     created_at = jmodel.jDateTimeField(auto_now_add=True)
     creator = models.ForeignKey(
         User,
-        on_delete = models.CASCADE
+        on_delete = models.CASCADE,
+        related_name='comments'
     )
     post = models.ForeignKey(
         Post,
-        on_delete = models.CASCADE
+        on_delete = models.CASCADE,
+        related_name='comments'
     )

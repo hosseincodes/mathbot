@@ -10,6 +10,13 @@ class PostSerializer(serializers.ModelSerializer):
         lookup_field='username'
     )
 
+    comments = serializers.HyperlinkedRelatedField(
+        many=True,
+        read_only=True,
+        view_name='comment-detail',
+        lookup_field='pk'
+    )
+
     class Meta:
         model = Post
         fields = '__all__'
