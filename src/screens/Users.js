@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import QuestionMiniList from '../components/QuestionMiniList';
-import profile from '../assets/images/hossein.png';
+import profile from '../assets/images/profile.png';
 
 
 class Users extends Component {

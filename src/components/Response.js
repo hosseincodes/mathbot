@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import Loader from "./Loader";
 import axios from 'axios';
-// import profile from '../assets/images/hossein.png';
+// import profile from '../assets/images/profile.png';
 import renderHTML from 'react-render-html'; 
 
 function Response(props) {

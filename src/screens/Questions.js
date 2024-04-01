@@ -4,7 +4,7 @@ import { useParams , Link } from "react-router-dom";
 import { Helmet } from 'react-helmet';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import profile from '../assets/images/hossein.png';
+import profile from '../assets/images/profile.png';
 import axios from 'axios';
 import UploadComment from '../components/UploadComment';
 import Loader from "../components/Loader";
