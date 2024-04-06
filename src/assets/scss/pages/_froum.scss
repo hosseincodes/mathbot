@@ -66,6 +66,40 @@ $font-size-little: 12px;
     resize: none;
 }
 
+.success-actions {
+    background: #29a58d;
+    color: white;
+    box-shadow: 0 5px 10px 0 rgba(20,83,155,.05);
+    padding: 10px 15px 5px 15px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.faile-actions {
+    background: red;
+    color: white;
+    box-shadow: 0 5px 10px 0 rgba(20,83,155,.05);
+    padding: 10px 15px 5px 15px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.back-to-ask-box {
+    border: 1px solid #29a58d;
+    color: #29a58d;
+    border-radius: 5px;
+    padding: 10px 15px 5px;
+    text-align: center;
+    margin: 50px 200px 20px;
+    &:hover {
+        background: transparent;
+        color: #aae68b;
+        transition: all 0.3s ease;
+        border: 1px solid #aae68b;
+        cursor: pointer;
+    }
+}
+
 .ask-box {
     background: #fff;
     box-shadow: 0 5px 10px 0 rgba(20, 83, 155, .05);
