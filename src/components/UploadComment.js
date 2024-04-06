@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
@@ -8,6 +8,11 @@ function UploadComment(props) {
     const post = props.postId
 
     const [content, setContent] = useState() 
+    const [token, setToken] = useState()
+
+    useEffect(() => {
+      setToken(localStorage.getItem('token'))
+    },[])
     
     // Function to submit the form data using Axios
     const handleSubmit = async (e) => {
@@ -15,7 +20,11 @@ function UploadComment(props) {
       try {
         const response = await axios.post("https://server.mathbot.ir/api/comments/create/", {
           content: content,
-          post: post
+          post_id: post
+        }, {
+          headers: {
+            'Authorization': `Bearer ${token}` 
+          }
         });
         console.log("Post created:", response.data);
         alert("پاسخ با موفقیت آپلود شد");
