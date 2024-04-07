@@ -9,6 +9,20 @@
 
 .mobile-header {
     display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 50px;
+    width: 100%;
+    padding-top: 15px;
+    background: #29a58d;
+    color: #ffffff;
+    text-align: center;
+}
+
+.mobile-header-button {
+    padding: 0px 20px 0px 20px;
+    margin: 0 7px;
 }
 
 .logo-img {
