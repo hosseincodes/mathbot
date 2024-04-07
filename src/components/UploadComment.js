@@ -76,7 +76,6 @@ function UploadComment(props) {
             return false
         } else {
             var decodedToken = jwtDecode(token);
-            console.log("Decoded Token", decodedToken);
             var currentDate = new Date();
         }
 
