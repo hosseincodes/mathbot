@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import axios from 'axios';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { jwtDecode } from "jwt-decode";
 
 function AskBox() {
 
@@ -76,75 +77,102 @@ function AskBox() {
         }
     };
 
-    if (submit) {
+    function validToken() {
+        let token = localStorage.getItem('token');
+
+        if (token == null) {
+            return false
+        } else {
+            var decodedToken = jwtDecode(token);
+            console.log("Decoded Token", decodedToken);
+            var currentDate = new Date();
+        }
+  
+        // JWT exp is in seconds
+        if (decodedToken.exp * 1000 < currentDate.getTime()) {
+          return false
+        } else {   
+          return true
+        }
+    }
+
+    if (!validToken()) {
         return (
             <>
-                {successupload ? (
-                    <>
-                        <div className='success-actions'><p>پست با موفقیت آپلود شد</p></div>
-                        <div>
-                            <p>سوال آپلود شده: </p>
-                            <div className="col-md-12 col-xs-12 responsive-box">
-                                <div className="question-box">
-                                    <Link className="question-box-link" to={`/questions/${data.id}`}>
-                                        <h4>{data.title}</h4>
-                                    </Link>
-                                    <div className="row question-box-bottom">
-                                        <div className="col-lg-3 col-md-4 col-xs-12 col-sm-4">
-                                            <p className="question-date">{data.created_at}</p>
+              <p>جهت ثبت سوال ابتدا <Link to="/login">وارد شوید</Link></p>
+            </>
+        )
+    } else {
+        if (submit) {
+            return (
+                <>
+                    {successupload ? (
+                        <>
+                            <div className='success-actions'><p>پست با موفقیت آپلود شد</p></div>
+                            <div>
+                                <p>سوال آپلود شده: </p>
+                                <div className="col-md-12 col-xs-12 responsive-box">
+                                    <div className="question-box">
+                                        <Link className="question-box-link" to={`/questions/${data.id}`}>
+                                            <h4>{data.title}</h4>
+                                        </Link>
+                                        <div className="row question-box-bottom">
+                                            <div className="col-lg-3 col-md-4 col-xs-12 col-sm-4">
+                                                <p className="question-date">{data.created_at}</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </>
-                ) : <div className='faile-actions'><p>پست آپلود نشد! یه مشکلی وجود داره</p></div>}
-                <div className='back-to-ask-box' onClick={() => { setsubmit(false) }}>
-                    <p>برگشت به صفحه ثبت سوال جدید</p>
+                        </>
+                    ) : <div className='faile-actions'><p>پست آپلود نشد! یه مشکلی وجود داره</p></div>}
+                    <div className='back-to-ask-box' onClick={() => { setsubmit(false) }}>
+                        <p>برگشت به صفحه ثبت سوال جدید</p>
+                    </div>
+                </>
+            )
+        } else {
+            return (
+                <div>
+                    <div className="ask-box">
+                        <form onSubmit={handleSubmit}>
+                            <div className="ask-title">
+                                <h4>نام سوال</h4>
+                                <input
+                                    name="title"
+                                    onChange={handleChange}
+                                    className="ask-input-title"
+                                    placeholder="مثلا کمترین تعداد علامت جمع مورد نیاز برای نمایش حاصل عددی عبارت کدام است؟"
+                                />
+                            </div>
+        
+                            <div classNameName="ask-description">
+                                <h4>توضیحات</h4>
+                                <CKEditor
+                                    editor={ ClassicEditor }
+                                    onReady={ ( editor ) => {
+                                    console.log( "ادیتور آماده استفاده است!", editor );
+                                    } }
+                                    onChange={ ( event, editor ) => {
+                                    const data = editor.getData();
+                                    setContent(data)
+                                    } }
+                                />
+                            </div>
+        
+                            {/* <div className="ask-tags">
+                                <h4>برچسب ها</h4>
+                                <textarea className="ask-input-tags" placeholder="مثلا انتگرال ..."></textarea>
+                            </div> */}
+        
+                            <div className="ask-button">
+                                <button className="ask-input-button" type="submit">ارسال سوال</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-            </>
-        )
-    } else {
-        return (
-            <div>
-                <div className="ask-box">
-                    <form onSubmit={handleSubmit}>
-                        <div className="ask-title">
-                            <h4>نام سوال</h4>
-                            <input
-                                name="title"
-                                onChange={handleChange}
-                                className="ask-input-title"
-                                placeholder="مثلا کمترین تعداد علامت جمع مورد نیاز برای نمایش حاصل عددی عبارت کدام است؟"
-                            />
-                        </div>
-    
-                        <div classNameName="ask-description">
-                            <h4>توضیحات</h4>
-                            <CKEditor
-                                editor={ ClassicEditor }
-                                onReady={ ( editor ) => {
-                                console.log( "ادیتور آماده استفاده است!", editor );
-                                } }
-                                onChange={ ( event, editor ) => {
-                                const data = editor.getData();
-                                setContent(data)
-                                } }
-                            />
-                        </div>
-    
-                        {/* <div className="ask-tags">
-                            <h4>برچسب ها</h4>
-                            <textarea className="ask-input-tags" placeholder="مثلا انتگرال ..."></textarea>
-                        </div> */}
-    
-                        <div className="ask-button">
-                            <button className="ask-input-button" type="submit">ارسال سوال</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        );
+            );
+        }
     }
 }
 

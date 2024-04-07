@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
+import { jwtDecode } from "jwt-decode";
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 function UploadComment(props) {
 
@@ -67,7 +69,33 @@ function UploadComment(props) {
       }
     };
 
-    return (
+    function validToken() {
+      let token = localStorage.getItem('token');
+        
+        if (token == null) {
+            return false
+        } else {
+            var decodedToken = jwtDecode(token);
+            console.log("Decoded Token", decodedToken);
+            var currentDate = new Date();
+        }
+
+      // JWT exp is in seconds
+      if (decodedToken.exp * 1000 < currentDate.getTime()) {
+        return false
+      } else {
+        return true
+      }
+    }
+
+    if (!validToken()) {
+      return (
+        <>
+          <p>جهت ثبت پاسخ ابتدا <Link to="/login">وارد شوید</Link></p>
+        </>
+      )
+    } else {
+      return (
         <div className="your-answer-box">
             <form onSubmit={handleSubmit}>
                 <div classNameName="ask-description">
@@ -90,7 +118,8 @@ function UploadComment(props) {
                 </div>
             </form>
         </div>
-    );
+      );
+    }
 }
 
 export default UploadComment;
