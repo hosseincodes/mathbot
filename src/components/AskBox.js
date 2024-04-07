@@ -8,7 +8,6 @@ function AskBox() {
 
     const [title, setTitle] = useState("")
     const [content, setContent] = useState()
-    const [token, setToken] = useState()
     const [submit, setsubmit] = useState(false)
     const [successupload, setsuccessupload] = useState()
     const [data, setdata] = useState([])
@@ -18,22 +17,55 @@ function AskBox() {
         setTitle(e.target.value);
     };
 
-    useEffect(() => {
-        setToken(localStorage.getItem('token'))
-    },[])
+    const postobject = axios.create({
+        baseURL: "https://server.mathbot.ir/api"
+    })
+
+    postobject.interceptors.request.use(
+        (config) => {
+          const token = localStorage.getItem('token');
+          if (token) {
+            config.headers.Authorization = `Bearer ${token}`;
+          }
+          return config;
+        },
+        (error) => Promise.reject(error)
+    );
+
+    postobject.interceptors.response.use(
+        (response) => response,
+        async (error) => {
+          const originalRequest = error.config;
+          if (error.response.status === 401 && !originalRequest._retry) {
+            originalRequest._retry = true;
+      
+            try {
+              const refreshToken = localStorage.getItem('refreshToken');
+              const response = await axios.post('https://server.mathbot.ir/api/token/refresh/', {refresh: refreshToken} );
+              const { access } = response.data;
+              
+              localStorage.setItem('token', access);
+      
+              // Retry the original request with the new token
+              originalRequest.headers.Authorization = `Bearer ${access}`;
+              return axios(originalRequest);
+            } catch (error) {
+              // Handle refresh token error or redirect to login
+            }
+          }
+      
+          return Promise.reject(error);
+        }
+    );
 
     // Function to submit the form data using Axios
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post("https://server.mathbot.ir/api/posts/create/", {
+            const response = await postobject.post("/posts/create/", {
                 title: title,
                 content: content
-            }, {
-                headers: {
-                  'Authorization': `Bearer ${token}` 
-                }
-              });
+            });
             setdata(response.data)
             setsubmit(true)
             setsuccessupload(true)
