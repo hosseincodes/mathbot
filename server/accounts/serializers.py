@@ -2,6 +2,7 @@ from rest_framework import serializers
 from .models import UserProfile
 from rest_framework.validators import UniqueValidator
 from django.contrib.auth import get_user_model
+from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 
 User = get_user_model()
 
@@ -88,3 +89,12 @@ class UserDetailSerializer(serializers.ModelSerializer):
         model = User
         fields = '__all__'
         lookup_field = 'username'
+
+class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
+    
+    def get_token(self, user):
+
+        token = super().get_token(user)
+        token['username'] = user.username
+
+        return token

@@ -1,5 +1,4 @@
 from rest_framework import generics
-from .models import UserProfile
 from rest_framework.permissions import (
     AllowAny,
 )
