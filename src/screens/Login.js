@@ -30,7 +30,7 @@ function Login() {
           localStorage.setItem('refreshToken', refresh);
 
           alert("موفقیت")
-    
+          window.location.replace("/account");
         } catch (error) {
             console.log(error)
         }
