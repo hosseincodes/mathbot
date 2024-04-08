@@ -80,7 +80,7 @@ function AskBox() {
     function validToken() {
         let token = localStorage.getItem('token');
 
-        if (token == null) {
+        if (token == null || token == "LOGGEDOUT") {
             return false
         } else {
             var decodedToken = jwtDecode(token);

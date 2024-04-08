@@ -65,7 +65,6 @@
 
 .account-sidebar-links {
     padding: 9px;
-    transition: all 0.2s ease;
     a {
         color: #333;
     }
@@ -73,11 +72,13 @@
         cursor: pointer;
         padding: 5px 10px;
         border-radius: 10px;
+        background: #fff;
         &:hover {
-            background: #fff;
             transition: all 0.2s ease;
+            background: #29a58d;
+            color: #fff;
         }
-    }
+    } 
 }
 
 .h5-mini-profile {

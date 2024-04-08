@@ -29,7 +29,6 @@ function Login() {
           localStorage.setItem('token', access);
           localStorage.setItem('refreshToken', refresh);
 
-          alert("موفقیت")
           window.location.replace("/account");
         } catch (error) {
             console.log(error)

@@ -25,9 +25,10 @@ function Account() {
     function validToken() {
         let token = localStorage.getItem('token');
 
-        if (token == null) {
+        if (token == null || token == "LOGGEDOUT") {
             return false
         } else {
+            console.log(localStorage.getItem('token'))
             var decodedToken = jwtDecode(token);
             var currentDate = new Date();
         }
@@ -64,9 +65,15 @@ function Account() {
                                     
                                 </div>
 
-                                <div onClick={() => { setexpand(false) }} className="account-sidebar-links"><span style={expand ? { } : {background: "#29a58d", color: "#fff", transition: "all 0.2s ease"}}>پروفایل من</span></div>
-                                <div onClick={() => { setexpand(true) }} className="account-sidebar-links"><span style={expand ? {background: "#29a58d", color: "#fff", transition: "all 0.2s ease"} : { }}>ادیت پروفایل و تنظمیات</span></div>
-                                <div className="account-sidebar-links"><span>خروج از حساب کاربری</span></div>
+                                <div onClick={() => { setexpand(false) }} className="account-sidebar-links"><span style={expand ? { } : {background: "#29a58d", color: "#fff"}}>پروفایل من</span></div>
+                                <div onClick={() => { setexpand(true) }} className="account-sidebar-links"><span style={expand ? {background: "#29a58d", color: "#fff"} : { }}>ادیت پروفایل و تنظمیات</span></div>
+                                <div
+                                    onClick={() => {
+                                        localStorage.setItem('token', "LOGGEDOUT");
+                                        window.location.replace("/");
+                                    }}
+                                    className="account-sidebar-links"
+                                ><span>خروج از حساب کاربری</span></div>
 
                             </div>
                             <div className="col-md-9">

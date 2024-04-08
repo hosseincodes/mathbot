@@ -10,7 +10,7 @@ function Header() {
 
     useEffect(() => {
         let token = localStorage.getItem('token');
-        if (token != null) {
+        if (token != null && token != "LOGGEDOUT") {
             var decodedToken = jwtDecode(token);
             axios.get("https://server.mathbot.ir/api/accounts/" + decodedToken.username).then((res) => {
                 setdata(res.data)
@@ -31,7 +31,7 @@ function Header() {
     function validToken() {
         let token = localStorage.getItem('token');
 
-        if (token == null) {
+        if (token == null || token == "LOGGEDOUT") {
             return false
         } else {
             var decodedToken = jwtDecode(token);
