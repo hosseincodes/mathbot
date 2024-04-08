@@ -11,6 +11,13 @@ function Account() {
 
     const [expand, setexpand] = useState(false)
     const [data, setdata] = useState([])
+    const [newdata, setnewdata] = useState({
+        email: '',
+        currnet_password: '',
+        new_password: '',
+        name: '',
+        bio: '',
+      })
 
     useEffect(() => {
         let token = localStorage.getItem('token');
@@ -22,13 +29,73 @@ function Account() {
         }
     }, [])
 
+    const handleChange = (e) => {
+        setnewdata({
+            ...newdata,
+            [e.target.name]: e.target.value
+        });
+    };
+
+    const postobject = axios.create({
+        baseURL: "https://server.mathbot.ir/api"
+      })
+  
+      postobject.interceptors.request.use(
+          (config) => {
+            const token = localStorage.getItem('token');
+            if (token) {
+              config.headers.Authorization = `Bearer ${token}`;
+            }
+            return config;
+          },
+          (error) => Promise.reject(error)
+      );
+  
+      postobject.interceptors.response.use(
+          (response) => response,
+          async (error) => {
+            const originalRequest = error.config;
+            if (error.response.status === 401 && !originalRequest._retry) {
+              originalRequest._retry = true;
+        
+              try {
+                const refreshToken = localStorage.getItem('refreshToken');
+                const response = await axios.post('https://server.mathbot.ir/api/token/refresh/', {refresh: refreshToken} );
+                const { access } = response.data;
+                
+                localStorage.setItem('token', access);
+        
+                // Retry the original request with the new token
+                originalRequest.headers.Authorization = `Bearer ${access}`;
+                return axios(originalRequest);
+              } catch (error) {
+                // Handle refresh token error or redirect to login
+              }
+            }
+        
+            return Promise.reject(error);
+          }
+      );
+      
+      // Function to submit the form data using Axios
+      const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+          const response = await postobject.put(`/accounts/${data.username}/edit/`, newdata);
+          alert("تغییرات با موفقیت اعمال شد");
+          window.location.reload();
+        } catch (error) {
+          console.error("Error:", error.response.data);
+          alert("نشد! یه مشکلی وجود داره")
+        }
+    };
+
     function validToken() {
         let token = localStorage.getItem('token');
 
         if (token == null || token == "LOGGEDOUT") {
             return false
         } else {
-            console.log(localStorage.getItem('token'))
             var decodedToken = jwtDecode(token);
             var currentDate = new Date();
         }
@@ -65,15 +132,17 @@ function Account() {
                                     
                                 </div>
 
-                                <div onClick={() => { setexpand(false) }} className="account-sidebar-links"><span style={expand ? { } : {background: "#29a58d", color: "#fff"}}>پروفایل من</span></div>
-                                <div onClick={() => { setexpand(true) }} className="account-sidebar-links"><span style={expand ? {background: "#29a58d", color: "#fff"} : { }}>ادیت پروفایل و تنظمیات</span></div>
-                                <div
-                                    onClick={() => {
-                                        localStorage.setItem('token', "LOGGEDOUT");
-                                        window.location.replace("/");
-                                    }}
-                                    className="account-sidebar-links"
-                                ><span>خروج از حساب کاربری</span></div>
+                                <div className="account-sidebar-links"><span onClick={() => { setexpand(false) }} style={expand ? { } : {background: "#29a58d", color: "#fff"}}>پروفایل من</span></div>
+                                <div className="account-sidebar-links"><span onClick={() => { setexpand(true) }} style={expand ? {background: "#29a58d", color: "#fff"} : { }}>ادیت پروفایل و تنظمیات</span></div>
+                                <div className="account-sidebar-links">
+                                    <span 
+                                        onClick={() => {
+                                            localStorage.setItem('token', "LOGGEDOUT");
+                                            window.location.replace("/");
+                                        }}
+                                    >خروج از حساب کاربری
+                                    </span>
+                                </div>
 
                             </div>
                             <div className="col-md-9">
@@ -91,19 +160,24 @@ function Account() {
                                         </div>
                                     </div>
                                     <div style={expand ? { } : {display: 'none'}}>
-                                        <div className="edit-profile-box">
-                                            <span>نام و نام خانوادگی : </span><input className="edit-profile-box-input" type="text" value={data.name} />
-                                        </div>
-                                        <div className="edit-profile-box">
-                                            <span>بایو (زمینه فعالیت) : </span><input className="edit-profile-box-input" type="text" value={data.bio} />
-                                        </div>
-                                        <div className="edit-profile-box">
-                                            <span>نام کاربری : </span><input className="edit-profile-box-input" type="text" value="hosseinakbari" />
-                                        </div>
-                                        <div className="edit-profile-box">
-                                            <span>ایمیل : </span><input className="edit-profile-box-input" type="text" value="hosseinakbari506@gmail.com" />
-                                        </div>
-                                        <button className="save-profile-box">ذخیره تغییرات</button>
+                                        <form onSubmit={handleSubmit}>
+                                            <div className="edit-profile-box">
+                                                <span>نام و نام خانوادگی : </span><input name="name" onChange={handleChange} className="edit-profile-box-input" type="text" placeholder={data.name} />
+                                            </div>
+                                            <div className="edit-profile-box">
+                                                <span>بایو (زمینه فعالیت) : </span><input name="bio" onChange={handleChange} className="edit-profile-box-input" type="text" placeholder={data.bio} />
+                                            </div>
+                                            <div className="edit-profile-box">
+                                                <span>پسورد فعلی : </span><input required name="current_password" onChange={handleChange} className="edit-profile-box-input" type="password" />
+                                            </div>
+                                            <div className="edit-profile-box">
+                                                <span>پسورد جدید : </span><input name="new_password" onChange={handleChange} className="edit-profile-box-input" type="password" />
+                                            </div>
+                                            <div className="edit-profile-box">
+                                                <span>ایمیل : </span><input name="email" onChange={handleChange} className="edit-profile-box-input" type="text" placeholder={data.email} />
+                                            </div>
+                                            <button className="save-profile-box" type="submit">ذخیره تغییرات</button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
