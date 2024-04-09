@@ -23,7 +23,7 @@ class Router extends Component {
                     <Route path="/register" component={Register} exact />
                     <Route path="/account" component={Account} exact />
                     <Route path="/Search" component={Search} exact />
-                    <Route path="/users/:id" component={Users} exact />
+                    <Route path="/users/:username" component={Users} exact />
                     <Route path="/questions/:id" component={Questions} exact />
                     <Route component={NotFoundPage} exact />
                 </Switch>
