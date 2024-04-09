@@ -1,33 +1,32 @@
 import React, { useEffect,useState } from 'react';
 import axios from 'axios';
-import renderHTML from 'react-render-html';
-import Loader from "./Loader";
 import { Link } from "react-router-dom";
+import Loader from "./Loader";
 
 
-function CommentMiniProfile(props) {
+function PostMiniProfile(props) {
 
     const {data} = props
     
-    const [commentData, setcommentData] = useState([])
+    const [postData, setpostData] = useState([])
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         axios.get(data).then((res) => {
-            setcommentData(res.data)
+            setpostData(res.data)
             setIsLoading(false)
         })
     }, [])
 
-    function deleteComment(CommentId) {
-        postobject.delete("https://server.mathbot.ir/api/comments/" + CommentId + "/delete/").then(response => {
+    function deletePost(postId) {
+        postobject.delete("https://server.mathbot.ir/api/posts/" + postId + "/delete/").then(response => {
             console.log('Resource deleted successfully:', response.data);
-            alert("کامنت با موفقیت پاک شد");
+            alert("پست با موفقیت پاک شد");
             window.location.reload();
           })
           .catch(error => {
             console.error('Error deleting resource:', error);
-            alert("کامنت پاک نشد! یه مشکلی وجود داره");
+            alert("پست پاک نشد! یه مشکلی وجود داره");
           })
     }
 
@@ -79,13 +78,13 @@ function CommentMiniProfile(props) {
             <div className="col-md-12 col-xs-12">
                 <div className="comments-showing-accountPage">
                     <div className="col-md-1">
-                        <span className="comment-button" onClick={() => deleteComment(commentData.id)}><i class="fa fa-trash"></i></span>
+                        <span className="comment-button" onClick={() => deletePost(postData.id)}><i class="fa fa-trash"></i></span>
                     </div>
                     <div className="col-md-1">
-                        <Link to={`/questions/${commentData.post}`}><span className="comment-button" ><i class="fa fa-solid fa-eye"></i></span></Link>
+                        <Link to={`/questions/${postData.id}`}><span className="comment-button" ><i class="fa fa-solid fa-eye"></i></span></Link>
                     </div>
                     <div className="col-md-10">
-                        {renderHTML(commentData.content)}
+                        <h5>{postData.title}</h5>
                     </div>
                 </div>
             </div>
@@ -93,4 +92,4 @@ function CommentMiniProfile(props) {
     }
 }
 
-export default CommentMiniProfile;
+export default PostMiniProfile;

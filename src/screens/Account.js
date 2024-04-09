@@ -3,7 +3,8 @@ import profile from '../assets/images/profile.png';
 import { Helmet } from 'react-helmet';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import PostMiniProfile from "../components/CommentMiniProfile";
+import PostMiniProfile from "../components/PostMiniProfile";
+import CommentMiniProfile from "../components/CommentMiniProfile";
 import { Link } from "react-router-dom";
 import axios from 'axios';
 import { jwtDecode } from "jwt-decode";
@@ -112,15 +113,19 @@ function Account() {
         }
     }
 
-    function SendCommentsLink(){
-
+    function SendPostsLink(){
         const fetchedData = []
-
-        for (const link of data.comments){
-
+        for (const link of data.posts){
             fetchedData.unshift(<PostMiniProfile data={link} />)
         }
+        return fetchedData
+    }
 
+    function SendCommentsLink(){
+        const fetchedData = []
+        for (const link of data.comments){
+            fetchedData.unshift(<CommentMiniProfile data={link} />)
+        }
         return fetchedData
     }
 
@@ -171,8 +176,7 @@ function Account() {
                                             <p>{data.bio}</p>
                                             <div className="activity">
                                                 <h5 className="h5-mini-profile">سوال های من</h5>
-                                                    <p><Link to="/questions/لورم-ایپسوم-متن-ساختگی" className="post-mini-profile">جبر چیست؟</Link></p>
-                                                    <p><Link to="/questions/لورم-ایپسوم-متن-ساختگی" className="post-mini-profile">چطور این فرمول را حساب کنم</Link></p>
+                                                    {SendPostsLink()}
                                                 <h5 className="h5-mini-profile">پاسخ های من</h5>
                                                     {SendCommentsLink()}
                                             </div>
