@@ -15,7 +15,6 @@ function Questions() {
     const {id} = useParams();    
 
     const [data, setdata] = useState([])
-    const [commentData, setcommentData] = useState([])
     const [creator, setcreator] = useState([])
     const [isLoading, setIsLoading] = useState(true);
 
@@ -23,25 +22,6 @@ function Questions() {
             axios.get("https://server.mathbot.ir/api/posts/" + id + "/").then((res) => {
 
                 setdata(res.data);
-
-                function getComments() {
-
-                    const fetchedData = []
-
-                    for (const link of res.data.comments){
-                        try {
-                            axios.get(link).then((res) => {
-                                fetchedData.push(res.data)
-                            })
-                        } catch(error){
-                            console.log("error fetching data", error)
-                        }
-                    }
-
-                    setcommentData(fetchedData)
-                }
-
-                getComments()
 
                 axios.get(res.data.creator).then((res) => {
                     setcreator(res.data)
@@ -53,15 +33,16 @@ function Questions() {
 
     },[id])
 
-    function deletePost() {
-        axios.delete("https://server.mathbot.ir/api/posts/" + id + "/delete/").then(response => {
-            console.log('Resource deleted successfully:', response.data);
-            alert("پست با موفقیت پاک شد");
-          })
-          .catch(error => {
-            console.error('Error deleting resource:', error);
-            alert("پست پاک نشد! یه مشکلی وجود داره");
-          })
+    function SendCommentsLink(){
+
+        const fetchedData = []
+
+        for (const link of data.comments){
+
+            fetchedData.unshift(<Response data={link} />)
+        }
+
+        return fetchedData
     }
 
     if (isLoading) {
@@ -97,14 +78,11 @@ function Questions() {
                                                 <h6>{creator.name}</h6>
                                             </div>
                                         </Link>
-                                        <div className="col-md-2 col-sm-4 col-xs-4 forum-title-view">
+                                        <div className="col-md-4 col-sm-4 col-xs-4 forum-title-view">
                                             <h6>{data.created_at}</h6>
                                         </div>
-                                        <div className="col-md-2 col-sm-4 col-xs-4 forum-title-last-seen">
+                                        <div className="col-md-4 col-sm-4 col-xs-4 forum-title-last-seen">
                                             <h6>???? بازدید</h6>
-                                        </div>
-                                        <div className="col-md-4 col-xs-12">
-                                            <Link to="/" className="title-a" onClick={deletePost}><i class="fa fa-trash"></i> پاک کردن پست</Link>
                                         </div>
                                     </div>
                                 </div>
@@ -120,7 +98,7 @@ function Questions() {
                             <h3>پاسخ ها</h3>
                         </div>
     
-                        <Response data={commentData} />
+                        {SendCommentsLink()}
     
                         <div className="forum-title-questions">
                             <h3>پاسخ شما</h3>
