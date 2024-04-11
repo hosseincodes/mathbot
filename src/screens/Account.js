@@ -170,8 +170,9 @@ function Account() {
                                         <div className="account-user-img-box-large">
                                             <img src={profile} className="account-user-img" alt="Hossein Akbari" />
                                         </div>
-                                        <p style={{textAlign: "center", padding: "15px 0px 0px 0px"}}>{data.name}</p>
-                                        
+                                        <Link to={`/users/${data.username}`}>
+                                            <p style={{color: "#000", textAlign: "center", padding: "15px 0px 0px 0px"}}>{data.name}</p>
+                                        </Link>
                                     </div>
 
                                     <div className="account-sidebar-links"><span onClick={() => { setexpand(false) }} style={expand ? { } : {background: "#29a58d", color: "#fff"}}>پروفایل من</span></div>
@@ -191,6 +192,9 @@ function Account() {
                                     <div className="account-section">
                                         <div style={expand ? {display: 'none'} : { }}>
                                             <h4 style={{fontWeight: "900"}}>{data.name}</h4>
+                                            <Link style={{left: "20px"}} className="title-a not-display-in-mobile" to="questions/ask">
+                                                <h6>طرح پرسش جدید</h6>
+                                            </Link>
                                             <p>{data.bio}</p>
                                             <div className="activity">
                                                 <h5 className="h5-mini-profile">سوال های من</h5>

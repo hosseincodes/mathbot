@@ -94,6 +94,15 @@
         margin-bottom: 50px;
         border-bottom: 2px solid white;
     }
+    .account-sidebar-links {
+        text-align: center;
+    }
+    .account-section {
+        margin-top: 30px;
+    }
+    .not-display-in-mobile {
+        display: none;
+    }
 }
 
 @media only screen and (max-width: 1200px) {
