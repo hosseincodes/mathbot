@@ -30,7 +30,6 @@ function Users() {
             fetchedData.unshift(<PostPublicProfile data={link} />)
         }
 
-        console.log(fetchedData)
         if (fetchedData.length == 0) {
             return (
                 <div style={{textAlign: "center"}}>

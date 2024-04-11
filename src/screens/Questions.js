@@ -35,14 +35,22 @@ function Questions() {
 
     function SendCommentsLink(){
 
-        const fetchedData = []
+        let fetchedData = []
 
         for (const link of data.comments){
 
             fetchedData.unshift(<Response data={link} />)
         }
 
-        return fetchedData
+        if (fetchedData.length == 0) {
+            return (
+                <div>
+                    <p>هیچ پاسخی موجود نیست. اولین کسی باشید که به این سوال پاسخ می دهد</p>
+                </div>
+            )
+        } else {
+            return fetchedData
+        }
     }
 
     if (isLoading) {
@@ -93,7 +101,7 @@ function Questions() {
                                 </div> */}
                             </div>
                         </div>
-    
+
                         <div className="forum-title-questions">
                             <h3>پاسخ ها</h3>
                         </div>
