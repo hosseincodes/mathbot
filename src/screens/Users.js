@@ -6,6 +6,7 @@ import profile from '../assets/images/profile.png';
 import { useParams } from "react-router-dom";
 import axios from 'axios';
 import Loader from "../components/Loader";
+import PostPublicProfile from '../components/PostPublicProfile';
 
 
 function Users() {
@@ -23,6 +24,24 @@ function Users() {
 
     },[username])
 
+    function SendPostsLink(){
+        const fetchedData = []
+        for (const link of data.posts){
+            fetchedData.unshift(<PostPublicProfile data={link} />)
+        }
+
+        console.log(fetchedData)
+        if (fetchedData.length == 0) {
+            return (
+                <div style={{textAlign: "center"}}>
+                    <p>هیچ سوالی توسط <span>{data.name}</span> ثبت نشده است</p>
+                </div>
+            )
+        } else {
+            return fetchedData
+        }
+    }
+
     if (isLoading) {
         return <Loader />;
     } else {
@@ -37,14 +56,16 @@ function Users() {
 
                 <div className="section">
                     <div className="container">
-                        <div className="col-md-12 responsive-box">
+                        <div style={{marginTop: "50px"}} className="col-md-12 responsive-box">
                             <div className="account-user-img-box-large">
                                 <img style={{width: "200px"}} src={profile} className="account-user-img" alt={data.name} />
                             </div>
                             <div style={{textAlign: "center"}} className="forum-title">
-                                <h3>{data.name}</h3>
+                                <h3>{data.name} / {data.username}@</h3>
                                 <h4>{data.bio}</h4>
                             </div>
+
+                            {SendPostsLink()}
 
                         </div>
 
