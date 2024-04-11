@@ -118,7 +118,16 @@ function Account() {
         for (const link of data.posts){
             fetchedData.unshift(<PostMiniProfile data={link} />)
         }
-        return fetchedData
+
+        if (fetchedData.length == 0) {
+            return (
+                <div>
+                    <p>هنوز هیچ سوالی ثبت نکرده اید</p>
+                </div>
+            )
+        } else {
+            return fetchedData
+        }
     }
 
     function SendCommentsLink(){
@@ -126,7 +135,16 @@ function Account() {
         for (const link of data.comments){
             fetchedData.unshift(<CommentMiniProfile data={link} />)
         }
-        return fetchedData
+
+        if (fetchedData.length == 0) {
+            return (
+                <div>
+                    <p>هنوز هیچ پاسخی ثبت نکرده اید</p>
+                </div>
+            )
+        } else {
+            return fetchedData
+        }
     }
 
     if (!validToken()) {
