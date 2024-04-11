@@ -23,6 +23,12 @@ $font-family-IRANYekan: "IRANYekanWebFn-Light" !important;
 body {
     width: 100%;
     overflow-x: hidden;
+    padding-bottom: 70px;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
 }
 
 a,

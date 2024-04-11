@@ -121,6 +121,10 @@
     background-color: #29a58d;
     text-align: center;
     margin-top: 40px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
     a {
         color: #fff;
         &:hover {
