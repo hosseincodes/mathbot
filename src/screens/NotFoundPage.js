@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Helmet } from 'react-helmet';
 import Header from "../components/Header";
 import TheLostBoy from '../assets/images/lost.png';
+import Footer from "../components/Footer";
 
 class NotFoundPage extends Component {
     render () {
@@ -24,6 +25,8 @@ class NotFoundPage extends Component {
                         <Link className="not-found-btn" to ="/">صفحه اصلی</Link>
                     </div>
                 </div>
+
+                <Footer />
 
             </div>
         );

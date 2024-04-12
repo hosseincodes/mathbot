@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Helmet } from 'react-helmet';
 import Header from "../components/Header";
 import SearchBox from "../components/SearchBox";
+import Footer from "../components/Footer";
 
 class Search extends Component {
     render () {
@@ -24,6 +25,8 @@ class Search extends Component {
 
                     </div>
                 </div>
+
+                <Footer />
 
             </div>
         );
