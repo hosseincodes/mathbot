@@ -10,7 +10,7 @@ function Header() {
 
     useEffect(() => {
         let token = localStorage.getItem('token');
-        if (token != null && token != "LOGGEDOUT") {
+        if (token !== null && token !== "LOGGEDOUT") {
             var decodedToken = jwtDecode(token);
             axios.get("https://server.mathbot.ir/api/accounts/" + decodedToken.username).then((res) => {
                 setdata(res.data)
@@ -31,7 +31,7 @@ function Header() {
     function validToken() {
         let token = localStorage.getItem('token');
 
-        if (token == null || token == "LOGGEDOUT") {
+        if (token === null || token === "LOGGEDOUT") {
             return false
         } else {
             var decodedToken = jwtDecode(token);
@@ -62,19 +62,19 @@ function Header() {
 
                     <Link title="Help" to="/help">
                         <div className="header-buttons">
-                            <i class="fas fa-question header-buttons-ico"></i>
+                            <i className="fas fa-question header-buttons-ico"></i>
                         </div>
                     </Link>
 
                     <Link title="Create Post" to="/questions/ask">
                         <div className="header-buttons">
-                            <i class="fas fa-plus header-buttons-ico"></i>
+                            <i className="fas fa-plus header-buttons-ico"></i>
                         </div>
                     </Link>
 
                     <Link title="Search" to="/search">
                         <div className="header-buttons">
-                            <i class="fas fa-search header-buttons-ico"></i>
+                            <i className="fas fa-search header-buttons-ico"></i>
                         </div>
                     </Link>
 
@@ -85,7 +85,7 @@ function Header() {
                 <div className="col-md-2">
                     <div className="logo-button">
                         <Link to="/">
-                            <img src={logo} class="logo-img" alt="mathbot logo" />
+                            <img src={logo} className="logo-img" alt="mathbot logo" />
                         </Link>
                     </div>
                 </div>

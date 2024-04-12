@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
-import Loader from "./Loader";
 import axios from 'axios';
 import profile from '../assets/images/profile.png';
 
@@ -19,7 +18,11 @@ function Creator(props) {
     }, [data])
 
     if (isLoading) {
-        return <Loader />;
+        return (
+            <div style={{float: "right"}}>
+                <h6>در حال بارگذاری... </h6>
+            </div>
+        )
     } else {
         return (
             <div>

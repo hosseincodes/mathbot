@@ -30,7 +30,7 @@ function Users() {
             fetchedData.unshift(<PostPublicProfile data={link} />)
         }
 
-        if (fetchedData.length == 0) {
+        if (fetchedData.length === 0) {
             return (
                 <div style={{textAlign: "center"}}>
                     <p>هیچ سوالی توسط <span>{data.name}</span> ثبت نشده است</p>

@@ -16,7 +16,7 @@ function Response(props) {
             setcommentData(res.data)
             setIsLoading(false)
         })
-    }, [])
+    }, [data])
 
     if (isLoading) {
         return <Loader />;

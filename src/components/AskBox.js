@@ -80,7 +80,7 @@ function AskBox() {
     function validToken() {
         let token = localStorage.getItem('token');
 
-        if (token == null || token == "LOGGEDOUT") {
+        if (token === null || token === "LOGGEDOUT") {
             return false
         } else {
             var decodedToken = jwtDecode(token);
@@ -145,13 +145,10 @@ function AskBox() {
                                 />
                             </div>
         
-                            <div classNameName="ask-description">
+                            <div className="ask-description">
                                 <h4>توضیحات</h4>
                                 <CKEditor
                                     editor={ ClassicEditor }
-                                    onReady={ ( editor ) => {
-                                    console.log( "ادیتور آماده استفاده است!", editor );
-                                    } }
                                     onChange={ ( event, editor ) => {
                                     const data = editor.getData();
                                     setContent(data)

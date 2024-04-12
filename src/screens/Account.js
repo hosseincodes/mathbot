@@ -87,6 +87,7 @@ function Account() {
         e.preventDefault();
         try {
           const response = await postobject.put(`/accounts/${data.username}/edit/`, newdata);
+          console.log(response)
           alert("تغییرات با موفقیت اعمال شد");
           window.location.reload();
         } catch (error) {
@@ -98,7 +99,7 @@ function Account() {
     function validToken() {
         let token = localStorage.getItem('token');
 
-        if (token == null || token == "LOGGEDOUT") {
+        if (token === null || token === "LOGGEDOUT") {
             return false
         } else {
             var decodedToken = jwtDecode(token);
@@ -119,7 +120,7 @@ function Account() {
             fetchedData.unshift(<PostMiniProfile data={link} />)
         }
 
-        if (fetchedData.length == 0) {
+        if (fetchedData.length === 0) {
             return (
                 <div>
                     <p>هنوز هیچ سوالی ثبت نکرده اید</p>
@@ -136,7 +137,7 @@ function Account() {
             fetchedData.unshift(<CommentMiniProfile data={link} />)
         }
 
-        if (fetchedData.length == 0) {
+        if (fetchedData.length === 0) {
             return (
                 <div>
                     <p>هنوز هیچ پاسخی ثبت نکرده اید</p>

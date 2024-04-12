@@ -42,7 +42,7 @@ function Questions() {
             fetchedData.unshift(<Response data={link} />)
         }
 
-        if (fetchedData.length == 0) {
+        if (fetchedData.length === 0) {
             return (
                 <div>
                     <p>هیچ پاسخی موجود نیست. اولین کسی باشید که به این سوال پاسخ می دهد</p>
@@ -94,7 +94,7 @@ function Questions() {
                                             </div>
                                         </div>
                                     </div>
-                                    <p className="question-box-big-p">{renderHTML(data.content)}</p>
+                                    {renderHTML(data.content)}
                                     
                                     {/* <div className="question-tag-box">
                                         <p><span className="question-tag-span">انتگرال</span><span className="question-tag-span">جبر</span><span className="question-tag-span">هندسه</span><span className="question-tag-span">متوسطه اول</span></p>

@@ -49,7 +49,7 @@ function Home() {
                         <div className="col-md-12 col-xs-12">
                             <div className="row">
                                 <p>
-                                    <span style={flag === true ? {} : {display: 'none'}}>به دنبال بیشتر هستید؟ <a onClick={Secondpage}>صفحه دوم سوالات </a> را بگردید. </span>
+                                    <span style={flag === true ? {} : {display: 'none'}}>به دنبال بیشتر هستید؟ <span className="page2" onClick={Secondpage}>صفحه دوم سوالات </span> را بگردید. </span>
                                     ما را در پاسخ به سوالات بی پاسخ یاری کنید.</p>
                             </div>
                         </div>

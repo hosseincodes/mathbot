@@ -16,7 +16,7 @@ function PostPublicProfile(props) {
             setpostData(res.data)
             setIsLoading(false)
         })
-    }, [])
+    }, [data])
 
     if (isLoading) {
         return <Loader />

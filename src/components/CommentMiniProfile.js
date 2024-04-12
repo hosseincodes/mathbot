@@ -17,7 +17,7 @@ function CommentMiniProfile(props) {
             setcommentData(res.data)
             setIsLoading(false)
         })
-    }, [])
+    }, [data])
 
     function deleteComment(CommentId) {
         postobject.delete("https://server.mathbot.ir/api/comments/" + CommentId + "/delete/").then(response => {
@@ -79,10 +79,10 @@ function CommentMiniProfile(props) {
             <div className="col-md-12 col-xs-12">
                 <div className="comments-showing-accountPage">
                     <div className="col-md-1 col-xs-1">
-                        <span className="comment-button" onClick={() => deleteComment(commentData.id)}><i class="fa fa-trash"></i></span>
+                        <span className="comment-button" onClick={() => deleteComment(commentData.id)}><i className="fa fa-trash"></i></span>
                     </div>
                     <div className="col-md-1 col-xs-1">
-                        <Link to={`/questions/${commentData.post}`}><span className="comment-button" ><i class="fa fa-solid fa-eye"></i></span></Link>
+                        <Link to={`/questions/${commentData.post}`}><span className="comment-button" ><i className="fa fa-solid fa-eye"></i></span></Link>
                     </div>
                     <div className="col-xs-1"></div>
                     <div className="col-md-10 col-xs-8">
