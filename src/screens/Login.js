@@ -30,8 +30,8 @@ function Login() {
           localStorage.setItem('refreshToken', refresh);
 
           window.location.replace("/account");
-        } catch (error) {
-            console.log(error)
+        } catch {
+            alert("نام کاربری یا رمز عبور اشتباه وارد شده است")
         }
       };
     

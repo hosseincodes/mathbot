@@ -28,12 +28,17 @@ function Register() {
           alert("اکانت با موفقیت ساخته شد");
           window.location.replace("/login");
         } catch (error) {
-          console.error("Error creating post:", error.response.data);
-          if (error.response.data.email === undefined){
-            alert(error.response.data.username)
-          } else {
-            alert(error.response.data.email)
+          var values = Object.values(error.response.data)
+          var keys = Object.keys(error.response.data)
+          const errors = []
+          for (let index = 0; index < values.length; index++) {
+            for (let indexd = 0; indexd < keys.length; indexd++) {
+                if (index === indexd) {
+                    errors.push("\n" + values[index] + " " + keys[indexd])
+                }              
+            }
           }
+          alert(errors)
         }
       };
 
@@ -60,7 +65,7 @@ function Register() {
                                     type="text"
                                     label="Name"
                                     name="name"
-                                    placeholder="نام و نام خانوادگی"
+                                    placeholder="* نام (تا ۳۲ کاراکتر)"
                                     value={formData.name}
                                     onChange={handleChange}
                                 />
@@ -79,7 +84,7 @@ function Register() {
                                     type="text"
                                     label="Username"
                                     name="username"
-                                    placeholder="نام کاربری"
+                                    placeholder="* نام کاربری (۴ تا ۳۲ کاراکتر)"
                                     value={formData.username}
                                     onChange={handleChange}
                                 />
@@ -89,7 +94,7 @@ function Register() {
                                     type="email"
                                     label="Email"
                                     name="email"
-                                    placeholder="ایمیل"
+                                    placeholder="* ایمیل"
                                     value={formData.email}
                                     onChange={handleChange}
                                 />
@@ -99,7 +104,7 @@ function Register() {
                                     type="password"
                                     label="Password"
                                     name="password"
-                                    placeholder="پسورد"
+                                    placeholder="* پسورد (۴ تا ۳۲ کاراکتر)"
                                     value={formData.password}
                                     onChange={handleChange}
                                 />
