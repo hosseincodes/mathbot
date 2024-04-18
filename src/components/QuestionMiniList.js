@@ -34,15 +34,15 @@ function QuestionMiniList(props) {
                                 <div className="col-lg-3 col-md-4 col-xs-12 col-sm-4">
                                     <p className="question-date">{data.created_at}</p>
                                 </div>
-                                {/* <div className="col-lg-6 col-nd-8 col-xs-12 col-sm-8">
-                                    <p className="question-tag">{data.question_tag}</p>
+                                <div className="col-lg-6 col-nd-8 col-xs-12 col-sm-8">
+                                    <p className="question-tag"></p>
                                 </div>
                                 <div className="col-md-2">     
-                                    <p className="question-visit">{data.question_visit}</p>
+                                    <p className="question-visit"></p>
                                 </div>
                                 <div className="col-md-1">
-                                    <p className="question-answer">{val.question_answer}</p>
-                                </div> */}
+                                    <p className="question-answer">{data.comments.length} پاسخ</p>
+                                </div>
                             </div>
                         </div>
                     </div>
