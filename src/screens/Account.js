@@ -15,6 +15,10 @@ function Account() {
     const [expand, setexpand] = useState(false)
     const [data, setdata] = useState([])
     const [isLoading, setIsLoading] = useState(true);
+    const [EditName, setEditName] = useState(false)
+    const [EditBio, setEditBio] = useState(false)
+    const [EditPassword, setEditPassword] = useState(false)
+    const [EditEmail, setEditEmail] = useState(false)
     const [newdata, setnewdata] = useState({
         email: '',
         currnet_password: '',
@@ -207,19 +211,43 @@ function Account() {
                                         <div style={expand ? { } : {display: 'none'}}>
                                             <form onSubmit={handleSubmit}>
                                                 <div className="edit-profile-box">
-                                                    <span>نام و نام خانوادگی : </span><input name="name" onChange={handleChange} className="edit-profile-box-input" type="text" placeholder={data.name} />
+                                                    <span>نام و نام خانوادگی : {data.name} </span>
+                                                    <span onClick={() => { setEditName(true) }}>
+                                                        <i style={{color: "#29a58d", cursor: "pointer"}} className="fa-solid fa-pen-to-square"></i>
+                                                    </span>
+                                                    <div style={EditName ? {} : {display: 'none'}} className='edit-box'>
+                                                        <input name="name" onChange={handleChange} className="edit-profile-box-input" type="text" />
+                                                    </div>
                                                 </div>
                                                 <div className="edit-profile-box">
-                                                    <span>بایو (زمینه فعالیت) : </span><input name="bio" onChange={handleChange} className="edit-profile-box-input" type="text" placeholder={data.bio} />
+                                                    <span>بایو (زمینه فعالیت) : {data.bio} </span>
+                                                    <span onClick={() => { setEditBio(true) }}>
+                                                        <i style={{color: "#29a58d", cursor: "pointer"}} className="fa-solid fa-pen-to-square"></i>
+                                                    </span>
+                                                    <div style={EditBio ? {} : {display: 'none'}} className='edit-box'>
+                                                        <textarea name="bio" onChange={handleChange} className="edit-profile-box-input" type="text" />
+                                                    </div>
                                                 </div>
                                                 <div className="edit-profile-box">
-                                                    <span>پسورد فعلی : </span><input required name="current_password" onChange={handleChange} className="edit-profile-box-input" type="password" />
+                                                    <span>پسورد جدید : </span>
+                                                    <span onClick={() => { setEditPassword(true) }}>
+                                                        <i style={{color: "#29a58d", cursor: "pointer"}} className="fa-solid fa-pen-to-square"></i>
+                                                    </span>
+                                                    <div style={EditPassword ? {} : {display: 'none'}} className='edit-box'>
+                                                        <input name="new_password" onChange={handleChange} className="edit-profile-box-input" type="password" />
+                                                    </div>
                                                 </div>
                                                 <div className="edit-profile-box">
-                                                    <span>پسورد جدید : </span><input name="new_password" onChange={handleChange} className="edit-profile-box-input" type="password" />
+                                                    <span>ایمیل : {data.email} </span>
+                                                    <span onClick={() => { setEditEmail(true) }}>
+                                                        <i style={{color: "#29a58d", cursor: "pointer"}} className="fa-solid fa-pen-to-square"></i>
+                                                    </span>
+                                                    <div style={EditEmail ? {} : {display: 'none'}} className='edit-box'>
+                                                        <input name="email" onChange={handleChange} className="edit-profile-box-input" type="text"/>
+                                                    </div>
                                                 </div>
                                                 <div className="edit-profile-box">
-                                                    <span>ایمیل : </span><input name="email" onChange={handleChange} className="edit-profile-box-input" type="text" placeholder={data.email} />
+                                                    <span>* پسورد فعلی : </span><input required name="current_password" onChange={handleChange} className="edit-profile-box-input" type="password" />
                                                 </div>
                                                 <button className="save-profile-box" type="submit">ذخیره تغییرات</button>
                                             </form>
