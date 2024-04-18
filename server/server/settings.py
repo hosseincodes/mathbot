@@ -49,7 +49,7 @@ INSTALLED_APPS = [
 ]
 
 REST_FRAMEWORK = {
-    'DATETIME_FORMAT': "%Y/%m/%d %H:%M:%S",
+    'DATETIME_FORMAT': "%m/%d/%Y %H:%M:%S",
 }
 
 from datetime import timedelta
