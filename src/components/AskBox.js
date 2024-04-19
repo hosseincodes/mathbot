@@ -9,6 +9,8 @@ function AskBox() {
 
     const [title, setTitle] = useState("")
     const [content, setContent] = useState()
+    const [theTag, settheTag] = useState()
+    const [tags, settags] = useState([])
     const [submit, setsubmit] = useState(false)
     const [successupload, setsuccessupload] = useState()
     const [data, setdata] = useState([])
@@ -95,6 +97,14 @@ function AskBox() {
         }
     }
 
+    function eraseText() {
+        document.getElementById("output").value = "";
+    }
+
+    function removeTag(index){
+        settags(tags.filter((el, i) => i !== index))        
+    }
+
     if (!validToken()) {
         return (
             <>
@@ -156,11 +166,23 @@ function AskBox() {
                                 />
                             </div>
         
-                            {/* <div className="ask-tags">
-                                <h4>برچسب ها</h4>
-                                <textarea className="ask-input-tags" placeholder="مثلا انتگرال ..."></textarea>
-                            </div> */}
-        
+                            <div className="ask-tags">
+                                <h4>برچسب ها <span style={{fontSize: "12px"}}>(حداکثر ۵ برچسب)</span></h4>
+                                <textarea id='output' onChange={(e)=> {settheTag(e.target.value)}} className="ask-input-tags" placeholder="مثلا انتگرال ..." type="text"/>
+                                <span onClick={() => {
+                                    if (tags.length > 5) {
+                                        alert("بیش از ۵ برچسب نمی توانید وارد کنید")
+                                    } else {
+                                        settags([...tags, theTag]); eraseText();
+                                    }
+                                }} className="tags-button">افزودن</span>
+                                {tags.map((e, index) => (
+                                    <div style={{display: "inline-block"}} key={index} >
+                                        <span className='question-tag-span'>{e} <span onClick={() => {removeTag(index)}}><i style={{cursor: "pointer"}} className="fa-solid fa-xmark"></i></span></span>
+                                    </div>
+                                ))}
+                            </div>
+
                             <div className="ask-button">
                                 <button className="ask-input-button" type="submit">ارسال سوال</button>
                             </div>

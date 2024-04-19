@@ -38,6 +38,19 @@ $font-size-little: 12px;
     resize: vertical;
 }
 
+.ask-tags {
+    margin-top: 25px;
+}
+
+.tags-button {
+    background: #29a58d;
+    padding: 5px 10px;
+    margin-left: 5px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 13px;
+}
+
 .ask-description-textarea {
     font-family: "IRANYekanWebFn-Light" !important;
     background: #f2f2f2;
@@ -57,10 +70,10 @@ $font-size-little: 12px;
     background: #f2f2f2;
     width: 100%;
     border: 0;
-    padding: 8px;
+    padding: 12px 20px;
     box-sizing: border-box;
     font-size: $font-size-medium;
-    border-radius: 10px;
+    border-radius: 5px;
     margin: 10px 0 15px;
     height: 40px;
     resize: none;
