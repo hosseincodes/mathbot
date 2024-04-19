@@ -6,21 +6,34 @@ function QuestionMiniList(props) {
 
     const id = props.id
     const [lisitng, setListing] = useState([]);
+    const [fetchError, setfetchError] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch('https://server.mathbot.ir/api/posts/?page=' + id);
-            const json = await response.json();
-            setIsLoading(false);
-            setListing(json.results);
-          };
+            try {
+                const response = await fetch('https://server.mathbot.ir/api/posts/?page=' + id);
+                const json = await response.json();
+                setIsLoading(false);
+                setListing(json.results);
+            } catch {
+                setfetchError(true)
+            }
+        };
       
-          fetchData();
+        fetchData();
     },[id])
 
     if (isLoading) {
-        return <Loader />;
+        if (!fetchError) {
+            return <Loader />
+        } else {
+            return (
+                <div className="failedtofetch">
+                    <span className="failedtofetch-icon"><i className="fa-solid fa-circle-exclamation"></i></span><p>عدم اتصال با سرور</p>
+                </div>
+            )
+        }
     } else {
         return (
             <div>
