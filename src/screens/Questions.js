@@ -95,10 +95,19 @@ function Questions() {
                                         </div>
                                     </div>
                                     {renderHTML(data.content)}
+                                    <div>
                                     
-                                    {/* <div className="question-tag-box">
-                                        <p><span className="question-tag-span">انتگرال</span><span className="question-tag-span">جبر</span><span className="question-tag-span">هندسه</span><span className="question-tag-span">متوسطه اول</span></p>
-                                    </div> */}
+                                    </div>
+                                    
+                                    <div className="question-tag-box">
+                                        {data.tags.length == 0 ? (
+                                            <span style={{fontSize : "12px"}}>بدون برچسب</span>
+                                        ) : (
+                                            data.tags.split(",").map((e) => (
+                                                <div className="question-tags">{e}</div>
+                                            ))
+                                        )}
+                                    </div>
                                 </div>
                             </div>
 

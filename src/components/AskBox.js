@@ -67,7 +67,8 @@ function AskBox() {
         try {
             const response = await postobject.post("/posts/create/", {
                 title: title,
-                content: content
+                content: content,
+                tags: tags.toString()
             });
             setdata(response.data)
             setsubmit(true)
@@ -170,7 +171,7 @@ function AskBox() {
                                 <h4>برچسب ها <span style={{fontSize: "12px"}}>(حداکثر ۵ برچسب)</span></h4>
                                 <textarea id='output' onChange={(e)=> {settheTag(e.target.value)}} className="ask-input-tags" placeholder="مثلا انتگرال ..." type="text"/>
                                 <span onClick={() => {
-                                    if (tags.length > 5) {
+                                    if (tags.length >= 5) {
                                         alert("بیش از ۵ برچسب نمی توانید وارد کنید")
                                     } else {
                                         settags([...tags, theTag]); eraseText();

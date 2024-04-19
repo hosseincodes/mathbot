@@ -9,7 +9,7 @@ class Post(models.Model):
     title = models.TextField()
     content = models.TextField()
     created_at = models.DateTimeField(default=now, editable=False)
-    # tags = models.TextChoices()
+    tags = models.TextField()
     creator = models.ForeignKey(
         User,
         on_delete = models.CASCADE,
