@@ -20,7 +20,7 @@ function Header() {
 
     function userData() {
         return (
-            <Link title="Help" to="/account">
+            <Link title={data.name} to="/account">
                 <div className="header-buttons header-buttons-login">       
                     {data.name}
                 </div>
@@ -60,19 +60,19 @@ function Header() {
                         </Link>
                     )}
 
-                    <Link title="Help" to="/help">
+                    <Link title="راهنما" to="/help">
                         <div className="header-buttons">
                             <i className="fas fa-question header-buttons-ico"></i>
                         </div>
                     </Link>
 
-                    <Link title="Create Post" to="/questions/ask">
+                    <Link title="پست جدید" to="/questions/ask">
                         <div className="header-buttons">
                             <i className="fas fa-plus header-buttons-ico"></i>
                         </div>
                     </Link>
 
-                    <Link title="Search" to="/search">
+                    <Link title="جستجو" to="/search">
                         <div className="header-buttons">
                             <i className="fas fa-search header-buttons-ico"></i>
                         </div>
