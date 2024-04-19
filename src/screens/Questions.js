@@ -100,7 +100,7 @@ function Questions() {
                                     </div>
                                     
                                     <div className="question-tag-box">
-                                        {data.tags.length == 0 ? (
+                                        {data.tags.length === 0 ? (
                                             <span style={{fontSize : "12px"}}>بدون برچسب</span>
                                         ) : (
                                             data.tags.split(",").map((e) => (

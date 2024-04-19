@@ -179,7 +179,7 @@ function AskBox() {
                                 }} className="tags-button">افزودن</span>
                                 {tags.map((e, index) => (
                                     <div style={{display: "inline-block"}} key={index} >
-                                        <span className='question-tag-span'>{e} <span onClick={() => {removeTag(index)}}><i style={{cursor: "pointer"}} className="fa-solid fa-xmark"></i></span></span>
+                                        <span className='question-tags'>{e} <span onClick={() => {removeTag(index)}}><i style={{cursor: "pointer"}} className="fa-solid fa-xmark"></i></span></span>
                                     </div>
                                 ))}
                             </div>
