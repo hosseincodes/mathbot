@@ -37,3 +37,6 @@ server/server/__pycache__
 
 # database
 server/db.sqlite3
+
+# profile images
+server/uploads

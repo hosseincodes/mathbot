@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import profile from '../assets/images/profile.png';
 import { Helmet } from 'react-helmet';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -16,13 +15,16 @@ function Account() {
     const [data, setdata] = useState([])
     const [isLoading, setIsLoading] = useState(true);
     const [EditName, setEditName] = useState(false)
+    const [EditImage, setEditImage] = useState(false)
     const [EditBio, setEditBio] = useState(false)
     const [EditPassword, setEditPassword] = useState(false)
     const [EditEmail, setEditEmail] = useState(false)
+    const [image, setImage] = useState(null)
     const [newdata, setnewdata] = useState({
         email: '',
-        currnet_password: '',
+        current_password: '',
         new_password: '',
+        avatar: '',
         name: '',
         bio: '',
       })
@@ -33,6 +35,7 @@ function Account() {
             var decodedToken = jwtDecode(token);
             axios.get("https://server.mathbot.ir/api/accounts/" + decodedToken.username).then((res) => {
                 setdata(res.data)
+                setImage(res.data.avatar)
                 setIsLoading(false)
             })
         }
@@ -44,6 +47,13 @@ function Account() {
             [e.target.name]: e.target.value
         });
     };
+
+    const handleFileSelect = (event) => {
+        setnewdata({...newdata, avatar: event.target.files[0]})
+        if (event.target.files && event.target.files[0]) {
+            setImage(URL.createObjectURL(event.target.files[0]));
+        }
+    }
 
     const postobject = axios.create({
         baseURL: "https://server.mathbot.ir/api"
@@ -89,8 +99,20 @@ function Account() {
     // Function to submit the form data using Axios
     const handleSubmit = async (e) => {
         e.preventDefault();
+        
+        let form_data = new FormData();
+        form_data.append("avatar", newdata.avatar);
+        form_data.append("email", newdata.email);
+        form_data.append("bio", newdata.bio);
+        form_data.append("name", newdata.name);
+        form_data.append("current_password", newdata.current_password);
+        form_data.append("new_password", newdata.new_password);
+        
         try {
-          const response = await postobject.put(`/accounts/${data.username}/edit/`, newdata);
+          const response = await postobject.put(`/accounts/${data.username}/edit/`, form_data, {
+            headers: {
+                "Content-Type": "multipart/form-data",
+            }});
           console.log(response)
           alert("تغییرات با موفقیت اعمال شد");
           window.location.reload();
@@ -173,7 +195,7 @@ function Account() {
                                 <div className="col-md-3">
                                     <div className="account-sidebar">
                                         <div className="account-user-img-box-large">
-                                            <img src={profile} className="account-user-img" alt="Hossein Akbari" />
+                                            <img src={data.avatar} className="account-user-img" alt={data.name} />
                                         </div>
                                         <Link to={`/users/${data.username}`}>
                                             <p style={{color: "#000", textAlign: "center", padding: "15px 0px 0px 0px"}}>{data.name}</p>
@@ -210,6 +232,18 @@ function Account() {
                                         </div>
                                         <div style={expand ? { } : {display: 'none'}}>
                                             <form onSubmit={handleSubmit}>
+                                                <div className="edit-profile-box">
+                                                    <span>تصویر پروفایل : </span>
+                                                    <span onClick={() => { setEditImage(true) }}>
+                                                        <i style={{color: "#29a58d", cursor: "pointer"}} className="fa-solid fa-pen-to-square"></i>
+                                                    </span>
+                                                    <div style={EditImage ? {} : {display: 'none'}} className='edit-box'>
+                                                        <input name="avatar" type="file" onChange={handleFileSelect} />
+                                                    </div>
+                                                    <div className="account-user-img-box-large change-img">
+                                                        <img src={image} style={{width: "50px"}} className="account-user-img" />
+                                                    </div>
+                                                </div>
                                                 <div className="edit-profile-box">
                                                     <span>نام و نام خانوادگی : {data.name} </span>
                                                     <span onClick={() => { setEditName(true) }}>

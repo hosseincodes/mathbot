@@ -13,6 +13,7 @@ class UserProfile(models.Model):
         default=''
     )
     name = models.CharField(max_length=32, default='')
+    avatar = models.ImageField()
 
     def __str__(self):
         return self.user.username

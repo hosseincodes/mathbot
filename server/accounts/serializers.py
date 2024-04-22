@@ -31,6 +31,7 @@ class UserCreateSerializer(serializers.ModelSerializer):
         )]
     )
     bio = serializers.CharField(source='profile.bio', allow_blank=True, default='')
+    avatar = serializers.ImageField(source='profile.avatar', allow_empty_file=True, default='')
     name = serializers.CharField(
         source='profile.name',
         allow_blank=True,
@@ -45,6 +46,7 @@ class UserCreateSerializer(serializers.ModelSerializer):
             'name',
             'email',
             'password',
+            'avatar',
             'bio'
         )
 
@@ -60,8 +62,12 @@ class UserCreateSerializer(serializers.ModelSerializer):
         user.set_password(password)
         user.save()
 
+        avatar = profile_data.get('avatar') or None
+        if not avatar:
+            avatar = 'profile.png'
         profile = UserProfile(
             user = user,
+            avatar = avatar,
             bio = profile_data.get('bio', ''),
             name = profile_data.get('name', ''),
         )
@@ -86,6 +92,7 @@ class UserDetailSerializer(serializers.ModelSerializer):
     
     bio = serializers.CharField(source='profile.bio')
     name = serializers.CharField(source='profile.name')
+    avatar = serializers.ImageField(source='profile.avatar')
     class Meta:
         model = User
         fields = [
@@ -96,6 +103,7 @@ class UserDetailSerializer(serializers.ModelSerializer):
             'date_joined',
             'email',
             'comments',
+            'avatar',
             'posts'
         ]
         lookup_field = 'username'
@@ -103,6 +111,7 @@ class UserDetailSerializer(serializers.ModelSerializer):
 class UserUpdateSerializer(serializers.ModelSerializer):
     # A field from the user's profile:
     bio = serializers.CharField(source='profile.bio', allow_blank=True)
+    avatar = serializers.ImageField(source='profile.avatar', allow_empty_file=True)
     name = serializers.CharField(
     	source='profile.name',
     	max_length=32,
@@ -139,6 +148,7 @@ class UserUpdateSerializer(serializers.ModelSerializer):
             'email',
             'current_password',
             'new_password',
+            'avatar',
             'bio',
         )
         read_only_fields = ('username',)

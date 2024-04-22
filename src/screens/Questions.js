@@ -4,7 +4,6 @@ import { useParams , Link } from "react-router-dom";
 import { Helmet } from 'react-helmet';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import profile from '../assets/images/profile.png';
 import axios from 'axios';
 import UploadComment from '../components/UploadComment';
 import Loader from "../components/Loader";
@@ -81,7 +80,7 @@ function Questions() {
                                             <Link className="username-answer" to={`/users/${creator.username}`}>
                                                 <div className="col-md-4 col-sm-4 col-xs-4 forum-title-ask">
                                                     <div className="account-user-img-box">
-                                                        <img src={profile} className="account-user-img-little" alt={creator.name} />
+                                                        <img src={creator.avatar} className="account-user-img-little" alt={creator.name} />
                                                     </div>
                                                     <h6>{creator.name}</h6>
                                                 </div>
