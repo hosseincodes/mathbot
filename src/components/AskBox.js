@@ -150,6 +150,7 @@ function AskBox() {
                                 <h4>نام سوال</h4>
                                 <input
                                     name="title"
+                                    maxlength="90"
                                     onChange={handleChange}
                                     className="ask-input-title"
                                     placeholder="مثلا کمترین تعداد علامت جمع مورد نیاز برای نمایش حاصل عددی عبارت کدام است؟"
