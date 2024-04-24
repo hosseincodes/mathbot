@@ -89,7 +89,7 @@ function Questions() {
                                                 <h6>{data.created_at}</h6>
                                             </div>
                                             <div className="col-md-4 col-sm-4 col-xs-4 forum-title-last-seen">
-                                                <h6>???? بازدید</h6>
+                                                <h6>{data.comments.length} پاسخ</h6>
                                             </div>
                                         </div>
                                     </div>
