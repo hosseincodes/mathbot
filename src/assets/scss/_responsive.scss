@@ -106,10 +106,10 @@
 }
 
 @media only screen and (max-width: 1200px) {
-    .question-answer {
+    .question-box-bottom {
         display: none;
     }
-    .question-visit {
-        display: none;
+    .question-box-bottom-mobile-display {
+        display: block;
     }
 }

@@ -44,21 +44,31 @@ function QuestionMiniList(props) {
                                 <h4>{data.title}</h4>
                             </Link>
                             <div className="row question-box-bottom">
-                                <div className="col-lg-3 col-md-4 col-xs-12 col-sm-4">
+                                <div className="col-md-4">
                                     <p className="question-date">{data.created_at}</p>
                                 </div>
-                                <div className="col-lg-6 col-nd-8 col-xs-12 col-sm-8">
+                                <div className="col-md-7">
                                     {data.tags.split(",").map((e) => (
                                         <div className="question-tags-homepage"><p>{e}</p></div>
                                     ))}
-                                </div>
-                                <div className="col-md-2">     
-                                    <p className="question-visit"></p>
                                 </div>
                                 <div className="col-md-1">
                                     <p className="question-answer">{data.comments.length} پاسخ</p>
                                 </div>
                             </div>
+
+                            {/* mobile display */}
+                            <div className="row question-box-bottom-mobile-display">
+                                <div className="col-xs-8">
+                                    {data.tags.split(",").map((e) => (
+                                        <div className="question-tags-homepage-mobile-display">{e}</div>
+                                    ))}
+                                </div>
+                                <div className="col-xs-4">
+                                    <p style={{float: "left"}}>{data.comments.length} پاسخ</p>
+                                </div>
+                            </div>
+                            
                         </div>
                     </div>
                     )

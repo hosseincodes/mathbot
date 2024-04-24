@@ -249,6 +249,7 @@ $font-size-little: 12px;
     color: rgb(117, 117, 117);
     font-size: 12px;
     display: inline-block;
+    font-family: "IRANYekanWebFn-Light";
 }
 
 .question-tag-box {
@@ -259,6 +260,17 @@ $font-size-little: 12px;
     padding: 5px 5px 5px 0px;
     max-width: max-content;
     display: inline-block;
+}
+
+.question-tags-homepage-mobile-display {
+    background: rgb(242, 242, 242) none repeat scroll 0% 0%;
+    border-radius: 5px;
+    color: rgb(117, 117, 117);
+    padding: 0 5px;
+    max-width: max-content;
+    display: inline-block;
+    font-family: "IRANYekanWebFn-Light";
+    margin-left: 5px;
 }
 
 .question-date {
