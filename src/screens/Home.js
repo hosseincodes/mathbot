@@ -27,7 +27,7 @@ function Home() {
             <Header />
 
             <Helmet>
-                <title>Home / mathbot</title>
+                <title>mathbot</title>
                 <meta name="keywords" content="مث بات, mathbot"></meta>
             </Helmet>
 
