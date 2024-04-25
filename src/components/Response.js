@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import renderHTML from 'react-render-html'; 
 import Creator from './Creator';
 import Loader from "./Loader";
 import axios from 'axios';
@@ -27,7 +26,7 @@ function Response(props) {
                     <div className="question-answer-big">
                         <Creator data = {commentData.creator} />
                         <h6>&nbsp; {commentData.created_at}</h6>
-                        {renderHTML(commentData.content)}
+                        <p>{commentData.content}</p>
                     </div>
                 </div>
             </div>

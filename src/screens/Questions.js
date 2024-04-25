@@ -7,7 +7,6 @@ import Footer from "../components/Footer";
 import axios from 'axios';
 import UploadComment from '../components/UploadComment';
 import Loader from "../components/Loader";
-import renderHTML from 'react-render-html'; 
 
 function Questions() {
 
@@ -93,10 +92,8 @@ function Questions() {
                                             </div>
                                         </div>
                                     </div>
-                                    {renderHTML(data.content)}
-                                    <div>
                                     
-                                    </div>
+                                    <p>{data.content}</p>
                                     
                                     <div className="question-tag-box">
                                         {data.tags.length === 0 ? (

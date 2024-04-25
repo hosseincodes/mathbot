@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import axios from 'axios';
-import { CKEditor } from '@ckeditor/ckeditor5-react';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { jwtDecode } from "jwt-decode";
 
 function AskBox() {
 
-    const [title, setTitle] = useState("")
-    const [content, setContent] = useState()
+    const [dataToUpload, setDataToUpload] = useState({
+        title: '',
+        content: '',
+    })
     const [theTag, settheTag] = useState()
     const [tags, settags] = useState([])
     const [submit, setsubmit] = useState(false)
@@ -17,7 +17,10 @@ function AskBox() {
     
     // Function to handle form input changes
     const handleChange = (e) => {
-        setTitle(e.target.value);
+        setDataToUpload({
+            ...dataToUpload,
+            [e.target.name]: e.target.value
+        });
     };
 
     const postobject = axios.create({
@@ -66,8 +69,8 @@ function AskBox() {
         e.preventDefault();
         try {
             const response = await postobject.post("/posts/create/", {
-                title: title,
-                content: content,
+                title: dataToUpload.title,
+                content: dataToUpload.content,
                 tags: tags.toString()
             });
             setdata(response.data)
@@ -159,13 +162,7 @@ function AskBox() {
         
                             <div className="ask-description">
                                 <h4>توضیحات</h4>
-                                <CKEditor
-                                    editor={ ClassicEditor }
-                                    onChange={ ( event, editor ) => {
-                                    const data = editor.getData();
-                                    setContent(data)
-                                    } }
-                                />
+                                <textarea className='ask-description-textarea' name="content" onChange={handleChange}></textarea>
                             </div>
         
                             <div className="ask-tags">
