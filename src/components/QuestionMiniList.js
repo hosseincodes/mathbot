@@ -49,7 +49,7 @@ function QuestionMiniList(props) {
                                 </div>
                                 <div className="col-md-7">
                                     {data.tags.split(",").map((e) => (
-                                        <div className="question-tags-homepage"><p>{e}</p></div>
+                                        <div className="question-tags-homepage">{e}</div>
                                     ))}
                                 </div>
                                 <div className="col-md-1">

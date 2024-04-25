@@ -257,9 +257,14 @@ $font-size-little: 12px;
 }
 
 .question-tags-homepage {
-    padding: 5px 5px 5px 0px;
+    padding: 0 5px;
     max-width: max-content;
     display: inline-block;
+    background: rgb(242, 242, 242) none repeat scroll 0% 0%;
+    border-radius: 5px;
+    color: rgb(117, 117, 117);
+    font-family: "IRANYekanWebFn-Light"; 
+    margin: 8px 0 0 5px;
 }
 
 .question-tags-homepage-mobile-display {
@@ -269,7 +274,7 @@ $font-size-little: 12px;
     padding: 0 5px;
     max-width: max-content;
     display: inline-block;
-    font-family: "IRANYekanWebFn-Light";
+    font-family: "IRANYekanWebFn-Light"; 
     margin-left: 5px;
 }
 
