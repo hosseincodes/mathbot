@@ -10,6 +10,7 @@ class Post(models.Model):
     content = models.TextField()
     created_at = models.DateTimeField(default=now, editable=False)
     tags = models.TextField()
+    image = models.ImageField(upload_to='postimages')
     creator = models.ForeignKey(
         User,
         on_delete = models.CASCADE,

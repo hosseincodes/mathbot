@@ -13,7 +13,7 @@ class UserProfile(models.Model):
         default=''
     )
     name = models.CharField(max_length=32, default='')
-    avatar = models.ImageField()
+    avatar = models.ImageField(upload_to='userprofiles')
 
     def __str__(self):
         return self.user.username

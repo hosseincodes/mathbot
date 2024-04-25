@@ -66,6 +66,14 @@ $font-size-little: 12px;
     resize: none;
 }
 
+.ask-image {
+    margin: 10px 0 30px;
+}
+
+.askbox-img-upload {
+    margin-top: 20px;
+}
+
 .ask-input-tags {
     font-family: $font-family-IRANYekan;
     background: #f2f2f2;
@@ -336,6 +344,21 @@ $font-size-little: 12px;
     position: relative;
     margin-bottom: 40px;
     margin-top: 40px;
+}
+
+.post-img-box {
+    text-align: center;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    background: #000;
+}
+
+.post-img {
+    max-width: 400px;
+}
+
+.post-content-box {
+    margin-top: 30px;
 }
 
 .comment-button {

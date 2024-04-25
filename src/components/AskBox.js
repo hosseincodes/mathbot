@@ -7,8 +7,10 @@ function AskBox() {
 
     const [dataToUpload, setDataToUpload] = useState({
         title: '',
+        image: '',
         content: '',
     })
+    const [imagePreview, setImagePreview] = useState(null)
     const [theTag, settheTag] = useState()
     const [tags, settags] = useState([])
     const [submit, setsubmit] = useState(false)
@@ -22,6 +24,13 @@ function AskBox() {
             [e.target.name]: e.target.value
         });
     };
+
+    const handleFileSelect = (event) => {
+        setDataToUpload({...dataToUpload, image: event.target.files[0]})
+        if (event.target.files && event.target.files[0]) {
+            setImagePreview(URL.createObjectURL(event.target.files[0]));
+        }
+    }
 
     const postobject = axios.create({
         baseURL: "https://server.mathbot.ir/api"
@@ -67,12 +76,18 @@ function AskBox() {
     // Function to submit the form data using Axios
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        let form_data = new FormData();
+        form_data.append("title", dataToUpload.title);
+        form_data.append("content", dataToUpload.content);
+        form_data.append("image", dataToUpload.image);
+        form_data.append("tags", tags.toString());
+
         try {
-            const response = await postobject.post("/posts/create/", {
-                title: dataToUpload.title,
-                content: dataToUpload.content,
-                tags: tags.toString()
-            });
+            const response = await postobject.post("/posts/create/", form_data, {
+                headers: {
+                    "Content-Type": "multipart/form-data",
+                }});
             setdata(response.data)
             setsubmit(true)
             setsuccessupload(true)
@@ -150,7 +165,7 @@ function AskBox() {
                     <div className="ask-box">
                         <form onSubmit={handleSubmit}>
                             <div className="ask-title">
-                                <h4>نام سوال</h4>
+                                <h4>* نام سوال</h4>
                                 <input
                                     name="title"
                                     maxlength="90"
@@ -159,9 +174,26 @@ function AskBox() {
                                     placeholder="مثلا کمترین تعداد علامت جمع مورد نیاز برای نمایش حاصل عددی عبارت کدام است؟"
                                 />
                             </div>
+
+                            <div className="ask-image">
+                                <h4>تصویر</h4>
+                                <input
+                                    name="image" type="file" onChange={handleFileSelect}
+                                />
+
+                                <div className='askbox-img-upload'>
+                                    {imagePreview == null ? (
+                                        <p>برای اپلود تصویر روی دکمه بالا کلیک کنید</p>
+                                    ) : (
+                                        <div className="post-img-box">
+                                            <img src={imagePreview} className="post-img" alt="عکس پیش نمایش" />
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
         
                             <div className="ask-description">
-                                <h4>توضیحات</h4>
+                                <h4>* توضیحات</h4>
                                 <textarea className='ask-description-textarea' name="content" onChange={handleChange}></textarea>
                             </div>
         

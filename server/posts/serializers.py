@@ -25,6 +25,7 @@ class PostCreateSerializer(serializers.ModelSerializer):
     title = serializers.CharField(allow_blank=False)
     content = serializers.CharField(allow_blank=False)
     tags = serializers.CharField(allow_blank=True)
+    image = serializers.ImageField(allow_empty_file=True, default='')
     creator = serializers.HyperlinkedRelatedField(
         read_only=True,
         view_name='user-detail',
@@ -38,6 +39,7 @@ class PostCreateSerializer(serializers.ModelSerializer):
             'content',
             'created_at',
             'tags',
+            'image',
             'creator'
         )
         read_only_fields=('id', 'created_at', 'creator')
@@ -46,6 +48,7 @@ class PostCreateSerializer(serializers.ModelSerializer):
         title = validated_data['title']
         content = validated_data['content']
         tags = validated_data['tags']
+        image = validated_data['image']
 
         # Get the requesting user
         user = None
@@ -60,6 +63,7 @@ class PostCreateSerializer(serializers.ModelSerializer):
             title=title,
             content=content,
             tags=tags,
+            image=image,
             creator=user
         )
         post.save()

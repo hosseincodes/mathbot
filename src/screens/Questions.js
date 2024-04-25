@@ -92,8 +92,16 @@ function Questions() {
                                             </div>
                                         </div>
                                     </div>
+
+                                    {data.image != null ? (
+                                        <div className="post-img-box">
+                                            <img src={data.image} className="post-img" alt={data.title} />
+                                        </div>
+                                    ) : (<></>)}
                                     
-                                    <p>{data.content}</p>
+                                    <div className="post-content-box">
+                                        <p>{data.content}</p>
+                                    </div>
                                     
                                     <div className="question-tag-box">
                                         {data.tags.length === 0 ? (

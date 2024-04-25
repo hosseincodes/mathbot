@@ -42,6 +42,11 @@ function QuestionMiniList(props) {
                         <div className="question-box">
                             <Link className="question-box-link" to={`/questions/${data.id}`}>
                                 <h4>{data.title}</h4>
+                                {data.image != null ? (
+                                    <div className="post-img-box">
+                                        <img src={data.image} className="post-img" alt={data.title} />
+                                    </div>
+                                ) : (<></>)}
                             </Link>
                             <div className="row question-box-bottom">
                                 <div className="col-md-4">
