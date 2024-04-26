@@ -64,7 +64,7 @@ class UserCreateSerializer(serializers.ModelSerializer):
 
         avatar = profile_data.get('avatar') or None
         if not avatar:
-            avatar = 'profile.png'
+            avatar = 'userprofiles/profile.png'
         profile = UserProfile(
             user = user,
             avatar = avatar,
