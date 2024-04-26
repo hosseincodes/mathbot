@@ -16,6 +16,7 @@ function AskBox() {
     const [submit, setsubmit] = useState(false)
     const [successupload, setsuccessupload] = useState()
     const [data, setdata] = useState([])
+    const [loader, setloader] = useState(false)
     
     // Function to handle form input changes
     const handleChange = (e) => {
@@ -75,6 +76,8 @@ function AskBox() {
 
     // Function to submit the form data using Axios
     const handleSubmit = async (e) => {
+        setloader(true);
+        
         e.preventDefault();
 
         let form_data = new FormData();
@@ -89,9 +92,11 @@ function AskBox() {
                     "Content-Type": "multipart/form-data",
                 }});
             setdata(response.data)
+            setloader(false)
             setsubmit(true)
             setsuccessupload(true)
         } catch (error) {
+            setloader(false)
             console.error("Error creating post:", error.response.data);
             setsubmit(true)
             setsuccessupload(false)
@@ -216,6 +221,11 @@ function AskBox() {
 
                             <div className="ask-button">
                                 <button className="ask-input-button" type="submit">ارسال سوال</button>
+                                {loader ? (
+                                    <div className='uploading-loader-box'>
+                                        <p>در حال اپلود کمی صبر کنید ...</p>
+                                    </div>
+                                ) : (<></>)}
                             </div>
                         </form>
                     </div>

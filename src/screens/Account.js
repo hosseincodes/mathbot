@@ -28,6 +28,8 @@ function Account() {
         name: '',
         bio: '',
       })
+    const [loader, setloader] = useState(false)
+
 
     useEffect(() => {
         let token = localStorage.getItem('token');
@@ -98,6 +100,8 @@ function Account() {
       
     // Function to submit the form data using Axios
     const handleSubmit = async (e) => {
+        setloader(true);
+
         e.preventDefault();
         
         let form_data = new FormData();
@@ -114,9 +118,11 @@ function Account() {
                 "Content-Type": "multipart/form-data",
             }});
           console.log(response)
+          setloader(false)
           alert("تغییرات با موفقیت اعمال شد");
           window.location.reload();
         } catch (error) {
+          setloader(false)
           console.error("Error:", error.response.data);
           alert("نشد! یه مشکلی وجود داره")
         }
@@ -284,6 +290,11 @@ function Account() {
                                                     <span>* پسورد فعلی : </span><input required name="current_password" onChange={handleChange} className="edit-profile-box-input" type="password" />
                                                 </div>
                                                 <button className="save-profile-box" type="submit">ذخیره تغییرات</button>
+                                                {loader ? (
+                                                    <div className='uploading-loader-box'>
+                                                        <p>در حال اپلود کمی صبر کنید ...</p>
+                                                    </div>
+                                                ) : (<></>)}
                                             </form>
                                         </div>
                                     </div>
