@@ -11,7 +11,6 @@ function Register() {
         name: "",
         email: "",
         password: "",
-        bio: "",
       });
     
       // Function to handle form input changes
@@ -65,17 +64,9 @@ function Register() {
                                     type="text"
                                     label="Name"
                                     name="name"
-                                    placeholder="* نام (تا ۳۲ کاراکتر)"
+                                    maxlength="32"
+                                    placeholder= "* نام و نام خانوادگی"
                                     value={formData.name}
-                                    onChange={handleChange}
-                                />
-
-                                <input
-                                    type="text"
-                                    label="Bio"
-                                    name="bio"
-                                    placeholder="بایو"
-                                    value={formData.bio}
                                     onChange={handleChange}
                                 />
 
@@ -84,7 +75,8 @@ function Register() {
                                     type="text"
                                     label="Username"
                                     name="username"
-                                    placeholder="* نام کاربری (۴ تا ۳۲ کاراکتر)"
+                                    maxlength="32"
+                                    placeholder="* نام کاربری (حداقل ۴ کاراکتر)"
                                     value={formData.username}
                                     onChange={handleChange}
                                 />
@@ -104,7 +96,8 @@ function Register() {
                                     type="password"
                                     label="Password"
                                     name="password"
-                                    placeholder="* پسورد (۴ تا ۳۲ کاراکتر)"
+                                    maxlength="32"
+                                    placeholder="* پسورد (حداقل ۴ کاراکتر)"
                                     value={formData.password}
                                     onChange={handleChange}
                                 />
