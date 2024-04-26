@@ -47,7 +47,9 @@ function QuestionMiniList(props) {
                                         <img src={data.image} className="post-img" alt={data.title} />
                                     </div>
                                 ) : (
-                                    <span>{data.content}</span>
+                                    <div style={{marginBottom: "15px", lineHeight: "24px"}}>
+                                        <span>{data.content}</span>
+                                    </div>
                                 )}
                             </Link>
                             <div className="row question-box-bottom">
