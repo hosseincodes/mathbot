@@ -110,16 +110,18 @@ class UserDetailSerializer(serializers.ModelSerializer):
 
 class UserUpdateSerializer(serializers.ModelSerializer):
     # A field from the user's profile:
-    bio = serializers.CharField(source='profile.bio', allow_blank=True)
-    avatar = serializers.ImageField(source='profile.avatar', allow_empty_file=True)
+    bio = serializers.CharField(source='profile.bio', allow_blank=True, default='')
+    avatar = serializers.ImageField(source='profile.avatar', allow_empty_file=True, default='')
     name = serializers.CharField(
     	source='profile.name',
+        default='',
     	max_length=32,
     	allow_blank=True
     )
     current_password = serializers.CharField(
         write_only=True,
         allow_blank=True,
+        default='',
         label=("پسورد فعلی"),
         help_text=('الزامی'),
     )
