@@ -56,12 +56,12 @@ function QuestionMiniList(props) {
                                 <div className="col-md-4">
                                     <p className="question-date">{data.created_at}</p>
                                 </div>
-                                <div className="col-md-7">
+                                <div className="col-md-6">
                                     {data.tags.split(",").map((e) => (
                                         <div className="question-tags-homepage">{e}</div>
                                     ))}
                                 </div>
-                                <div className="col-md-1">
+                                <div className="col-md-2">
                                     <p className="question-answer">{data.comments.length} پاسخ</p>
                                 </div>
                             </div>
