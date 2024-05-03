@@ -1,25 +1,9 @@
 import React from "react";
-import { jwtDecode } from "jwt-decode";
+import IsAuthenticated from "../utils/IsAuthenticated";
 import { Link } from "react-router-dom";
 
 function Footer() {
-    function validToken() {
-        let token = localStorage.getItem('token');
-
-        if (token === null || token === "LOGGEDOUT") {
-            return false
-        } else {
-            var decodedToken = jwtDecode(token);
-            var currentDate = new Date();
-        }
-  
-        // JWT exp is in seconds
-        if (decodedToken.exp * 1000 < currentDate.getTime()) {
-            return false
-        } else {   
-            return true
-        }
-    }
+    
     return (
         <div className="footer ">
             <div className="container ">
@@ -29,7 +13,7 @@ function Footer() {
                     </div>
                     <div className="mobile-header">
                         
-                        {validToken() ? (
+                        {IsAuthenticated() !== "Not Authenticated" ? (
                             <Link to="/account">
                                 <span className="mobile-header-button">
                                         <i className="fa-solid fa-user header-buttons-ico"></i>
