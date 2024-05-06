@@ -18,10 +18,8 @@ function Header() {
 
     function userData() {
         return (
-            <Link title={data.name} to="/account">
-                <div className="header-buttons header-buttons-login">       
-                    {data.name}
-                </div>
+            <Link to="/account">
+                <img src={data.avatar} className="account-user-img-little-header" alt={data.name} />
             </Link>
         )
     }
