@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Loader from "./Loader";
+import Creator from './Creator';
 
 function QuestionMiniList(props) {
 
@@ -54,7 +55,7 @@ function QuestionMiniList(props) {
                             </Link>
                             <div className="row question-box-bottom">
                                 <div className="col-md-4">
-                                    <p className="question-date">{data.created_at}</p>
+                                    <Creator data={data.creator} />
                                 </div>
                                 <div className="col-md-6">
                                     {data.tags.split(",").map((e) => (
