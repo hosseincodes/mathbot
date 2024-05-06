@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import axios from 'axios';
 import Loader from "../components/Loader";
 import IsAuthenticated from "../utils/IsAuthenticated";
+import config from '../utils/config';
 
 function Account() {
 
@@ -54,47 +55,6 @@ function Account() {
             setImage(URL.createObjectURL(event.target.files[0]));
         }
     }
-
-    const postobject = axios.create({
-        baseURL: "https://server.mathbot.ir/api"
-    })
-  
-    postobject.interceptors.request.use(
-        (config) => {
-        const token = localStorage.getItem('token');
-        if (token) {
-            config.headers.Authorization = `Bearer ${token}`;
-        }
-        return config;
-        },
-        (error) => Promise.reject(error)
-    );
-  
-    postobject.interceptors.response.use(
-        (response) => response,
-        async (error) => {
-        const originalRequest = error.config;
-        if (error.response.status === 401 && !originalRequest._retry) {
-            originalRequest._retry = true;
-    
-            try {
-            const refreshToken = localStorage.getItem('refreshToken');
-            const response = await axios.post('https://server.mathbot.ir/api/token/refresh/', {refresh: refreshToken} );
-            const { access } = response.data;
-            
-            localStorage.setItem('token', access);
-    
-            // Retry the original request with the new token
-            originalRequest.headers.Authorization = `Bearer ${access}`;
-            return axios(originalRequest);
-            } catch (error) {
-            // Handle refresh token error or redirect to login
-            }
-        }
-    
-        return Promise.reject(error);
-        }
-    );
       
     // Function to submit the form data using Axios
     const handleSubmit = async (e) => {
@@ -110,8 +70,10 @@ function Account() {
         form_data.append("current_password", newdata.current_password);
         form_data.append("new_password", newdata.new_password);
         
+        const TokenConfig = config();
+
         try {
-          const response = await postobject.put(`/accounts/${data.username}/edit/`, form_data, {
+          const response = await TokenConfig.put(`/accounts/${data.username}/edit/`, form_data, {
             headers: {
                 "Content-Type": "multipart/form-data",
             }});
