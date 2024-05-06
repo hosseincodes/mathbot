@@ -6,8 +6,8 @@ import PostMiniProfile from "../components/PostMiniProfile";
 import CommentMiniProfile from "../components/CommentMiniProfile";
 import { Link } from "react-router-dom";
 import axios from 'axios';
-import { jwtDecode } from "jwt-decode";
 import Loader from "../components/Loader";
+import IsAuthenticated from "../utils/IsAuthenticated";
 
 function Account() {
 
@@ -32,10 +32,8 @@ function Account() {
 
 
     useEffect(() => {
-        let token = localStorage.getItem('token');
-        if (token != null) {
-            var decodedToken = jwtDecode(token);
-            axios.get("https://server.mathbot.ir/api/accounts/" + decodedToken.username).then((res) => {
+        if (IsAuthenticated() !== "Not Authenticated") {
+            axios.get("https://server.mathbot.ir/api/accounts/" + IsAuthenticated()).then((res) => {
                 setdata(res.data)
                 setImage(res.data.avatar)
                 setIsLoading(false)
@@ -128,24 +126,6 @@ function Account() {
         }
     };
 
-    function validToken() {
-        let token = localStorage.getItem('token');
-
-        if (token === null || token === "LOGGEDOUT") {
-            return false
-        } else {
-            var decodedToken = jwtDecode(token);
-            var currentDate = new Date();
-        }
-  
-        // JWT exp is in seconds
-        if (decodedToken.exp * 1000 < currentDate.getTime()) {
-          return false
-        } else {   
-          return true
-        }
-    }
-
     function SendPostsLink(){
         const fetchedData = []
         for (const link of data.posts){
@@ -180,7 +160,7 @@ function Account() {
         }
     }
 
-    if (!validToken()) {
+    if (IsAuthenticated() === "Not Authenticated") {
         window.location.replace("/login");
     } else {
         if (isLoading) {

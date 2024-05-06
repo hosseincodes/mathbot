@@ -2,17 +2,15 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from '../assets/images/logo.png';
 import axios from 'axios';
-import { jwtDecode } from "jwt-decode";
+import IsAuthenticated from "../utils/IsAuthenticated";
 
 function Header() {
 
     const [data, setdata] = useState([])
 
     useEffect(() => {
-        let token = localStorage.getItem('token');
-        if (token !== null && token !== "LOGGEDOUT") {
-            var decodedToken = jwtDecode(token);
-            axios.get("https://server.mathbot.ir/api/accounts/" + decodedToken.username).then((res) => {
+        if (IsAuthenticated() !== "Not Authenticated") {
+            axios.get("https://server.mathbot.ir/api/accounts/" + IsAuthenticated()).then((res) => {
                 setdata(res.data)
             })
         }
@@ -28,31 +26,13 @@ function Header() {
         )
     }
 
-    function validToken() {
-        let token = localStorage.getItem('token');
-
-        if (token === null || token === "LOGGEDOUT") {
-            return false
-        } else {
-            var decodedToken = jwtDecode(token);
-            var currentDate = new Date();
-        }
-  
-        // JWT exp is in seconds
-        if (decodedToken.exp * 1000 < currentDate.getTime()) {
-            return false
-        } else {   
-            return true
-        }
-    }
-
     return (
         <div className="header">
             <div className="row">
 
                 <div className="col-md-3 header-responsive header-icons-box">
                     
-                    {validToken() ? userData() : (
+                    {IsAuthenticated() !== "Not Authenticated" ? userData() : (
                         <Link to="/login">
                             <div className="header-buttons header-buttons-login">       
                                 ورود

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { jwtDecode } from "jwt-decode";
+import IsAuthenticated from "../utils/IsAuthenticated";
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 function UploadComment(props) {
@@ -71,25 +71,7 @@ function UploadComment(props) {
       }
     };
 
-    function validToken() {
-      let token = localStorage.getItem('token');
-        
-        if (token === null || token === "LOGGEDOUT") {
-            return false
-        } else {
-            var decodedToken = jwtDecode(token);
-            var currentDate = new Date();
-        }
-
-      // JWT exp is in seconds
-      if (decodedToken.exp * 1000 < currentDate.getTime()) {
-        return false
-      } else {
-        return true
-      }
-    }
-
-    if (!validToken()) {
+    if (IsAuthenticated() === "Not Authenticated") {
       return (
         <>
           <p>جهت ثبت پاسخ ابتدا <Link to="/login">وارد شوید</Link></p>

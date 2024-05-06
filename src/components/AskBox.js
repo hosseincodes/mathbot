@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import axios from 'axios';
-import { jwtDecode } from "jwt-decode";
+import IsAuthenticated from "../utils/IsAuthenticated";
 
 function AskBox() {
 
@@ -103,24 +103,6 @@ function AskBox() {
         }
     };
 
-    function validToken() {
-        let token = localStorage.getItem('token');
-
-        if (token === null || token === "LOGGEDOUT") {
-            return false
-        } else {
-            var decodedToken = jwtDecode(token);
-            var currentDate = new Date();
-        }
-  
-        // JWT exp is in seconds
-        if (decodedToken.exp * 1000 < currentDate.getTime()) {
-          return false
-        } else {   
-          return true
-        }
-    }
-
     function eraseText() {
         document.getElementById("output").value = "";
     }
@@ -129,7 +111,7 @@ function AskBox() {
         settags(tags.filter((el, i) => i !== index))        
     }
 
-    if (!validToken()) {
+    if (IsAuthenticated() !== "Not Authenticated") {
         return (
             <>
               <p>جهت ثبت سوال ابتدا <Link to="/login">وارد شوید</Link></p>
