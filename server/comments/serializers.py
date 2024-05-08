@@ -22,7 +22,7 @@ class CommentCreateSerializer(serializers.ModelSerializer):
     )
     post_id = serializers.IntegerField(
         required=True,
-        help_text=('Required. Id of the thread this post is created in')
+        help_text=('Required. Id of the post this comment is created in')
     )
     creator = serializers.HyperlinkedRelatedField(
         read_only=True,

@@ -4,6 +4,7 @@ from .serializers import PostSerializer, PostCreateSerializer
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.authentication import JWTAuthentication
+from .permissions import IsOwnerOrAdmin
 
 class LargeResultsSetPagination(PageNumberPagination):
     page_size = 30
@@ -28,5 +29,5 @@ class PostsDetailAPIView(generics.RetrieveAPIView):
 class PostsDeleteAPIView(generics.DestroyAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsOwnerOrAdmin]
     authentication_classes = [JWTAuthentication]

@@ -3,6 +3,7 @@ from .models import Comment
 from .serializers import CommentSerializer, CommentCreateSerializer
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.authentication import JWTAuthentication
+from .permissions import IsOwnerOrAdmin
 
 class CommentsListAPIView(generics.ListAPIView):
     queryset = Comment.objects.all().order_by('-created_at')
@@ -21,5 +22,5 @@ class CommentsDetailAPIView(generics.RetrieveAPIView):
 class CommentsDeleteAPIView(generics.DestroyAPIView):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsOwnerOrAdmin]
     authentication_classes = [JWTAuthentication]
