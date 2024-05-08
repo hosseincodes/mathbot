@@ -42,12 +42,9 @@ function PostMiniProfile(props) {
                     <div className="col-md-1 col-xs-1">
                         <span className="comment-button" onClick={() => deletePost(postData.id)}><i className="fa fa-trash"></i></span>
                     </div>
-                    <div className="col-md-1 col-xs-1">
-                        <Link to={`/questions/${postData.id}`}><span className="comment-button" ><i className="fa fa-solid fa-eye"></i></span></Link>
-                    </div>
-                    <div className="col-xs-1"></div>
-                    <div className="col-md-10 col-xs-8">
-                        <h5>{postData.title}</h5>
+                    <div className="col-xs-1 margin-mobile-responsive"></div>
+                    <div className="col-md-11 col-xs-10">
+                        <Link to={`/questions/${postData.id}`}><h5>{postData.title}</h5></Link>
                     </div>
                 </div>
             </div>

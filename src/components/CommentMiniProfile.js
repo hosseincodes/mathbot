@@ -1,6 +1,5 @@
 import React, { useEffect,useState } from 'react';
 import axios from 'axios';
-import renderHTML from 'react-render-html';
 import Loader from "./Loader";
 import config from '../utils/config';
 import { Link } from "react-router-dom";
@@ -43,12 +42,9 @@ function CommentMiniProfile(props) {
                     <div className="col-md-1 col-xs-1">
                         <span className="comment-button" onClick={() => deleteComment(commentData.id)}><i className="fa fa-trash"></i></span>
                     </div>
-                    <div className="col-md-1 col-xs-1">
-                        <Link to={`/questions/${commentData.post}`}><span className="comment-button" ><i className="fa fa-solid fa-eye"></i></span></Link>
-                    </div>
-                    <div className="col-xs-1"></div>
-                    <div className="col-md-10 col-xs-8">
-                        {renderHTML(commentData.content)}
+                    <div className="col-xs-1  margin-mobile-responsive"></div>
+                    <div className="col-md-11 col-xs-10">
+                        <Link to={`/questions/${commentData.post}`}><h5>{commentData.content}</h5></Link>
                     </div>
                 </div>
             </div>

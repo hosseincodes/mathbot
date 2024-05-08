@@ -88,12 +88,25 @@
     } 
 }
 
+.margin-mobile-responsive {
+    display: none;
+}
+
 .comments-showing-accountPage {
     background: #f3f2ef;
-    padding: 20px 15px 50px 15px;
+    padding: 13px 10px 5px 10px;
     border-radius: 10px;
     box-shadow: 0 5px 10px 0 rgba(20,83,155,.05);
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.comments-showing-accountPage a {
+    color: #333333;
+}
+
+.comments-showing-accountPage h5 {
+    line-height: 25px;
 }
 
 .h5-mini-profile {
