@@ -38,9 +38,9 @@ function Header() {
                         </Link>
                     )}
 
-                    <Link title="راهنما" to="/help">
+                    <Link title="اعلانات" to="/notifications">
                         <div className="header-buttons">
-                            <i className="fas fa-question header-buttons-ico"></i>
+                            <i class="fa-regular fa-bell header-buttons-ico"></i>
                         </div>
                     </Link>
 

@@ -22,14 +22,14 @@ function Footer() {
                         ) : (
                             <Link to="/login">
                                 <span className="mobile-header-button">
-                                        <i className="fa-solid fa-right-to-bracket header-buttons-ico"></i>
+                                    <i className="fa-solid fa-right-to-bracket header-buttons-ico"></i>
                                 </span>
                             </Link>
                         )}
 
-                        <Link to="/help">
+                        <Link to="/notifications">
                             <span className="mobile-header-button">
-                                <i className="fas fa-question header-buttons-ico"></i>
+                                <i class="fa-regular fa-bell header-buttons-ico"></i>
                             </span>
                         </Link>
                         <Link to="/questions/ask">
