@@ -70,12 +70,10 @@ function QuestionMiniList(props) {
                             {/* mobile display */}
                             <div className="row question-box-bottom-mobile-display">
                                 <div className="col-xs-8">
-                                    {data.tags.split(",").map((e) => (
-                                        <div className="question-tags-homepage-mobile-display">{e}</div>
-                                    ))}
+                                    <Creator data={data.creator} />
                                 </div>
                                 <div className="col-xs-4">
-                                    <p style={{float: "left"}}>{data.comments.length} پاسخ</p>
+                                    <span className="number-of-comments-homepage">{data.comments.length} پاسخ</span>
                                 </div>
                             </div>
                             
