@@ -56,7 +56,7 @@ function Users() {
                     <div className="container">
                         <div style={{marginTop: "50px"}} className="col-md-12 responsive-box">
                             <div className="account-user-img-box-large">
-                                <img style={{width: "200px"}} src={data.avatar} className="account-user-img" alt={data.name} />
+                                <img style={{width: "200px", height: "200px"}} src={data.avatar} className="account-user-img" alt={data.name} />
                             </div>
                             <div style={{textAlign: "center"}} className="forum-title">
                                 <h3>{data.name} / {data.username}@</h3>
