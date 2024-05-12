@@ -109,6 +109,9 @@
     .not-display-in-mobile {
         display: none;
     }
+    .sidebar {
+        display: none;
+    }
 }
 
 @media only screen and (max-width: 1200px) {
