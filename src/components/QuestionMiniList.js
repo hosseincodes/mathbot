@@ -45,7 +45,7 @@ function QuestionMiniList(props) {
                                 <h4>{data.title}</h4>
                                 {data.image != null ? (
                                     <div className="post-img-box">
-                                        <img src={data.image} className="post-img" alt={data.title} />
+                                        <img loading="lazy" src={data.image} className="post-img" alt={data.title} />
                                     </div>
                                 ) : (
                                     <div style={{marginBottom: "15px", lineHeight: "24px"}}>
