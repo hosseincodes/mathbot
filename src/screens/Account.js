@@ -189,7 +189,7 @@ function Account() {
                                                         <input name="avatar" type="file" onChange={handleFileSelect} />
                                                     </div>
                                                     <div className="account-user-img-box-large change-img">
-                                                        <img src={image} style={{width: "50px"}} className="account-user-img" alt={data.name}/>
+                                                        <img src={image} className="account-user-img" alt={data.name}/>
                                                     </div>
                                                 </div>
                                                 <div className="edit-profile-box">
