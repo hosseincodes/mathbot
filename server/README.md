@@ -1,4 +1,3 @@
 # backend
 
-<p>i am using django to make api to send to react. NOT FINISHED yet</p>
-<p>currently studying about it...</p>
+<p>The backend is a scalable system that provides data through its RESTful API (browseable API available), written in Python.</p>
