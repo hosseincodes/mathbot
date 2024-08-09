@@ -21,9 +21,6 @@ function Sidebar() {
                     <Link className="sidebar-user-links" to="/soon"><p><i class="fa-regular fa-thumbs-up"></i> سوال های مورد علاقه</p></Link>
                 </div>
             )}
-            <div className="sidebar">
-                <p>تبلیغات</p>
-            </div>
             <div className="sidebar contact-links">
                 <a className="contact-icons-sidebar" href="http://instagram.com/themathbot "><i className="fab fa-instagram "></i></a>
                 <a className="contact-icons-sidebar" href="http://t.me/math_20_bot_channel "><i className="fab fa-telegram "></i></a>
