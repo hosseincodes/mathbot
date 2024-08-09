@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'accounts',
     'comments',
     'posts',
+    'contests',
 
     "corsheaders",
     "django_jalali",
