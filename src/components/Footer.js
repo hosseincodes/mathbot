@@ -14,11 +14,18 @@ function Footer() {
                     <div className="mobile-header">
                         
                         {IsAuthenticated() !== "Not Authenticated" ? (
-                            <Link to="/account">
-                                <span className="mobile-header-button">
-                                        <i className="fa-solid fa-user header-buttons-ico"></i>
-                                </span>
-                            </Link>     
+                            <>
+                                <Link to="/account">
+                                    <span className="mobile-header-button">
+                                            <i className="fa-solid fa-user header-buttons-ico"></i>
+                                    </span>
+                                </Link>
+                                <Link to="/notifications">
+                                    <span className="mobile-header-button">
+                                        <i class="fa-regular fa-bell header-buttons-ico"></i>
+                                    </span>
+                                </Link> 
+                            </>    
                         ) : (
                             <Link to="/login">
                                 <span className="mobile-header-button">
@@ -27,16 +34,13 @@ function Footer() {
                             </Link>
                         )}
 
-                        <Link to="/notifications">
-                            <span className="mobile-header-button">
-                                <i class="fa-regular fa-bell header-buttons-ico"></i>
-                            </span>
-                        </Link>
+                        
                         <Link to="/questions/ask">
                             <span className="mobile-header-button">
                                 <i className="fas fa-plus header-buttons-ico"></i>
                             </span>
                         </Link>
+
                         <Link to="/search">
                             <span className="mobile-header-button">
                                 <i className="fas fa-search header-buttons-ico"></i>

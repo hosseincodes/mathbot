@@ -18,9 +18,17 @@ function Header() {
 
     function userData() {
         return (
-            <Link title={data.name} to="/account">
-                <img src={data.avatar} className="account-user-img-little-header" alt={data.name} />
-            </Link>
+            <>
+                <Link title={data.name} to="/account">
+                    <img src={data.avatar} className="account-user-img-little-header" alt={data.name} />
+                </Link>
+
+                <Link title="اعلانات" to="/notifications">
+                    <div className="header-buttons">
+                        <i class="fa-regular fa-bell header-buttons-ico"></i>
+                    </div>
+                </Link>
+            </>
         )
     }
 
@@ -37,12 +45,6 @@ function Header() {
                             </div>
                         </Link>
                     )}
-
-                    <Link title="اعلانات" to="/notifications">
-                        <div className="header-buttons">
-                            <i class="fa-regular fa-bell header-buttons-ico"></i>
-                        </div>
-                    </Link>
 
                     <Link title="پست جدید" to="/questions/ask">
                         <div className="header-buttons">
