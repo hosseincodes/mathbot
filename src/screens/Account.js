@@ -146,7 +146,7 @@ function Account() {
                                             <img src={data.avatar} className="account-user-img" alt={data.name} />
                                         </div>
                                         <Link to={`/users/${data.username}`}>
-                                            <p style={{color: "#000", textAlign: "center", padding: "15px 0px 0px 0px"}}>{data.name}</p>
+                                            <p style={{color: "#fff", textAlign: "center", padding: "15px 0px 0px 0px"}}>{data.name}</p>
                                         </Link>
                                     </div>
 

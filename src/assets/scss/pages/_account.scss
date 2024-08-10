@@ -1,7 +1,7 @@
 /* Account */
 
 .account {
-    background: #fff;
+    background: #212226;
     padding: 15px 0px 15px 0px;
     border-radius: 10px;
     box-shadow: 0 5px 10px 0 rgba(20, 83, 155, .05);
@@ -11,7 +11,7 @@
 .account-sidebar {
     padding: 15px;
     border-radius: 10px;
-    background: #eee;
+    background: #16171a;
     margin-bottom: 15px;
 }
 
@@ -43,7 +43,7 @@
 .forum-title-ask h6 {
     float: right;
     margin-right: 8px;
-    color: #333333;
+    color: #fff;
 }
 
 .account-user-img-little {
@@ -87,7 +87,6 @@
         cursor: pointer;
         padding: 5px 10px;
         border-radius: 10px;
-        background: #fff;
         &:hover {
             transition: all 0.2s ease;
             background: #29a58d;
@@ -101,7 +100,7 @@
 }
 
 .comments-showing-accountPage {
-    background: #f3f2ef;
+    background: #16171a;
     padding: 13px 10px 5px 10px;
     border-radius: 10px;
     box-shadow: 0 5px 10px 0 rgba(20,83,155,.05);
@@ -110,7 +109,7 @@
 }
 
 .comments-showing-accountPage a {
-    color: #333333;
+    color: #fff;
 }
 
 .comments-showing-accountPage h5 {

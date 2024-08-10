@@ -123,7 +123,7 @@ $font-size-little: 12px;
 }
 
 .ask-box {
-    background: #fff;
+    background: #212226;
     box-shadow: 0 5px 10px 0 rgba(20, 83, 155, .05);
     padding: 15px 15px 15px 15px;
     border-radius: 10px;
@@ -148,7 +148,7 @@ $font-size-little: 12px;
 }
 
 .breadcrumb a {
-    color: #333;
+    color: #fff;
 }
 
 .question-search-box {
@@ -156,7 +156,8 @@ $font-size-little: 12px;
 }
 
 .question-box {
-    background: #fff;
+    color: #fff;
+    background: #212226;
     box-shadow: 0 5px 10px 0 rgba(20, 83, 155, .05);
     padding: 5px 15px 5px 15px;
     border-radius: 10px;
@@ -183,12 +184,11 @@ $font-size-little: 12px;
 
 .question-box-bottom {
     margin-top: 15px;
-    border-top: 1px #ddd solid;
-    padding: 10px 0 5px 0;
+    padding: 2px 0 5px 0;
 }
 
 .question-box-big {
-    background: #fff;
+    background: #212226;
     box-shadow: 0 5px 10px 0 rgba(20, 83, 155, .05);
     padding: 5px 25px 10px 25px;
     border-radius: 10px;
@@ -209,7 +209,7 @@ $font-size-little: 12px;
 }
 
 .question-answer-big {
-    background: #fff;
+    background: #212226;
     box-shadow: 0 5px 10px 0 rgba(20, 83, 155, .05);
     padding: 15px 15px 15px 15px;
     border-radius: 10px;
@@ -248,11 +248,11 @@ $font-size-little: 12px;
 }
 
 .question-tags {
-    background: rgb(242, 242, 242) none repeat scroll 0% 0%;
+    background: #29a58d none repeat scroll 0% 0%;
     padding: 5px 10px;
     margin-left: 5px;
     border-radius: 5px;
-    color: rgb(117, 117, 117);
+    color: #fff;
     font-size: 12px;
     display: inline-block;
     font-family: "IRANYekanWebFn-Light";
@@ -266,9 +266,9 @@ $font-size-little: 12px;
     padding: 0 5px;
     max-width: max-content;
     display: inline-block;
-    background: rgb(242, 242, 242) none repeat scroll 0% 0%;
+    background: #29a58d none repeat scroll 0% 0%;
     border-radius: 5px;
-    color: rgb(117, 117, 117);
+    color: #fff;
     font-family: "IRANYekanWebFn-Light"; 
     margin: 8px 0 0 5px;
 }
@@ -306,7 +306,10 @@ $font-size-little: 12px;
 }
 
 .question-box-link {
-    color: #333;
+    color: #fff;
+    &:hover {
+        color: #fff;
+    }
 }
 
 .forum-title-view {
@@ -404,7 +407,7 @@ $font-size-little: 12px;
 .sidebar {
     padding: 10px 15px 5px 15px;
     border-radius: 10px;
-    background: #fff;
+    background: #212226;
     box-shadow: 0 5px 10px 0 rgba(20, 83, 155, .05);
     margin-bottom: 20px;
 }
@@ -421,4 +424,7 @@ $font-size-little: 12px;
     color: #29a58d;
     font-size: 25px;
     margin: 0 15px;
+    &:hover{
+        color: #fff;
+    }
 }

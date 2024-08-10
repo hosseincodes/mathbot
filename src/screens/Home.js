@@ -35,24 +35,13 @@ function Home() {
             <div className="section">
                 <div className="container">
 
-                    <div className="forum-title">
-                        <h3>انجمن پرسش و پاسخ ریاضی</h3>
-                        <Link className="title-a" to="questions/ask">
-                            <h6>طرح پرسش جدید</h6>
-                        </Link>
-                    </div>
-
                     <div className="col-md-3 responsive-box">
                         <Sidebar />
                     </div>
 
                     <div className="col-md-9 responsive-box">
-
-                        {/* <h5 style={flag === true ? {} : {display: 'none'}}>جدید ترین سوالات</h5>
-                        <h5 style={flag === true ? {display: 'none'} : {}}>صفحه دوم سوالات</h5> */}
                         
                         <QuestionMiniListDisplay/>
-                        
 
                         <div className="col-md-12 col-xs-12">
                             <div className="row">
