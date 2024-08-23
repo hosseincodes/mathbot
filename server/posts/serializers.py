@@ -3,6 +3,9 @@ from .models import Post
 
 
 class PostSerializer(serializers.ModelSerializer):
+    likes_count = serializers.SerializerMethodField()
+    def get_likes_count(self, obj):
+        return obj.likes.count()  # Count of likes for the post
 
     creator = serializers.HyperlinkedRelatedField(
         read_only=True,
@@ -19,7 +22,7 @@ class PostSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Post
-        fields = '__all__'
+        fields = ['id','title','content','created_at','tags','image','creator','likes_count']
 
 class PostCreateSerializer(serializers.ModelSerializer):
     title = serializers.CharField(allow_blank=False)

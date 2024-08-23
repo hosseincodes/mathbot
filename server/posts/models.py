@@ -16,3 +16,8 @@ class Post(models.Model):
         on_delete = models.CASCADE,
         related_name='posts'
     )
+    likes = models.ManyToManyField(User, related_name='liked_posts', blank=True)
+
+    def likes_count(self):
+        return self.likes.count()
+
