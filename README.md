@@ -3,9 +3,11 @@
 </p>
 
 # mathbot
+
 Question & Answer Forum
 
 ## API endpoint
+
 ```
 List of available API (browseable) at /api
 * /accounts/register/
@@ -25,12 +27,14 @@ List of available API (browseable) at /api
 ## Installation
 
 Make sure you have following software installed in your system:
-* Python 3
-* Node.js
-* NPM
-* Git
+
+- Python 3
+- Node.js
+- NPM
+- Git
 
 First, we need to clone the repository
+
 ```
 git clone https://github.com/hosseincodes/mathbot.git
 ```
@@ -44,9 +48,10 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Install all required dependencies for frontend in mathbot/src folder by typing
+Install all required dependencies for frontend in mathbot/ folder by typing
+
 ```
-cd ../src
+cd ..
 npm i
 ```
 
@@ -72,7 +77,6 @@ python manage.py runserver
 Start development server
 
 ```
-cd src
 npm start
 ```
 
