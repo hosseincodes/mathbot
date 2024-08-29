@@ -3,7 +3,7 @@ import Creator from './Creator';
 import Loader from "./Loader";
 import axios from 'axios';
 
-function Response(props) {
+function Comment(props) {
 
     const {data} = props
     
@@ -34,4 +34,4 @@ function Response(props) {
     }
 }
 
-export default Response;
+export default Comment;
