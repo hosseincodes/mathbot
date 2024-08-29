@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Response from '../components/Response';
+import Comment from '../components/Comment';
 import { useParams , Link } from "react-router-dom";
 import { Helmet } from 'react-helmet';
 import Header from "../components/Header";
@@ -37,7 +37,7 @@ function Questions() {
 
         for (const link of data.comments){
 
-            fetchedData.unshift(<Response data={link} />)
+            fetchedData.unshift(<Comment data={link} />)
         }
 
         if (fetchedData.length === 0) {
