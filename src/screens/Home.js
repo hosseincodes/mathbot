@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import QuestionMiniList from '../components/QuestionMiniList';
 import { Helmet } from 'react-helmet';
 import Header from "../components/Header";
@@ -6,20 +6,6 @@ import Footer from "../components/Footer";
 import Sidebar from "../components/Sidebar";
 
 function Home() {
-
-    const [flag, setFlag] = useState(true);
-
-    const Secondpage = () => {
-        return setFlag(false)
-    }
-
-    function QuestionMiniListDisplay() {
-        if (flag === true) {
-            return <QuestionMiniList id = {1} />
-        } else {
-            return <QuestionMiniList id = {2} />
-        }
-    }
 
     return (
         <div>
@@ -40,13 +26,13 @@ function Home() {
 
                     <div className="col-md-9 responsive-box">
                         
-                        <QuestionMiniListDisplay/>
+                        <QuestionMiniList/>
 
                         <div className="col-md-12 col-xs-12">
                             <div className="row">
                                 <p>
-                                    <span style={flag === true ? {} : {display: 'none'}}>به دنبال بیشتر هستید؟ <span className="page2" onClick={Secondpage}>صفحه دوم سوالات </span> را بگردید. </span>
-                                    ما را در پاسخ به سوالات بی پاسخ یاری کنید.</p>
+                                    <span>به دنبال بیشتر هستید؟ <span className="page2">به زودی </span></span>
+                                </p>
                             </div>
                         </div>
 

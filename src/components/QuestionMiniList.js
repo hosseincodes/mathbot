@@ -3,9 +3,8 @@ import { Link } from "react-router-dom";
 import Loader from "./Loader";
 import Creator from './Creator';
 
-function QuestionMiniList(props) {
+function QuestionMiniList() {
 
-    const id = props.id
     const [lisitng, setListing] = useState([]);
     const [fetchError, setfetchError] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
@@ -13,7 +12,7 @@ function QuestionMiniList(props) {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('https://server.mathbot.ir/api/posts/?page=' + id);
+                const response = await fetch('https://server.mathbot.ir/api/posts/?page=' + 1);
                 const json = await response.json();
                 setIsLoading(false);
                 setListing(json.results);
@@ -23,7 +22,7 @@ function QuestionMiniList(props) {
         };
       
         fetchData();
-    },[id])
+    },[])
 
     if (isLoading) {
         if (!fetchError) {
