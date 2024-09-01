@@ -62,7 +62,7 @@ function QuestionMiniList() {
                                     ))}
                                 </div>
                                 <div className="col-md-2">
-                                    <p className="question-answer">{data.comments.length} پاسخ</p>
+                                    <p className="question-answer">{data.comments.length} <i class="fa-regular fa-comments"></i></p>
                                 </div>
                             </div>
 
