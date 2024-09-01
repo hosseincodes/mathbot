@@ -152,15 +152,12 @@ $font-size-little: 12px;
 .question-box {
     color: #fff;
     background: #212226;
-    box-shadow: 0 5px 10px 0 rgba(20, 83, 155, .05);
     padding: 5px 15px 5px 15px;
     border-radius: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     transition: all 0.2s ease;
     &:hover {
-        box-shadow: 0 20px 30px 0 rgba(20, 83, 155, .08);
-        -webkit-transform: translateY(-3px);
-        transform: translateY(-3px);
+        background: #323337;
         transition: all 0.2s ease;
     }
 }
@@ -324,8 +321,6 @@ $font-size-little: 12px;
 
 .forum-title-QuestionBox {
     position: relative;
-    margin-bottom: 20px;
-    border-bottom: 1px #eee solid;
 }
 
 .forum-title-QuestionBox h3 {
@@ -351,7 +346,7 @@ $font-size-little: 12px;
 }
 
 .post-content-box {
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .comment-button {
@@ -404,7 +399,7 @@ $font-size-little: 12px;
 }
 
 .sidebar-user-links {
-    color: #333333;
+    color: #fff;
 }
 
 .contact-links {
