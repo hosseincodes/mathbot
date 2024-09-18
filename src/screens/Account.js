@@ -145,12 +145,15 @@ function Account() {
                                         <div className="account-user-img-box-large">
                                             <img src={data.avatar} className="account-user-img" alt={data.name} />
                                         </div>
+                                        <p style={{color: "#fff", textAlign: "center", padding: "15px 0px 0px 0px"}}>{data.name}</p>
                                         <Link to={`/users/${data.username}`}>
-                                            <p style={{color: "#fff", textAlign: "center", padding: "15px 0px 0px 0px"}}>{data.name}</p>
+                                            <div className="profile-view">
+                                                <p>مشاهده پروفایل</p>
+                                            </div>
                                         </Link>
                                     </div>
 
-                                    <div className="account-sidebar-links"><span onClick={() => { setexpand(false) }} style={expand ? { } : {background: "#29a58d", color: "#fff"}}>پروفایل من</span></div>
+                                    <div className="account-sidebar-links"><span onClick={() => { setexpand(false) }} style={expand ? { } : {background: "#29a58d", color: "#fff"}}>داشبورد</span></div>
                                     <div className="account-sidebar-links"><span onClick={() => { setexpand(true) }} style={expand ? {background: "#29a58d", color: "#fff"} : { }}>ادیت پروفایل و تنظمیات</span></div>
                                     <div className="account-sidebar-links">
                                         <span 

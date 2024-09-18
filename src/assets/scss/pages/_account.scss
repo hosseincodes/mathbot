@@ -145,6 +145,26 @@
     }
 }
 
+.profile-view {
+    background: transparent;
+    color: #29a58d;
+    border-radius: 5px;
+    padding-top: 7px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 300;
+    font-size: 13px;
+    border: 1px solid #29a58d;
+    margin-top: 20px;
+    &:hover {
+        background: transparent;
+        color: #aae68b;
+        transition: all 0.3s ease;
+        border: 1px solid #aae68b;
+    }
+}
+
 .save-profile-box {
     background: #29a58d;
     color: #fff;
