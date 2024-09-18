@@ -138,11 +138,28 @@
     margin-top: 15px;
     .edit-profile-box-input {
         border-radius: 5px;
-        width: 50%;
+        width: 350px;
         padding: 5px;
         border: 0;
         background: #d1d1d1;
+        margin-top: 10px;
     }
+}
+
+.change-pass-box {
+    margin-right: 25px;
+}
+
+.change-pass-big-box {
+    border-radius: 5px;
+    padding: 7px;
+    text-decoration: none;
+    border: 1px solid #29a58d;
+    width: fit-content;
+}
+
+.change-pass-button {
+    cursor: pointer;
 }
 
 .profile-view {
