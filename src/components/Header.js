@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import logo from '../assets/images/logo.ico';
 import axios from 'axios';
 import IsAuthenticated from "../utils/IsAuthenticated";
 
@@ -60,12 +59,12 @@ function Header() {
 
                 </div>
 
-                <div className="col-md-7 header-responsive"></div>
+                <div className="col-md-5 header-responsive"></div>
 
-                <div className="col-md-2">
+                <div className="col-md-4">
                     <div className="logo-button">
                         <Link to="/">
-                            <img src={logo} className="logo-img" alt="mathbot logo" />
+                            <div className="site-title"><h3>Mathbot, Algorithm Arena</h3></div>
                         </Link>
                     </div>
                 </div>
