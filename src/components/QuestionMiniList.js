@@ -36,7 +36,7 @@ function QuestionMiniList() {
         }
     } else {
         return (
-            <div>
+            <>
                 {lisitng.map((data) =>
                     <div className="col-md-12 col-xs-12 responsive-box">
                         <div className="question-box">
@@ -80,7 +80,7 @@ function QuestionMiniList() {
                     </div>
                     )
                 }     
-            </div>
+            </>
         );    
     }    
     

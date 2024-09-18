@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Sidebar from "../components/Sidebar";
+import LeftSidebar from "../components/LeftSidebar";
 
 function Home() {
 
@@ -24,7 +25,7 @@ function Home() {
                         <Sidebar />
                     </div>
 
-                    <div className="col-md-9 responsive-box">
+                    <div className="col-md-6 responsive-box">
                         
                         <QuestionMiniList/>
 
@@ -36,6 +37,10 @@ function Home() {
                             </div>
                         </div>
 
+                    </div>
+
+                    <div className="col-md-3 responsive-box">
+                        <LeftSidebar />
                     </div>
 
                 </div>
