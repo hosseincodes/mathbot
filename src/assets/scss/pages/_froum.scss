@@ -10,7 +10,7 @@ $font-size-little: 12px;
 }
 
 .ask-input-title {
-    background: #f2f2f2;
+    background: #d1d1d1;
     width: 100%;
     border: 0;
     padding: 8px;
@@ -50,7 +50,7 @@ $font-size-little: 12px;
 }
 
 .ask-description-textarea {
-    background: #f2f2f2;
+    background: #d1d1d1;
     width: 100%;
     border: 0;
     padding: 8px;
@@ -71,7 +71,7 @@ $font-size-little: 12px;
 }
 
 .ask-input-tags {
-    background: #f2f2f2;
+    background: #d1d1d1;
     width: 100%;
     border: 0;
     padding: 12px 20px;
@@ -233,7 +233,7 @@ $font-size-little: 12px;
 }
 
 .your-answer-box {
-    background: #fff;
+    background: #212226;
     padding: 15px;
     border-radius: 15px;
 }
@@ -335,6 +335,7 @@ $font-size-little: 12px;
 
 .post-img-box {
     text-align: center;
+    margin-top: 15px;
     margin-bottom: 15px;
     border-radius: 10px;
     background: #000;
@@ -391,7 +392,7 @@ $font-size-little: 12px;
 }
 
 .sidebar {
-    padding: 10px 15px 5px 15px;
+    padding: 10px 15px 10px 15px;
     border-radius: 10px;
     background: #212226;
     box-shadow: 0 5px 10px 0 rgba(20, 83, 155, .05);
