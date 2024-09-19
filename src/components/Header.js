@@ -57,6 +57,12 @@ function Header() {
                         </div>
                     </Link>
 
+                    <Link title="صفحه اصلی" to="/">
+                        <div className="header-buttons">
+                            <i className="fa-solid fa-house header-buttons-ico"></i>
+                        </div>
+                    </Link>
+
                 </div>
 
                 <div className="col-md-5 header-responsive"></div>
