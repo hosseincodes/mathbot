@@ -22,9 +22,10 @@
 }
 
 .account-user-img-small {
-    width: 60px;
-    height: 60px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
+    margin: 15px;
 }
 
 .account-user-img-box {
@@ -73,9 +74,31 @@
 }
 
 .change-img {
+    text-align: right;
+}
+
+.edit-box-input {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
     position: absolute;
-    left: 20px;
-    top: 0;
+    z-index: -1;
+    
+}
+
+.edit-box-input + label {
+    padding: 5px 10px;
+    color: white;
+    background-color: rgb(41, 165, 141);
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.edit-box-input:focus + label,
+.edit-box-input + label:hover {
+    background-color: #aae68b;
 }
 
 .account-sidebar-links {
@@ -150,7 +173,7 @@
     margin-right: 25px;
 }
 
-.change-pass-big-box {
+.change-big-box {
     border-radius: 5px;
     padding: 7px;
     text-decoration: none;
@@ -158,7 +181,7 @@
     width: fit-content;
 }
 
-.change-pass-button {
+.change-button {
     cursor: pointer;
 }
 

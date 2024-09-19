@@ -179,17 +179,18 @@ function Account() {
                                             </div>
                                         </div>
                                         <div style={expand ? { } : {display: 'none'}}>
+                                            <p>پس از اعمال تغییرات مورد نظر، پسورد فعلی را وارد و سپس بر روی دکمه ذخیره تغییرات کلیک کنید.</p>
                                             <form onSubmit={handleSubmit}>
-                                                <div className="edit-profile-box">
-                                                    <span>تصویر پروفایل : </span>
-                                                    <span onClick={() => { setEditImage(true) }}>
-                                                        <i style={{color: "#29a58d", cursor: "pointer"}} className="fa-solid fa-pen-to-square"></i>
-                                                    </span>
-                                                    <div style={EditImage ? {} : {display: 'none'}} className='edit-box'>
-                                                        <input name="avatar" type="file" onChange={handleFileSelect} />
-                                                    </div>
-                                                    <div className="account-user-img-box-large change-img">
-                                                        <img src={image} className="account-user-img-small" alt={data.name}/>
+                                                <div className="edit-profile-box change-big-box">
+                                                    <span className='change-button' onClick={() => { setEditImage(true) }}><i style={{color: "#29a58d"}} className="fa-solid fa-pen-to-square"></i> تغییر تصویر پروفایل</span>
+                                                    <div style={EditImage ? {} : {display: 'none'}}>
+                                                        <div className="account-user-img-box-large change-img">
+                                                            <img src={image} className="account-user-img-small" alt={data.name}/>
+                                                        </div>
+                                                        <div className='edit-box'>
+                                                            <input className='edit-box-input' name="avatar" id="file" type="file" onChange={handleFileSelect} />
+                                                            <label for="file">آپلود تصویر</label>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div className="edit-profile-box">
@@ -204,8 +205,8 @@ function Account() {
                                                     <span>ایمیل :</span><br />
                                                     <input placeholder={data.email} name="email" onChange={handleChange} className="edit-profile-box-input" type="text"/>
                                                 </div>
-                                                <div className="edit-profile-box change-pass-big-box">
-                                                    <span className='change-pass-button' onClick={() => { setEditPassword(true) }}><i style={{color: "#29a58d"}} className="fa-solid fa-pen-to-square"></i> تغییر پسورد</span>
+                                                <div className="edit-profile-box change-big-box">
+                                                    <span className='change-button' onClick={() => { setEditPassword(true) }}><i style={{color: "#29a58d"}} className="fa-solid fa-pen-to-square"></i> تغییر پسورد</span>
                                                     <div style={EditPassword ? {} : {display: 'none'}} className='edit-box change-pass-box'>
                                                         <span>پسورد جدید: </span><br />
                                                         <input name="new_password" onChange={handleChange} className="edit-profile-box-input" type="password" />
