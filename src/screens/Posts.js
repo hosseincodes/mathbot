@@ -7,6 +7,8 @@ import Footer from "../components/Footer";
 import axios from 'axios';
 import UploadComment from '../components/UploadComment';
 import Loader from "../components/Loader";
+import Sidebar from "../components/Sidebar";
+import LeftSidebar from "../components/LeftSidebar";
 
 function Posts() {
 
@@ -68,8 +70,12 @@ function Posts() {
                             <div className="breadcrumb">
                                 <h6><Link to="/">انجمن</Link> / <Link to={`/posts/${data.id}`}>{data.title}</Link></h6>
                             </div>
+
+                            <div className="col-md-3 responsive-box">
+                                <Sidebar />
+                            </div>
                     
-                            <div className="col-md-12 col-xs-12 responsive-box">
+                            <div className="col-md-6 col-xs-12 responsive-box">
                                 <div className="post-box-big">
                                     <div className="forum-title-postBox">
                                         <h3>{data.title}</h3>
@@ -111,19 +117,24 @@ function Posts() {
                                         )}
                                     </div>
                                 </div>
+
+                                <div className="forum-title-posts">
+                                    <h3>دیدگاه ها</h3>
+                                </div>
+
+                                {SendCommentsLink()}
+
+                                <div className="forum-title-posts">
+                                    <h5>نظر خود را درباره این پست بنویسید</h5>
+                                </div>
+                        
+                                <UploadComment postId={id} />
+
                             </div>
 
-                            <div className="forum-title-posts">
-                                <h3>دیدگاه ها</h3>
+                            <div className="col-md-3 responsive-box">
+                                <LeftSidebar />
                             </div>
-
-                            {SendCommentsLink()}
-
-                            <div className="forum-title-posts">
-                                <h5>نظر خود را درباره این پست بنویسید</h5>
-                            </div>
-                    
-                            <UploadComment postId={id} />
 
                         </div>
 
