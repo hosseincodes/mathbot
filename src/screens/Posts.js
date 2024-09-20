@@ -8,7 +8,7 @@ import axios from 'axios';
 import UploadComment from '../components/UploadComment';
 import Loader from "../components/Loader";
 
-function Questions() {
+function Posts() {
 
     const {id} = useParams();    
 
@@ -42,9 +42,7 @@ function Questions() {
 
         if (fetchedData.length === 0) {
             return (
-                <div>
-                    <p>هیچ پاسخی موجود نیست. اولین کسی باشید که به این سوال پاسخ می دهد</p>
-                </div>
+                <></>
             )
         } else {
             return fetchedData
@@ -68,14 +66,14 @@ function Questions() {
                             <div className="col-md-12 responsive-box">
 
                             <div className="breadcrumb">
-                                <h6><Link to="/">انجمن</Link> / <Link to={`/questions/${data.id}`}>{data.title}</Link></h6>
+                                <h6><Link to="/">انجمن</Link> / <Link to={`/posts/${data.id}`}>{data.title}</Link></h6>
                             </div>
                     
                             <div className="col-md-12 col-xs-12 responsive-box">
-                                <div className="question-box-big">
-                                    <div className="forum-title-QuestionBox">
+                                <div className="post-box-big">
+                                    <div className="forum-title-postBox">
                                         <h3>{data.title}</h3>
-                                        <div className="row question-box-big-details">
+                                        <div className="row post-box-big-details">
                                             <Link className="username-answer" to={`/users/${creator.username}`}>
                                                 <div className="col-md-4 col-sm-4 col-xs-4 forum-title-ask">
                                                     <div className="account-user-img-box">
@@ -103,26 +101,26 @@ function Questions() {
                                         <p>{data.content}</p>
                                     </div>
                                     
-                                    <div className="question-tag-box">
+                                    <div className="post-tag-box">
                                         {data.tags.length === 0 ? (
                                             <span style={{fontSize : "12px"}}>بدون برچسب</span>
                                         ) : (
                                             data.tags.split(",").map((e) => (
-                                                <div className="question-tags">{e}</div>
+                                                <div className="post-tags">{e}</div>
                                             ))
                                         )}
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="forum-title-questions">
-                                <h3>پاسخ ها</h3>
+                            <div className="forum-title-posts">
+                                <h3>دیدگاه ها</h3>
                             </div>
 
                             {SendCommentsLink()}
 
-                            <div className="forum-title-questions">
-                                <h3>پاسخ شما</h3>
+                            <div className="forum-title-posts">
+                                <h5>نظر خود را درباره این پست بنویسید</h5>
                             </div>
                     
                             <UploadComment postId={id} />
@@ -141,4 +139,4 @@ function Questions() {
     )
 }
 
-export default Questions;
+export default Posts;

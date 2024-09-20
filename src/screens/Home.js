@@ -1,5 +1,5 @@
 import React from "react";
-import QuestionMiniList from '../components/QuestionMiniList';
+import PostsListHomePage from '../components/PostsListHomePage';
 import { Helmet } from 'react-helmet';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -27,7 +27,7 @@ function Home() {
 
                     <div className="col-md-6 responsive-box">
                         
-                        <QuestionMiniList/>
+                        <PostsListHomePage/>
 
                         <div className="col-md-12 col-xs-12">
                             <div className="row">

@@ -94,7 +94,7 @@ function Account() {
         if (fetchedData.length === 0) {
             return (
                 <div>
-                    <p>هنوز هیچ سوالی ثبت نکرده اید</p>
+                    <p>هنوز هیچ پستی ثبت نکرده اید</p>
                 </div>
             )
         } else {
@@ -111,7 +111,7 @@ function Account() {
         if (fetchedData.length === 0) {
             return (
                 <div>
-                    <p>هنوز هیچ پاسخی ثبت نکرده اید</p>
+                    <p>هنوز هیچ دیدگاهی ارسال نکرده اید</p>
                 </div>
             )
         } else {
@@ -167,14 +167,14 @@ function Account() {
                                     <div className="account-section">
                                         <div style={expand ? {display: 'none'} : { }}>
                                             <h4 style={{fontWeight: "900"}}>{data.name}</h4>
-                                            <Link style={{left: "20px"}} className="title-a not-display-in-mobile" to="questions/ask">
-                                                <h6>طرح پرسش جدید</h6>
+                                            <Link style={{left: "20px"}} className="title-a not-display-in-mobile" to="post/create">
+                                                <h6>نوشتن پست جدید</h6>
                                             </Link>
                                             <p>{data.bio}</p>
                                             <div className="activity">
-                                                <h5 className="h5-mini-profile">سوال های من</h5>
+                                                <h5 className="h5-mini-profile">پست های من</h5>
                                                     {SendPostsLink()}
-                                                <h5 className="h5-mini-profile">پاسخ های من</h5>
+                                                <h5 className="h5-mini-profile">دیدگاه های من</h5>
                                                     {SendCommentsLink()}
                                             </div>
                                         </div>

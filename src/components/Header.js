@@ -45,7 +45,7 @@ function Header() {
                         </Link>
                     )}
 
-                    <Link title="پست جدید" to="/questions/ask">
+                    <Link title="پست جدید" to="/post/create">
                         <div className="header-buttons">
                             <i className="fas fa-plus header-buttons-ico"></i>
                         </div>

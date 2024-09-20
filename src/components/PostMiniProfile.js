@@ -44,7 +44,7 @@ function PostMiniProfile(props) {
                     </div>
                     <div className="col-xs-1 margin-mobile-responsive"></div>
                     <div className="col-md-11 col-xs-10">
-                        <Link to={`/questions/${postData.id}`}><h5>{postData.title}</h5></Link>
+                        <Link to={`/posts/${postData.id}`}><h5>{postData.title}</h5></Link>
                     </div>
                 </div>
             </div>

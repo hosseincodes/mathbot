@@ -25,18 +25,18 @@ function UploadComment(props) {
       try {
         const response = await TokenConfig.post("/comments/create/", formData);
         console.log("Post created:", response.data);
-        alert("پاسخ با موفقیت آپلود شد");
+        alert("دیدگاه شما با موفقیت ارسال شد");
         window.location.reload();
       } catch (error) {
         console.error("Error creating post:", error.response.data);
-        alert("پاسخ آپلود نشد! یه مشکلی وجود داره")
+        alert("ارسال نشد! یه مشکلی وجود داره")
       }
     };
 
     if (IsAuthenticated() === "Not Authenticated") {
       return (
         <>
-          <p>جهت ثبت پاسخ ابتدا <Link to="/login">وارد شوید</Link></p>
+          <p>جهت ارسال دیدگاه ابتدا <Link to="/login">وارد شوید</Link></p>
         </>
       )
     } else {
@@ -44,8 +44,6 @@ function UploadComment(props) {
         <div className="your-answer-box">
             <form onSubmit={handleSubmit}>
                 <div className="ask-description">
-                    <h4>توضیحات</h4>
- 
                     <textarea
                         className='ask-description-textarea'
                         name="content"
@@ -54,7 +52,7 @@ function UploadComment(props) {
 
                 </div>
                 <div className="ask-button">
-                    <button className="ask-input-button" type="submit">ارسال پاسخ</button>
+                    <button className="ask-input-button" type="submit">ارسال</button>
                 </div>
             </form>
         </div>

@@ -23,7 +23,7 @@ function Comment(props) {
         return (
             <div>
                 <div className="col-md-12 col-xs-12 responsive-box" id={commentData.id}>
-                    <div className="question-answer-big">
+                    <div className="post-answer-big">
                         <Creator data = {commentData.creator} />
                         <h6>&nbsp; {commentData.created_at}</h6>
                         <p>{commentData.content}</p>

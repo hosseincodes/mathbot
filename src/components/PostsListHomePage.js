@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Loader from "./Loader";
 import Creator from './Creator';
 
-function QuestionMiniList() {
+function PostsListHomePage() {
 
     const [lisitng, setListing] = useState([]);
     const [fetchError, setfetchError] = useState(false);
@@ -39,8 +39,8 @@ function QuestionMiniList() {
             <>
                 {lisitng.map((data) =>
                     <div className="col-md-12 col-xs-12 responsive-box">
-                        <div className="question-box">
-                            <Link className="question-box-link" to={`/questions/${data.id}`}>
+                        <div className="post-box">
+                            <Link className="post-box-link" to={`/posts/${data.id}`}>
                                 <h4>{data.title}</h4>
                                 {data.image != null ? (
                                     <div className="post-img-box">
@@ -52,27 +52,27 @@ function QuestionMiniList() {
                                     </div>
                                 )}
                             </Link>
-                            <div className="row question-box-bottom">
+                            <div className="row post-box-bottom">
                                 <div className="col-md-4">
                                     <Creator data={data.creator} />
                                 </div>
                                 <div className="col-md-6">
                                     {data.tags.split(",").map((e) => (
-                                        <div className="question-tags-homepage">{e}</div>
+                                        <div className="post-tags-homepage">{e}</div>
                                     ))}
                                 </div>
                                 <div className="col-md-2">
-                                    <p className="question-answer">{data.comments.length} <i class="fa-regular fa-comments"></i></p>
+                                    <p className="post-answer">{data.comments.length} <i class="fa-regular fa-comments"></i></p>
                                 </div>
                             </div>
 
                             {/* mobile display */}
-                            <div className="row question-box-bottom-mobile-display">
+                            <div className="row post-box-bottom-mobile-display">
                                 <div className="col-xs-8">
                                     <Creator data={data.creator} />
                                 </div>
                                 <div className="col-xs-4">
-                                    <span className="number-of-comments-homepage">{data.comments.length} پاسخ</span>
+                                    <span className="number-of-comments-homepage">{data.comments.length} دیدگاه</span>
                                 </div>
                             </div>
                             
@@ -86,4 +86,4 @@ function QuestionMiniList() {
     
 }
 
-export default QuestionMiniList;
+export default PostsListHomePage;

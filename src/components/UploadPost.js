@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import config from '../utils/config';
 import IsAuthenticated from "../utils/IsAuthenticated";
 
-function AskBox() {
+function UploadPost() {
 
     const [dataToUpload, setDataToUpload] = useState({
         title: '',
@@ -75,7 +75,7 @@ function AskBox() {
     if (IsAuthenticated() === "Not Authenticated") {
         return (
             <>
-              <p>جهت ثبت سوال ابتدا <Link to="/login">وارد شوید</Link></p>
+              <p>جهت ارسال پست ابتدا <Link to="/login">وارد شوید</Link></p>
             </>
         )
     } else {
@@ -86,15 +86,15 @@ function AskBox() {
                         <>
                             <div className='success-actions'><p>پست با موفقیت آپلود شد</p></div>
                             <div>
-                                <p>سوال آپلود شده: </p>
+                                <p>پست ارسال شده: </p>
                                 <div className="col-md-12 col-xs-12 responsive-box">
-                                    <div className="question-box">
-                                        <Link className="question-box-link" to={`/questions/${data.id}`}>
+                                    <div className="post-box">
+                                        <Link className="post-box-link" to={`/posts/${data.id}`}>
                                             <h4>{data.title}</h4>
                                         </Link>
-                                        <div className="row question-box-bottom">
+                                        <div className="row post-box-bottom">
                                             <div className="col-lg-3 col-md-4 col-xs-12 col-sm-4">
-                                                <p className="question-date">{data.created_at}</p>
+                                                <p className="post-date">{data.created_at}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -103,7 +103,7 @@ function AskBox() {
                         </>
                     ) : <div className='faile-actions'><p>پست آپلود نشد! یه مشکلی وجود داره</p></div>}
                     <div className='back-to-ask-box' onClick={() => { setsubmit(false) }}>
-                        <p>برگشت به صفحه ثبت سوال جدید</p>
+                        <p>برگشت به صفحه ثبت پست جدید</p>
                     </div>
                 </>
             )
@@ -113,13 +113,12 @@ function AskBox() {
                     <div className="ask-box">
                         <form onSubmit={handleSubmit}>
                             <div className="ask-title">
-                                <h4>* نام سوال</h4>
+                                <h4>* عنوان</h4>
                                 <input
                                     name="title"
                                     maxlength="90"
                                     onChange={handleChange}
                                     className="ask-input-title"
-                                    placeholder="مثلا کمترین تعداد علامت جمع مورد نیاز برای نمایش حاصل عددی عبارت کدام است؟"
                                 />
                             </div>
 
@@ -157,13 +156,13 @@ function AskBox() {
                                 }} className="tags-button">افزودن</span>
                                 {tags.map((e, index) => (
                                     <div style={{display: "inline-block"}} key={index} >
-                                        <span className='question-tags'>{e} <span onClick={() => {removeTag(index)}}><i style={{cursor: "pointer"}} className="fa-solid fa-xmark"></i></span></span>
+                                        <span className='post-tags'>{e} <span onClick={() => {removeTag(index)}}><i style={{cursor: "pointer"}} className="fa-solid fa-xmark"></i></span></span>
                                     </div>
                                 ))}
                             </div>
 
                             <div className="ask-button">
-                                <button className="ask-input-button" type="submit">ارسال سوال</button>
+                                <button className="ask-input-button" type="submit">ارسال</button>
                                 {loader ? (
                                     <div className='uploading-loader-box'>
                                         <p>در حال اپلود کمی صبر کنید ...</p>
@@ -178,4 +177,4 @@ function AskBox() {
     }
 }
 
-export default AskBox;
+export default UploadPost;

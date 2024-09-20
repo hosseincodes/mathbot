@@ -4,7 +4,7 @@
 
 # mathbot
 
-Question & Answer Forum
+post & Answer Forum
 
 ## API endpoint
 

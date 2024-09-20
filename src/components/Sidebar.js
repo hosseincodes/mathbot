@@ -11,14 +11,13 @@ function Sidebar() {
             {username === "Not Authenticated" ? (
                 <Link to="/login">
                     <div className="sidebar login-text-green">
-                        <p>برای ثبت سوال یا پاسخ دادن به سوال های بقیه وارد حساب کاربری خود شوید</p>
+                        <p>برای شرکت در مسابقات و فعالیت در انجمن وارد حساب کاربری خود شوید</p>
                     </div>
                 </Link>
             ) : (
                 <div className="sidebar">
                     <Link className="sidebar-user-links" to={`/users/${username}`}><p><i class="fa-solid fa-user"></i> پروفایل من</p></Link>
-                    <Link className="sidebar-user-links" to="/soon"><p><i class="fa-regular fa-bookmark"></i> بعدا حل می کنم</p></Link>
-                    <Link className="sidebar-user-links" to="/soon"><p><i class="fa-regular fa-thumbs-up"></i> سوال های مورد علاقه</p></Link>
+                    <Link className="sidebar-user-links" to="/soon"><p><i class="fa-regular fa-bookmark"></i> ذخیره</p></Link>
                 </div>
             )}
             <div className="sidebar contact-links">

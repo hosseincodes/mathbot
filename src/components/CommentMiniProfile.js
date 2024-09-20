@@ -44,7 +44,7 @@ function CommentMiniProfile(props) {
                     </div>
                     <div className="col-xs-1  margin-mobile-responsive"></div>
                     <div className="col-md-11 col-xs-10">
-                        <Link to={`/questions/${commentData.post}`}><h5>{commentData.content}</h5></Link>
+                        <Link to={`/posts/${commentData.post}`}><h5>{commentData.content}</h5></Link>
                     </div>
                 </div>
             </div>

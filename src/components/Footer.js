@@ -35,7 +35,7 @@ function Footer() {
                         )}
 
                         
-                        <Link to="/questions/ask">
+                        <Link to="/post/create">
                             <span className="mobile-header-button">
                                 <i className="fas fa-plus header-buttons-ico"></i>
                             </span>

@@ -133,7 +133,7 @@ $font-size-little: 12px;
     text-decoration: none;
     line-height: 25px;
     border: 0;
-    margin: 20px 0 0;
+    margin-top: 10px;
 }
 
 .breadcrumb {
@@ -145,11 +145,11 @@ $font-size-little: 12px;
     color: #fff;
 }
 
-.question-search-box {
+.post-search-box {
     margin-top: 20px;
 }
 
-.question-box {
+.post-box {
     color: #fff;
     background: #212226;
     padding: 5px 15px 5px 15px;
@@ -162,23 +162,23 @@ $font-size-little: 12px;
     }
 }
 
-.question-box h4 {
+.post-box h4 {
     font-weight: 600;
     line-height: 30px;
 }
 
-.question-box p {
+.post-box p {
     text-align: justify;
     line-height: 22px;
     font-size: $font-size-little;
 }
 
-.question-box-bottom {
+.post-box-bottom {
     margin-top: 15px;
     padding: 2px 0 5px 0;
 }
 
-.question-box-big {
+.post-box-big {
     background: #212226;
     box-shadow: 0 5px 10px 0 rgba(20, 83, 155, .05);
     padding: 5px 25px 10px 25px;
@@ -186,12 +186,12 @@ $font-size-little: 12px;
     margin-bottom: 20px;
 }
 
-.question-box-big-p {
+.post-box-big-p {
     line-height: 32px;
     font-size: 16px;
 }
 
-.question-box-big-tags {
+.post-box-big-tags {
     font-size: $font-size-little;
     background: #eee;
     padding: 10px;
@@ -199,7 +199,7 @@ $font-size-little: 12px;
     max-width: -moz-fit-content;
 }
 
-.question-answer-big {
+.post-answer-big {
     background: #212226;
     box-shadow: 0 5px 10px 0 rgba(20, 83, 155, .05);
     padding: 15px 15px 15px 15px;
@@ -208,7 +208,7 @@ $font-size-little: 12px;
     left: 15px;
 }
 
-.question-answer-big-p {
+.post-answer-big-p {
     line-height: 30px;
     margin-top: 15px;
 }
@@ -217,7 +217,7 @@ $font-size-little: 12px;
     margin-right: 45px;
 }
 
-.question-answer {
+.post-answer {
     padding: 5px 5px 5px 5px;
     max-width: max-content;
     border-radius: 5px;
@@ -225,7 +225,7 @@ $font-size-little: 12px;
     left: 15px;
 }
 
-.question-visit {
+.post-visit {
     padding: 5px 5px 5px 0px;
     max-width: max-content;
     position: absolute;
@@ -238,7 +238,7 @@ $font-size-little: 12px;
     border-radius: 15px;
 }
 
-.question-tags {
+.post-tags {
     background: #29a58d none repeat scroll 0% 0%;
     padding: 5px 10px;
     margin-left: 5px;
@@ -248,11 +248,11 @@ $font-size-little: 12px;
     display: inline-block;
 }
 
-.question-tag-box {
+.post-tag-box {
     margin: 20px 0 15px 0;
 }
 
-.question-tags-homepage {
+.post-tags-homepage {
     padding: 0 5px;
     max-width: max-content;
     display: inline-block;
@@ -262,7 +262,7 @@ $font-size-little: 12px;
     margin: 8px 0 0 5px;
 }
 
-.question-tags-homepage-mobile-display {
+.post-tags-homepage-mobile-display {
     background: rgb(242, 242, 242) none repeat scroll 0% 0%;
     border-radius: 5px;
     color: rgb(117, 117, 117);
@@ -272,7 +272,7 @@ $font-size-little: 12px;
     margin-left: 5px;
 }
 
-.question-date {
+.post-date {
     padding: 5px 5px 5px 0px;
     max-width: max-content;
     opacity: 0.7;
@@ -293,7 +293,7 @@ $font-size-little: 12px;
     height: auto;
 }
 
-.question-box-link {
+.post-box-link {
     color: #fff;
     &:hover {
         color: #fff;
@@ -319,15 +319,15 @@ $font-size-little: 12px;
     margin-bottom: 40px;
 }
 
-.forum-title-QuestionBox {
+.forum-title-postBox {
     position: relative;
 }
 
-.forum-title-QuestionBox h3 {
+.forum-title-postBox h3 {
     line-height: 30px;
 }
 
-.forum-title-questions {
+.forum-title-posts {
     position: relative;
     margin-bottom: 40px;
     margin-top: 40px;

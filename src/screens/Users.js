@@ -32,7 +32,7 @@ function Users() {
         if (fetchedData.length === 0) {
             return (
                 <div style={{textAlign: "center"}}>
-                    <p>هیچ سوالی توسط <span>{data.name}</span> ثبت نشده است</p>
+                    <p>هیچ پستی توسط <span>{data.name}</span> ثبت نشده است</p>
                 </div>
             )
         } else {
