@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Sidebar from "../components/Sidebar";
 import LeftSidebar from "../components/LeftSidebar";
+import ContestLargeBoxIntroduction from "../components/ContestLargeBoxIntroduction";
 
 function Home() {
 
@@ -20,6 +21,8 @@ function Home() {
 
             <div className="section">
                 <div className="container">
+
+                    <ContestLargeBoxIntroduction />
 
                     <div className="col-md-3 responsive-box">
                         <Sidebar />
