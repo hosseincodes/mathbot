@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import IsAuthenticated from "../utils/IsAuthenticated";
 import { Link } from "react-router-dom";
+import axios from 'axios';
 
 function Sidebar() {
 
     const username = IsAuthenticated()
+    const [data, setdata] = useState([])
+
+    useEffect(() => {
+        if (IsAuthenticated() !== "Not Authenticated") {
+            axios.get("https://server.mathbot.ir/api/accounts/" + IsAuthenticated()).then((res) => {
+                setdata(res.data)
+            })
+        }
+    }, [])
     
     return (
         <>
@@ -16,7 +26,14 @@ function Sidebar() {
                 </Link>
             ) : (
                 <div className="sidebar">
-                    <Link className="sidebar-user-links" to={`/users/${username}`}><p><i class="fa-solid fa-user"></i> پروفایل من</p></Link>
+
+                    <div className="user-data-sidebar">
+                        <Link className="sidebar-user-links" to={`/users/${username}`}>
+                            <img src={data.avatar} className="account-user-img" alt={data.name} />
+                            <h4>{data.name}</h4>
+                        </Link>
+                        <h5>{data.bio}</h5>
+                    </div>
                     <Link className="sidebar-user-links" to="/soon"><p><i class="fa-regular fa-bookmark"></i> ذخیره</p></Link>
                 </div>
             )}
