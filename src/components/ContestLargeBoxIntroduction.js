@@ -1,5 +1,6 @@
 import React from "react";
 import testImg from '../testimg.png'
+import { Link } from "react-router-dom";
 
 function ContestLargeBoxIntroduction() {
 
@@ -9,19 +10,21 @@ function ContestLargeBoxIntroduction() {
                 <div className="post-box">
                     
                     <div className="row">
-                        <div className="col-md-2 col-xs-3">
-                            <img src={testImg} className="contest-img"/>
+                        <div className="col-md-1 col-xs-0">
+                            <img src={testImg} className="contest-img" alt="contest img"/>
                         </div>
-                        <div className="col-md-8 col-xs-7">
+                        <div className="col-md-9 col-xs-12">
                             <h5>مسابقه هفتگی مث بات دوره اول</h5>
-                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد</p>
-                            <p>1532 شرکت کننده</p>
-                            <p>
-                                تاریخ برگزاری: ۳ مهر ۱۴۰۳ ساعت ۲۲:۳۰
-                            </p>
+                            <span style={{marginLeft: "5px", lineHeight: "30px"}}><i class="fa-solid fa-user-group"></i> 1532 شرکت کننده </span>
+                            <span style={{marginLeft: "5px", lineHeight: "30px"}}><i class="fa-solid fa-clock"></i> تاریخ برگزاری: ۳ مهر ۱۴۰۳ ساعت ۲۲:۳۰ </span>
+                            <span style={{marginLeft: "5px", lineHeight: "30px"}}><i class="fa-solid fa-location-dot"></i> شیراز، دانشگاه صنعتی شیراز</span>
                         </div>
-                        <div className="col-md-2 col-xs-2">
-                            <button>ثبت نام</button>
+                        <div className="col-md-2 col-xs-0">
+                            <Link to="/soon">
+                                <button className="contest-register-button">
+                                    ثبت نام
+                                </button>
+                            </Link>
                         </div>
                     </div>
 

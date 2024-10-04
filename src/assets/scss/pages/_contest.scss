@@ -23,7 +23,16 @@
 
 .contest-img {
     border-radius: 10px;
-    height: 180px;
-    width: 180px;
+    height: 50px;
+    width: 50px;
+    margin: 10px 0;
+}
+
+.contest-register-button {
+    border-radius: 5px;
+    border: 0;
+    background: #29a58d;
+    color: #fff;
+    padding: 8px;
     margin: 10px 0;
 }
