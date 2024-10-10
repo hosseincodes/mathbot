@@ -4,6 +4,7 @@ import Home from './screens/Home';
 import Contact from './screens/Contact';
 import PostCreate from './screens/PostCreate';
 import Posts from './screens/Posts';
+import Contest from './screens/Contest';
 import Login from './screens/Login';
 import Register from './screens/Register';
 import Account from './screens/Account';
@@ -27,6 +28,7 @@ class Router extends Component {
                     <Route path="/notifications" component={Notifications} exact />
                     <Route path="/users/:username" component={Users} exact />
                     <Route path="/posts/:id" component={Posts} exact />
+                    <Route path="/contests/:id" component={Contest} exact />
                     <Route component={NotFoundPage} exact />
                 </Switch>
             </BrowserRouter>
