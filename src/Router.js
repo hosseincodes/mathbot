@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from './screens/Home';
-import Contact from './screens/Contact';
+import About from './screens/About';
 import PostCreate from './screens/PostCreate';
 import Posts from './screens/Posts';
 import Contest from './screens/Contest';
@@ -19,7 +19,7 @@ class Router extends Component {
             <BrowserRouter>
                 <Switch>
                     <Route path="/" component={Home} exact />
-                    <Route path="/contact" component={Contact} exact />
+                    <Route path="/about" component={About} exact />
                     <Route path="/post/create" component={PostCreate} exact />
                     <Route path="/login" component={Login} exact />
                     <Route path="/register" component={Register} exact />

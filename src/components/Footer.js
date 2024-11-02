@@ -9,7 +9,7 @@ function Footer() {
             <div className="container ">
                 <div className="row ">
                     <div className="footerBox">
-                        <p>به یاد <a target="_blank" rel="noreferrer" href="https://fa.wikipedia.org/wiki/%D9%85%D8%B1%DB%8C%D9%85_%D9%85%DB%8C%D8%B1%D8%B2%D8%A7%D8%AE%D8%A7%D9%86%DB%8C">مریم میرزاخانی</a> / <Link to="/contact">تماس با ما</Link></p>
+                        <p>به یاد <a target="_blank" rel="noreferrer" href="https://fa.wikipedia.org/wiki/%D9%85%D8%B1%DB%8C%D9%85_%D9%85%DB%8C%D8%B1%D8%B2%D8%A7%D8%AE%D8%A7%D9%86%DB%8C">مریم میرزاخانی</a> / <Link to="/about">درباره ما</Link></p>
                     </div>
                     <div className="mobile-header">
                         
