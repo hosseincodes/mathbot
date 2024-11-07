@@ -35,6 +35,8 @@ server/accounts/migrations
 server/accounts/__pycache__
 server/contests/migrations
 server/contests/__pycache__
+server/teams/migrations
+server/teams/__pycache__
 server/server/__pycache__
 
 # database
