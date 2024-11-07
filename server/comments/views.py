@@ -3,7 +3,7 @@ from .models import Comment
 from .serializers import CommentSerializer, CommentCreateSerializer
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.authentication import JWTAuthentication
-from .permissions import IsOwnerOrAdmin
+from ..permissions import IsOwnerOrAdmin
 
 class CommentsListAPIView(generics.ListAPIView):
     queryset = Comment.objects.all().order_by('-created_at')
