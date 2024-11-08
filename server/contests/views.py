@@ -51,6 +51,8 @@ class ContestsDetailAPIView(generics.RetrieveAPIView):
 
 
 class AddUserToTeamView(APIView):
+    permission_classes = [IsAuthenticated]
+    authentication_classes = [JWTAuthentication]
     def post(self, request, *args, **kwargs):
         username = request.data.get("username")
         
@@ -70,3 +72,18 @@ class AddUserToTeamView(APIView):
         user_profile_to_add.save()
         
         return Response({"success": f"{username} به تیم اضافه شد"}, status=status.HTTP_200_OK)
+
+class CreateTeamView(APIView):
+    permission_classes = [IsAuthenticated]
+    authentication_classes = [JWTAuthentication]
+    def post(self,request,*args,**kwargs):
+        team_name = request.data.get("team_name")
+        team_admin = request.user.profile
+        if team_admin.team:
+            return Response({"error":"شما عضو تیم دیگری هستید "},status=status.HTTP_400_BAD_REQUEST)
+        new_team = Team(name=team_name)
+        new_team.save()
+        team_admin.is_admin = True
+        team_admin.team = new_team
+        team_admin.save()
+        return Response({'message':'تیم {team_name} با موفقیت ساخته شد و آماده عضوگیری است.'},status=status.HTTP_200_OK)
