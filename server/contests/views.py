@@ -87,3 +87,36 @@ class CreateTeamView(APIView):
         team_admin.team = new_team
         team_admin.save()
         return Response({'message':'تیم {team_name} با موفقیت ساخته شد و آماده عضوگیری است.'},status=status.HTTP_200_OK)
+    
+
+
+
+class LeaveTeamView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request, *args, **kwargs):
+        user_profile = request.user.profile          
+        if not user_profile.team:
+            return Response({"error": "شما عضو هیچ تیمی نیستید"}, status=status.HTTP_400_BAD_REQUEST)
+      
+        # If the user is the admin, delete the team and remove all members
+        if user_profile.is_admin:
+            team = user_profile.team
+            team_members = UserProfile.objects.filter(team=team)
+            
+            # Set the team and admin status to None/False for all members
+            for member in team_members:
+                member.team = None
+                member.is_admin = False
+                member.save()
+                
+            team.delete()
+            
+            return Response({"message": "تیم با موفقیت حذف شد، زیرا مدیر تیم آن را ترک کرد."}, status=status.HTTP_200_OK)
+        
+        user_profile.team = None
+        user_profile.is_admin = False
+        user_profile.save()
+        
+        return Response({"message": "شما با موفقیت تیم را ترک کردید"}, status=status.HTTP_200_OK)
+
