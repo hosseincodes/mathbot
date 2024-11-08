@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
+from contests.models import Team
 
 class UserProfile(models.Model):
     user = models.OneToOneField(
@@ -19,7 +20,7 @@ class UserProfile(models.Model):
     links = models.CharField(max_length=512)
     work_experience = models.TextField()
     personal_info = models.TextField()
-    team = models.ForeignKey(null=True,blank=True,on_delete=models.SET_NULL)
+    team = models.ForeignKey(Team,null=True,blank=True,on_delete=models.SET_NULL)
     is_admin = models.BooleanField(default=False,blank=True)
   
     def __str__(self):
