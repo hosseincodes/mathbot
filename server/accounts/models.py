@@ -15,5 +15,15 @@ class UserProfile(models.Model):
     name = models.CharField(max_length=32, default='')
     avatar = models.ImageField(upload_to='userprofiles')
 
+    skills = models.CharField(max_length=512)
+    links = models.CharField(max_length=512)
+    work_experience = models.TextField()
+    personal_info = models.TextField()
+    team = models.ForeignKey(null=True,blank=True,on_delete=models.SET_NULL)
+    is_admin = models.BooleanField(default=False,blank=True)
+    
+
+
+
     def __str__(self):
         return self.user.username
