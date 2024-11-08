@@ -4,6 +4,12 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from permissions import IsOwnerOrAdmin
 from .serializers import ContestListSerializer,TeamListSerializer
+from rest_framework import status
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from django.contrib.auth.models import User
+from django.shortcuts import get_object_or_404
+from .models import UserProfile
 
 # class ContestsCreateAPIView(generics.CreateAPIView):
 #     queryset = Contest.objects.all()
@@ -18,7 +24,6 @@ class TeamListAPIVIEW(generics.ListAPIView):
     permission_classes = [IsAuthenticated]
     authentication_classes = [JWTAuthentication]
 
-    def get_serializer_context(self,request):
         
 
 
@@ -40,3 +45,28 @@ class ContestsDetailAPIView(generics.RetrieveAPIView):
 #     # serializer_class = PostSerializer
 #     permission_classes = [IsOwnerOrAdmin]
 #     authentication_classes = [JWTAuthentication]
+
+
+
+
+
+class AddUserToTeamView(APIView):
+    def post(self, request, *args, **kwargs):
+        username = request.data.get("username")
+        
+        admin_profile = request.user.profile  
+        
+        if not admin_profile.is_admin or not admin_profile.team:
+            return Response({"error": "برای اضافه کردن عضو، ابتدا باید ادمین یک تیم باشید"}, status=status.HTTP_403_FORBIDDEN)
+        
+        current_team_members = UserProfile.objects.filter(team=admin_profile.team).count()
+        if current_team_members >= 3:
+            return Response({"error": "این تیم دارای حداکثر تعداد اعضا می باشد"}, status=status.HTTP_400_BAD_REQUEST)
+
+        user_to_add = get_object_or_404(User, username=username)
+        user_profile_to_add = user_to_add.profile  
+
+        user_profile_to_add.team = admin_profile.team
+        user_profile_to_add.save()
+        
+        return Response({"success": f"{username} به تیم اضافه شد"}, status=status.HTTP_200_OK)

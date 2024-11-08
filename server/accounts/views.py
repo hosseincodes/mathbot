@@ -27,3 +27,4 @@ class UserUpdateAPIView(generics.UpdateAPIView):
     lookup_field = 'username'
     permission_classes = [IsOwnerOrAdmin]
     authentication_classes = [JWTAuthentication]
+
