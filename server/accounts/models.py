@@ -21,9 +21,5 @@ class UserProfile(models.Model):
     personal_info = models.TextField()
     team = models.ForeignKey(null=True,blank=True,on_delete=models.SET_NULL)
     is_admin = models.BooleanField(default=False,blank=True)
-    
-
-
-
     def __str__(self):
         return self.user.username
