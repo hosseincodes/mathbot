@@ -4,7 +4,7 @@ from .serializers import PostSerializer, PostCreateSerializer
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.authentication import JWTAuthentication
-from ..permissions import IsOwnerOrAdmin
+from permissions import IsOwnerOrAdmin
 
 class LargeResultsSetPagination(PageNumberPagination):
     page_size = 30
