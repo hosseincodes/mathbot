@@ -20,7 +20,7 @@ class UserProfile(models.Model):
     links = models.CharField(max_length=512)
     work_experience = models.TextField()
     personal_info = models.TextField()
-    team = models.ForeignKey(Team,null=True,blank=True,on_delete=models.SET_NULL)
+    team = models.ForeignKey(Team,null=True,blank=True,on_delete=models.SET_NULL,related_name='participants')
     is_admin = models.BooleanField(default=False,blank=True)
   
     def __str__(self):
