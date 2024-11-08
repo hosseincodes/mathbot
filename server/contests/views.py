@@ -11,11 +11,11 @@ from django.contrib.auth.models import User
 from django.shortcuts import get_object_or_404
 from .models import UserProfile
 
-# class ContestsCreateAPIView(generics.CreateAPIView):
-#     queryset = Contest.objects.all()
-#     # serializer_class = ContestCreateSerializer
-#     permission_classes = [IsAuthenticated]
-#     authentication_classes = [JWTAuthentication]
+class ContestsCreateAPIView(generics.CreateAPIView):
+    queryset = Contest.objects.all()
+    # serializer_class = ContestCreateSerializer
+    permission_classes = [IsAuthenticated]
+    authentication_classes = [JWTAuthentication]
 
 
 class TeamListAPIVIEW(generics.ListAPIView):
@@ -40,11 +40,11 @@ class ContestsDetailAPIView(generics.RetrieveAPIView):
     serializer_class = ContestListSerializer
 
 
-# class ContestsDeleteAPIView(generics.DestroyAPIView):
-#     queryset = Contest.objects.all()
-#     # serializer_class = PostSerializer
-#     permission_classes = [IsOwnerOrAdmin]
-#     authentication_classes = [JWTAuthentication]
+class ContestsDeleteAPIView(generics.DestroyAPIView):
+    queryset = Contest.objects.all()
+    # serializer_class = PostSerializer
+    permission_classes = [IsOwnerOrAdmin]
+    authentication_classes = [JWTAuthentication]
 
 
 
