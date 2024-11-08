@@ -1,5 +1,4 @@
 import React from "react";
-import testImg from '../testimg.png'
 import { Link } from "react-router-dom";
 
 function ContestLargeBoxIntroduction() {
@@ -8,12 +7,8 @@ function ContestLargeBoxIntroduction() {
         <>
             <div className="col-md-12 col-xs-12 responsive-box">
                 <div className="post-box">
-                    
                     <div className="row">
-                        <div className="col-md-1 col-xs-0">
-                            <img src={testImg} className="contest-img" alt="contest img"/>
-                        </div>
-                        <div className="col-md-9 col-xs-12">
+                        <div className="col-md-10 col-xs-12">
                             <h5>مسابقه هفتگی مث بات دوره اول</h5>
                             <span style={{marginLeft: "5px", lineHeight: "30px"}}><i class="fa-solid fa-user-group"></i> 1532 شرکت کننده </span>
                             <span style={{marginLeft: "5px", lineHeight: "30px"}}><i class="fa-solid fa-clock"></i> تاریخ برگزاری: ۳ مهر ۱۴۰۳ ساعت ۲۲:۳۰ </span>
