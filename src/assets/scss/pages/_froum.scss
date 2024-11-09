@@ -382,13 +382,6 @@ $font-size-little: 12px;
     color: #fff !important;
     text-align: center;
     line-height: 30px;
-    transition: all 0.2s ease;
-    &:hover {
-        box-shadow: 0 20px 30px 0 rgba(20, 83, 155, .08);
-        -webkit-transform: translateY(-3px);
-        transform: translateY(-3px);
-        transition: all 0.2s ease;
-    }
 }
 
 .sidebar {
