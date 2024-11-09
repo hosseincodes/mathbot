@@ -3,7 +3,6 @@ import PostsListHomePage from '../components/PostsListHomePage';
 import { Helmet } from 'react-helmet';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Sidebar from "../components/Sidebar";
 import LeftSidebar from "../components/LeftSidebar";
 import ContestLargeBoxIntroduction from "../components/ContestLargeBoxIntroduction";
 
@@ -24,11 +23,7 @@ function Home() {
 
                     <ContestLargeBoxIntroduction />
 
-                    <div className="col-md-3 responsive-box">
-                        <Sidebar />
-                    </div>
-
-                    <div className="col-md-6 responsive-box">
+                    <div className="col-md-9 responsive-box">
                         
                         <PostsListHomePage/>
 

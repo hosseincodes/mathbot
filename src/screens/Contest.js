@@ -2,7 +2,6 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Sidebar from "../components/Sidebar";
 import LeftSidebar from "../components/LeftSidebar";
 import { Link } from "react-router-dom";
 
@@ -24,12 +23,8 @@ function Contest() {
                             <div className="breadcrumb">
                                 <h6><Link to="/">مسابقات</Link> / <Link to={`/Contests/`}>تست</Link></h6>
                             </div>
-
-                            <div className="col-md-3 responsive-box">
-                                <Sidebar />
-                            </div>
                     
-                            <div className="col-md-6 col-xs-12 responsive-box">
+                            <div className="col-md-9 col-xs-12 responsive-box">
                                 <div className="post-box-big">
                                     <div className="forum-title-postBox">
                                         <h3>تست</h3>
