@@ -42,15 +42,6 @@ function PostsListHomePage() {
                         <div className="post-box">
                             <Link className="post-box-link" to={`/posts/${data.id}`}>
                                 <h4>{data.title}</h4>
-                                {data.image != null ? (
-                                    <div className="post-img-box">
-                                        <img loading="lazy" src={data.image} className="post-img" alt={data.title} />
-                                    </div>
-                                ) : (
-                                    <div style={{marginBottom: "15px", lineHeight: "24px"}}>
-                                        <span>{data.content}</span>
-                                    </div>
-                                )}
                             </Link>
                             <div className="row post-box-bottom">
                                 <div className="col-md-4">
