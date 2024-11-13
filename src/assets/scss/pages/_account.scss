@@ -122,6 +122,10 @@
     display: none;
 }
 
+.comment-ltr-display {
+    direction: ltr;
+}
+
 .comments-showing-accountPage {
     background: #16171a;
     padding: 13px 10px 5px 10px;
@@ -129,10 +133,18 @@
     box-shadow: 0 5px 10px 0 rgba(20,83,155,.05);
     margin-bottom: 20px;
     display: flex;
+    transition: all 0.2s ease;
+    &:hover {
+        background: #323337;
+        transition: all 0.2s ease;
+    }
 }
 
 .comments-showing-accountPage a {
     color: #fff;
+    &:hover {
+        color: #fff;
+    }
 }
 
 .comments-showing-accountPage h5 {

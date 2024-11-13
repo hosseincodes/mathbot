@@ -3,6 +3,7 @@ import axios from 'axios';
 import Loader from "./Loader";
 import config from '../utils/config';
 import { Link } from "react-router-dom";
+import renderHTML from 'react-render-html';
 
 
 function CommentMiniProfile(props) {
@@ -44,7 +45,9 @@ function CommentMiniProfile(props) {
                     </div>
                     <div className="col-xs-1  margin-mobile-responsive"></div>
                     <div className="col-md-11 col-xs-10">
-                        <Link to={`/posts/${commentData.post}`}><h5>{commentData.content}</h5></Link>
+                        <div className='comment-ltr-display'>
+                            <Link to={`/posts/${commentData.post}`}><h5>{renderHTML(commentData.content)}</h5></Link>
+                        </div>
                     </div>
                 </div>
             </div>

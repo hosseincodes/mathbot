@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Creator from './Creator';
 import Loader from "./Loader";
 import axios from 'axios';
-import renderHTML from 'react-render-html'; 
+import renderHTML from 'react-render-html';
 
 function Comment(props) {
 
