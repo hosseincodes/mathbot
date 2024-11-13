@@ -29,8 +29,10 @@ function LeftSidebar() {
 
                     <div className="user-data-sidebar">
                         <Link className="sidebar-user-links" to={`/users/${username}`}>
-                            <img src={data.avatar} className="account-user-img" alt={data.name} />
-                            <h4>{data.name}</h4>
+                            <div>
+                                <img src={data.avatar} className="account-user-img" alt={data.name} />
+                                <h4>{data.name}</h4>
+                            </div>
                         </Link>
                         <h5>{data.bio}</h5>
                     </div>

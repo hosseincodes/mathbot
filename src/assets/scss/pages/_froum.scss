@@ -398,6 +398,9 @@ $font-size-little: 12px;
 
 .sidebar-user-links {
     color: #fff;
+    &:hover{
+        color: #fff;
+    }
 }
 
 .contact-links {
