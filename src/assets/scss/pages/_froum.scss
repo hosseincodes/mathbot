@@ -62,6 +62,10 @@ $font-size-little: 12px;
     resize: none;
 }
 
+.ask-description {
+    color: #333333 !important;
+}
+
 .ask-image {
     margin: 10px 0 30px;
 }
@@ -174,7 +178,6 @@ $font-size-little: 12px;
 }
 
 .post-box-bottom {
-    margin-top: 15px;
     padding: 2px 0 5px 0;
 }
 
@@ -348,6 +351,7 @@ $font-size-little: 12px;
 
 .post-content-box {
     margin-top: 10px;
+    text-align: left;
 }
 
 .comment-button {

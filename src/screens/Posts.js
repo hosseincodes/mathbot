@@ -8,6 +8,7 @@ import axios from 'axios';
 import UploadComment from '../components/UploadComment';
 import Loader from "../components/Loader";
 import LeftSidebar from "../components/LeftSidebar";
+import renderHTML from 'react-render-html'; 
 
 function Posts() {
 
@@ -99,7 +100,7 @@ function Posts() {
                                     ) : (<></>)}
                                     
                                     <div className="post-content-box">
-                                        <p>{data.content}</p>
+                                        {renderHTML(data.content)}
                                     </div>
                                     
                                     <div className="post-tag-box">

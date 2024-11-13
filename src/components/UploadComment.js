@@ -2,28 +2,25 @@ import React, { useState } from 'react';
 import config from '../utils/config';
 import IsAuthenticated from "../utils/IsAuthenticated";
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 function UploadComment(props) {
 
     const post = props.postId
 
-    const [formData, setFormData] = useState({
-      content: "",
-      post_id: post,
-    });
-
-    const handleChange = (e) => {
-      setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
+    const [content, setContent] = useState() 
     
-    // Function to submit the form data using Axios
     const handleSubmit = async (e) => {
       e.preventDefault();
 
       const TokenConfig = config();
 
       try {
-        const response = await TokenConfig.post("/comments/create/", formData);
+        const response = await TokenConfig.post("/comments/create/", {
+          content: content,
+          post_id: post
+        });
         console.log("Post created:", response.data);
         alert("دیدگاه شما با موفقیت ارسال شد");
         window.location.reload();
@@ -44,11 +41,13 @@ function UploadComment(props) {
         <div className="your-answer-box">
             <form onSubmit={handleSubmit}>
                 <div className="ask-description">
-                    <textarea
-                        className='ask-description-textarea'
-                        name="content"
-                        onChange={handleChange}
-                    />
+                  <CKEditor
+                        editor={ ClassicEditor }
+                        onChange={ ( event, editor ) => {
+                        const data = editor.getData();
+                        setContent(data);
+                        } }
+                  />
 
                 </div>
                 <div className="ask-button">

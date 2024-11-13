@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Creator from './Creator';
 import Loader from "./Loader";
 import axios from 'axios';
+import renderHTML from 'react-render-html'; 
 
 function Comment(props) {
 
@@ -26,7 +27,9 @@ function Comment(props) {
                     <div className="post-answer-big">
                         <Creator data = {commentData.creator} />
                         <h6>&nbsp; {commentData.created_at}</h6>
-                        <p>{commentData.content}</p>
+                        <div className='post-content-box'>
+                            {renderHTML(commentData.content)}
+                        </div>
                     </div>
                 </div>
             </div>
