@@ -20,6 +20,7 @@ $font-size-little: 12px;
     margin: 10px 0 15px;
     height: 40px;
     resize: none;
+    direction: ltr;
 }
 
 .ask-input-description {
@@ -333,6 +334,7 @@ $font-size-little: 12px;
 .forum-title-postBox h3 {
     line-height: 30px;
     text-align: left;
+    direction: ltr;
 }
 
 .forum-title-posts {
