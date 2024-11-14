@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from 'axios';
 import IsAuthenticated from "../utils/IsAuthenticated";
+import logo from "../assets/images/MATHBOTrect.png"
 
 function Header() {
 
@@ -70,7 +71,7 @@ function Header() {
                 <div className="col-md-4">
                     <div className="logo-button">
                         <Link to="/">
-                            <div className="site-title"><h3>Mathbot, Algorithm Arena</h3></div>
+                            <img className="logo-img" src={logo} alt="MATHBOT Logo" />
                         </Link>
                     </div>
                 </div>
