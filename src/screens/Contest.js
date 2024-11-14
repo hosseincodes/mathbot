@@ -23,6 +23,10 @@ function Contest() {
                             <div className="breadcrumb">
                                 <h6><Link to="/">مسابقات</Link> / <Link to={`/Contests/`}>تست</Link></h6>
                             </div>
+
+                            <div className="col-md-3 responsive-box">
+                                <LeftSidebar />
+                            </div>
                     
                             <div className="col-md-9 col-xs-12 responsive-box">
                                 <div className="post-box-big">
@@ -53,10 +57,6 @@ function Contest() {
                                     
                                 </div>
 
-                            </div>
-
-                            <div className="col-md-3 responsive-box">
-                                <LeftSidebar />
                             </div>
 
                         </div>

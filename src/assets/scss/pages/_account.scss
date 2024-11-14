@@ -122,10 +122,6 @@
     display: none;
 }
 
-.comment-ltr-display {
-    direction: ltr;
-}
-
 .comments-showing-accountPage {
     background: #16171a;
     padding: 13px 10px 5px 10px;
@@ -134,6 +130,8 @@
     margin-bottom: 20px;
     display: flex;
     transition: all 0.2s ease;
+    text-align: left;
+    direction: ltr;
     &:hover {
         background: #323337;
         transition: all 0.2s ease;

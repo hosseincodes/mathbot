@@ -38,36 +38,34 @@ function PostsListHomePage() {
         return (
             <>
                 {lisitng.map((data) =>
-                    <div className="col-md-12 col-xs-12 responsive-box">
-                        <div className="post-box">
-                            <Link className="post-box-link" to={`/posts/${data.id}`}>
-                                <h4>{data.title}</h4>
-                            </Link>
-                            <div className="row post-box-bottom">
-                                <div className="col-md-4">
-                                    <Creator data={data.creator} />
-                                </div>
-                                <div className="col-md-6">
-                                    {data.tags.split(",").map((e) => (
-                                        <div className="post-tags-homepage">{e}</div>
-                                    ))}
-                                </div>
-                                <div className="col-md-2">
-                                    <p className="post-answer">{data.comments.length} <i class="fa-regular fa-comments"></i></p>
-                                </div>
+                    <div className="post-box">
+                        <Link className="post-box-link" to={`/posts/${data.id}`}>
+                            <h4>{data.title}</h4>
+                        </Link>
+                        <div className="row post-box-bottom">
+                            <div className="col-md-4">
+                                <Creator data={data.creator} />
                             </div>
-
-                            {/* mobile display */}
-                            <div className="row post-box-bottom-mobile-display">
-                                <div className="col-xs-8">
-                                    <Creator data={data.creator} />
-                                </div>
-                                <div className="col-xs-4">
-                                    <span className="number-of-comments-homepage">{data.comments.length} دیدگاه</span>
-                                </div>
+                            <div className="col-md-6">
+                                {data.tags.split(",").map((e) => (
+                                    <div className="post-tags-homepage">{e}</div>
+                                ))}
                             </div>
-                            
+                            <div className="col-md-2">
+                                <p className="post-answer">{data.comments.length} <i class="fa-regular fa-comments"></i></p>
+                            </div>
                         </div>
+
+                        {/* mobile display */}
+                        <div className="row post-box-bottom-mobile-display">
+                            <div className="col-xs-8">
+                                <Creator data={data.creator} />
+                            </div>
+                            <div className="col-xs-4">
+                                <span className="number-of-comments-homepage">{data.comments.length} دیدگاه</span>
+                            </div>
+                        </div>
+                        
                     </div>
                     )
                 }     

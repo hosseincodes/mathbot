@@ -45,9 +45,7 @@ function CommentMiniProfile(props) {
                     </div>
                     <div className="col-xs-1  margin-mobile-responsive"></div>
                     <div className="col-md-11 col-xs-10">
-                        <div className='comment-ltr-display'>
-                            <Link to={`/posts/${commentData.post}`}><h5>{renderHTML(commentData.content)}</h5></Link>
-                        </div>
+                        <Link to={`/posts/${commentData.post}`}><h5>{renderHTML(commentData.content)}</h5></Link>
                     </div>
                 </div>
             </div>

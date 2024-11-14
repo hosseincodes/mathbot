@@ -143,6 +143,8 @@ $font-size-little: 12px;
 .breadcrumb {
     padding: 1px 15px 1px 15px !important;
     background-color: unset !important;
+    text-align: left;
+    direction: ltr;
 }
 
 .breadcrumb a {
@@ -169,6 +171,8 @@ $font-size-little: 12px;
 .post-box h4 {
     font-weight: 600;
     line-height: 30px;
+    text-align: left;
+    direction: ltr;
 }
 
 .post-box p {
@@ -328,6 +332,7 @@ $font-size-little: 12px;
 
 .forum-title-postBox h3 {
     line-height: 30px;
+    text-align: left;
 }
 
 .forum-title-posts {

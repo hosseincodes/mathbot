@@ -137,32 +137,6 @@ function Account() {
                     <div className="section">
                         <div className="container">
                             <div className="row account">
-                                <div className="col-md-3">
-                                    <div className="account-sidebar">
-                                        <div className="account-user-img-box-large">
-                                            <img src={data.avatar} className="account-user-img" alt={data.name} />
-                                        </div>
-                                        <p style={{color: "#fff", textAlign: "center", padding: "15px 0px 0px 0px"}}>{data.name}</p>
-                                        <Link to={`/users/${data.username}`}>
-                                            <div className="profile-view">
-                                                <p>مشاهده پروفایل</p>
-                                            </div>
-                                        </Link>
-                                    </div>
-
-                                    <div className="account-sidebar-links"><span onClick={() => { setexpand(false) }} style={expand ? { } : {background: "#29a58d", color: "#fff"}}>داشبورد</span></div>
-                                    <div className="account-sidebar-links"><span onClick={() => { setexpand(true) }} style={expand ? {background: "#29a58d", color: "#fff"} : { }}>ادیت پروفایل و تنظمیات</span></div>
-                                    <div className="account-sidebar-links">
-                                        <span 
-                                            onClick={() => {
-                                                localStorage.setItem('token', "LOGGEDOUT");
-                                                window.location.replace("/");
-                                            }}
-                                        >خروج از حساب کاربری
-                                        </span>
-                                    </div>
-
-                                </div>
                                 <div className="col-md-9">
                                     <div className="account-section">
                                         <div style={expand ? {display: 'none'} : { }}>
@@ -224,6 +198,32 @@ function Account() {
                                             </form>
                                         </div>
                                     </div>
+                                </div>
+                                <div className="col-md-3">
+                                    <div className="account-sidebar">
+                                        <div className="account-user-img-box-large">
+                                            <img src={data.avatar} className="account-user-img" alt={data.name} />
+                                        </div>
+                                        <p style={{color: "#fff", textAlign: "center", padding: "15px 0px 0px 0px"}}>{data.name}</p>
+                                        <Link to={`/users/${data.username}`}>
+                                            <div className="profile-view">
+                                                <p>مشاهده پروفایل</p>
+                                            </div>
+                                        </Link>
+                                    </div>
+
+                                    <div className="account-sidebar-links"><span onClick={() => { setexpand(false) }} style={expand ? { } : {background: "#29a58d", color: "#fff"}}>داشبورد</span></div>
+                                    <div className="account-sidebar-links"><span onClick={() => { setexpand(true) }} style={expand ? {background: "#29a58d", color: "#fff"} : { }}>ادیت پروفایل و تنظمیات</span></div>
+                                    <div className="account-sidebar-links">
+                                        <span 
+                                            onClick={() => {
+                                                localStorage.setItem('token', "LOGGEDOUT");
+                                                window.location.replace("/");
+                                            }}
+                                        >خروج از حساب کاربری
+                                        </span>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>

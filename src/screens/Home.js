@@ -21,7 +21,15 @@ function Home() {
             <div className="section">
                 <div className="container">
 
-                    <ContestLargeBoxIntroduction />
+                    <div className="row">
+                        <div className="col-md-12">
+                            <ContestLargeBoxIntroduction />
+                        </div>
+                    </div>
+
+                    <div className="col-md-3 responsive-box">
+                        <LeftSidebar />
+                    </div>
 
                     <div className="col-md-9 responsive-box">
                         
@@ -35,10 +43,6 @@ function Home() {
                             </div>
                         </div>
 
-                    </div>
-
-                    <div className="col-md-3 responsive-box">
-                        <LeftSidebar />
                     </div>
 
                 </div>

@@ -71,6 +71,10 @@ function Posts() {
                                 <h6><Link to="/">انجمن</Link> / <Link to={`/posts/${data.id}`}>{data.title}</Link></h6>
                             </div>
 
+                            <div className="col-md-3 responsive-box">
+                                <LeftSidebar />
+                            </div>
+
                             <div className="col-md-9 col-xs-12 responsive-box">
                                 <div className="post-box-big">
                                     <div className="forum-title-postBox">
@@ -126,10 +130,6 @@ function Posts() {
                         
                                 <UploadComment postId={id} />
 
-                            </div>
-
-                            <div className="col-md-3 responsive-box">
-                                <LeftSidebar />
                             </div>
 
                         </div>
