@@ -6,6 +6,23 @@
 
 post & Answer Forum
 
+Note: The program is compatible with Node.js version 16. It is not compatible with higher versions.
+
+Downgrading Node.js:
+- For macOS and Linux:
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+```
+- For Windows:
+Download the Windows installer from the nvm GitHub repository.
+Run the installer and follow the on-screen instructions.
+
+```
+source ~/.nvm/nvm.sh
+nvm install 16
+nvm use 16
+```
+
 ## API endpoint
 
 ```
