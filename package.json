@@ -1,6 +1,6 @@
 {
   "name": "mathbot",
-  "version": "0.1.0",
+  "version": "0.1.3",
   "private": true,
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^41.2.1",

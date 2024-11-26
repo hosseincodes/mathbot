@@ -38,6 +38,7 @@ server/contests/__pycache__
 server/teams/migrations
 server/teams/__pycache__
 server/server/__pycache__
+server/__pycache__
 
 # database
 server/db.sqlite3

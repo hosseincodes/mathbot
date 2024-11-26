@@ -35,14 +35,6 @@ function Home() {
                         
                         <PostsListHomePage/>
 
-                        <div className="col-md-12 col-xs-12">
-                            <div className="row">
-                                <p>
-                                    <span>به دنبال بیشتر هستید؟ <span className="page2">به زودی </span></span>
-                                </p>
-                            </div>
-                        </div>
-
                     </div>
 
                 </div>
