@@ -9,7 +9,9 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from django.contrib.auth.models import User
 from django.shortcuts import get_object_or_404
-from .models import UserProfile
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 class ContestsCreateAPIView(generics.CreateAPIView):
     queryset = Contest.objects.all()
@@ -61,7 +63,7 @@ class AddUserToTeamView(APIView):
         if not admin_profile.is_admin or not admin_profile.team:
             return Response({"error": "برای اضافه کردن عضو، ابتدا باید ادمین یک تیم باشید"}, status=status.HTTP_403_FORBIDDEN)
         
-        current_team_members = UserProfile.objects.filter(team=admin_profile.team).count()
+        current_team_members = User.objects.filter(team=admin_profile.team).count()
         if current_team_members >= 3:
             return Response({"error": "این تیم دارای حداکثر تعداد اعضا می باشد"}, status=status.HTTP_400_BAD_REQUEST)
 
@@ -102,7 +104,7 @@ class LeaveTeamView(APIView):
         # If the user is the admin, delete the team and remove all members
         if user_profile.is_admin:
             team = user_profile.team
-            team_members = UserProfile.objects.filter(team=team)
+            team_members = User.objects.filter(team=team)
             
             # Set the team and admin status to None/False for all members
             for member in team_members:
