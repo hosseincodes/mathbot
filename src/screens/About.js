@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Helmet } from 'react-helmet';
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Header from "../components/Header.js";
+import Footer from "../components/Footer.js";
 import Hossein from '../assets/images/hossein-akbari.jpeg';
 import Maziar from '../assets/images/maziar-heidari.jpg';
 import Olia from '../assets/images/olia-abbasi.jpg';

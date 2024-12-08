@@ -1,5 +1,5 @@
 import React from "react";
-import IsAuthenticated from "../utils/IsAuthenticated";
+import IsAuthenticated from "../utils/IsAuthenticated.js";
 import { Link } from "react-router-dom";
 
 function Footer() {

@@ -1,36 +1,36 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Home from './screens/Home';
-import About from './screens/About';
-import PostCreate from './screens/PostCreate';
-import Posts from './screens/Posts';
-import Contest from './screens/Contest';
-import Login from './screens/Login';
-import Register from './screens/Register';
-import Account from './screens/Account';
-import NotFoundPage from './screens/NotFoundPage';
-import Search from './screens/Search';
-import Users from './screens/Users';
-import Notifications from './screens/Notifications';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './screens/Home.js';
+import About from './screens/About.js';
+import PostCreate from './screens/PostCreate.js';
+import Posts from './screens/Posts.js';
+import Contest from './screens/Contest.js';
+import Login from './screens/Login.js';
+import Register from './screens/Register.js';
+import Account from './screens/Account.js';
+import NotFoundPage from './screens/NotFoundPage.js';
+import Search from './screens/Search.js';
+import Users from './screens/Users.js';
+import Notifications from './screens/Notifications.js';
 
 class Router extends Component {
     render () {
         return (
             <BrowserRouter>
-                <Switch>
-                    <Route path="/" component={Home} exact />
-                    <Route path="/about" component={About} exact />
-                    <Route path="/post/create" component={PostCreate} exact />
-                    <Route path="/login" component={Login} exact />
-                    <Route path="/register" component={Register} exact />
-                    <Route path="/account" component={Account} exact />
-                    <Route path="/Search" component={Search} exact />
-                    <Route path="/notifications" component={Notifications} exact />
-                    <Route path="/users/:username" component={Users} exact />
-                    <Route path="/posts/:id" component={Posts} exact />
-                    <Route path="/contests/:id" component={Contest} exact />
-                    <Route component={NotFoundPage} exact />
-                </Switch>
+                <Routes>
+                    <Route path="/" element={<Home />} exact />
+                    <Route path="/about" element={<About />} exact />
+                    <Route path="/post/create" element={<PostCreate />} exact />
+                    <Route path="/login" element={<Login />} exact />
+                    <Route path="/register" element={<Register />} exact />
+                    <Route path="/account" element={<Account />} exact />
+                    <Route path="/Search" element={<Search />} exact />
+                    <Route path="/notifications" element={<Notifications />} exact />
+                    <Route path="/users/:username" element={<Users />} exact />
+                    <Route path="/posts/:id" element={<Posts />} exact />
+                    <Route path="/contests/:id" element={<Contest />} exact />
+                    <Route element={<NotFoundPage />} exact />
+                </Routes>
             </BrowserRouter>
         );
     }

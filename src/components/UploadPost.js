@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
-import config from '../utils/config';
-import IsAuthenticated from "../utils/IsAuthenticated";
+import config from '../utils/config.js';
+import IsAuthenticated from "../utils/IsAuthenticated.js";
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 

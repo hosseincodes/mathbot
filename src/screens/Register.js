@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Helmet } from 'react-helmet';
-import Header from "../components/Header";
+import Header from "../components/Header.js";
 import { Link } from "react-router-dom";
 
 function Register() {

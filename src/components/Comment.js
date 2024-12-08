@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import Creator from './Creator';
-import Loader from "./Loader";
+import Creator from './Creator.js';
+import Loader from "./Loader.js";
 import axios from 'axios';
-import renderHTML from 'react-render-html';
+import parse from 'html-react-parser';
 
 function Comment(props) {
 
@@ -10,6 +10,7 @@ function Comment(props) {
     
     const [commentData, setcommentData] = useState([])
     const [isLoading, setIsLoading] = useState(true);
+    const parsedHtml = parse(commentData.content);
 
     useEffect(() => {
         axios.get(data).then((res) => {
@@ -28,7 +29,7 @@ function Comment(props) {
                         <Creator data = {commentData.creator} />
                         <h6>&nbsp; {commentData.created_at}</h6>
                         <div className='post-content-box'>
-                            {renderHTML(commentData.content)}
+                            {parsedHtml}
                         </div>
                     </div>
                 </div>

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Header from "../components/Header.js";
+import Footer from "../components/Footer.js";
 import { useParams } from "react-router-dom";
 import axios from 'axios';
-import Loader from "../components/Loader";
-import PostPublicProfile from '../components/PostPublicProfile';
+import Loader from "../components/Loader.js";
+import PostPublicProfile from '../components/PostPublicProfile.js';
 
 
 function Users() {

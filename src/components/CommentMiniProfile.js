@@ -1,9 +1,9 @@
 import React, { useEffect,useState } from 'react';
 import axios from 'axios';
-import Loader from "./Loader";
-import config from '../utils/config';
+import Loader from "./Loader.js";
+import config from '../utils/config.js';
 import { Link } from "react-router-dom";
-import renderHTML from 'react-render-html';
+import parse from 'html-react-parser';
 
 
 function CommentMiniProfile(props) {
@@ -12,6 +12,7 @@ function CommentMiniProfile(props) {
     
     const [commentData, setcommentData] = useState([])
     const [isLoading, setIsLoading] = useState(true);
+    const parsedHtml = parse(commentData.content);
 
     useEffect(() => {
         axios.get(data).then((res) => {
@@ -45,7 +46,7 @@ function CommentMiniProfile(props) {
                     </div>
                     <div className="col-xs-1  margin-mobile-responsive"></div>
                     <div className="col-md-11 col-xs-10">
-                        <Link to={`/posts/${commentData.post}`}><h5>{renderHTML(commentData.content)}</h5></Link>
+                        <Link to={`/posts/${commentData.post}`}><h5>{parsedHtml}</h5></Link>
                     </div>
                 </div>
             </div>

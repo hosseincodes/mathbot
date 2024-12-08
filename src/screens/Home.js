@@ -1,10 +1,10 @@
 import React from "react";
-import PostsListHomePage from '../components/PostsListHomePage';
+import PostsListHomePage from '../components/PostsListHomePage.js';
 import { Helmet } from 'react-helmet';
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import LeftSidebar from "../components/LeftSidebar";
-import ContestLargeBoxIntroduction from "../components/ContestLargeBoxIntroduction";
+import Header from "../components/Header.js";
+import Footer from "../components/Footer.js";
+import LeftSidebar from "../components/LeftSidebar.js";
+import ContestLargeBoxIntroduction from "../components/ContestLargeBoxIntroduction.js";
 
 function Home() {
 

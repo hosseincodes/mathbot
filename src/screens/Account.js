@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import PostMiniProfile from "../components/PostMiniProfile";
-import CommentMiniProfile from "../components/CommentMiniProfile";
+import Header from "../components/Header.js";
+import Footer from "../components/Footer.js";
+import PostMiniProfile from "../components/PostMiniProfile.js";
+import CommentMiniProfile from "../components/CommentMiniProfile.js";
 import { Link } from "react-router-dom";
 import axios from 'axios';
-import Loader from "../components/Loader";
-import IsAuthenticated from "../utils/IsAuthenticated";
-import config from '../utils/config';
+import Loader from "../components/Loader.js";
+import IsAuthenticated from "../utils/IsAuthenticated.js";
+import config from '../utils/config.js';
 
 function Account() {
 

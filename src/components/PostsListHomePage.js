@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Loader from "./Loader";
-import Creator from './Creator';
+import Loader from "./Loader.js";
+import Creator from './Creator.js';
 
 function PostsListHomePage() {
 

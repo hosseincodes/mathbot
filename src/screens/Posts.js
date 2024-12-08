@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import Comment from '../components/Comment';
+import Comment from '../components/Comment.js';
 import { useParams , Link } from "react-router-dom";
 import { Helmet } from 'react-helmet';
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Header from "../components/Header.js";
+import Footer from "../components/Footer.js";
 import axios from 'axios';
-import UploadComment from '../components/UploadComment';
-import Loader from "../components/Loader";
-import LeftSidebar from "../components/LeftSidebar";
-import renderHTML from 'react-render-html'; 
+import UploadComment from '../components/UploadComment.js';
+import Loader from "../components/Loader.js";
+import LeftSidebar from "../components/LeftSidebar.js";
+import parse from 'html-react-parser';
 
 function Posts() {
 
@@ -17,6 +17,7 @@ function Posts() {
     const [data, setdata] = useState([])
     const [creator, setcreator] = useState([])
     const [isLoading, setIsLoading] = useState(true);
+    const parsedHtml = parse(data.content);
 
     useEffect(() => {
             axios.get("https://server.mathbot.ir/api/posts/" + id + "/").then((res) => {
@@ -104,7 +105,7 @@ function Posts() {
                                     ) : (<></>)}
                                     
                                     <div className="post-content-box">
-                                        {renderHTML(data.content)}
+                                        {parsedHtml}
                                     </div>
                                     
                                     <div className="post-tag-box">

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from 'axios';
-import IsAuthenticated from "../utils/IsAuthenticated";
+import IsAuthenticated from "../utils/IsAuthenticated.js";
 import logo from "../assets/images/MATHBOTrect.png"
 
 function Header() {

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { Helmet } from 'react-helmet';
-import Header from "../components/Header";
+import Header from "../components/Header.js";
 import TheLostBoy from '../assets/images/lost.png';
-import Footer from "../components/Footer";
+import Footer from "../components/Footer.js";
 
 class NotFoundPage extends Component {
     render () {
