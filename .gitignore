@@ -24,7 +24,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # virtual environment
-server/venv
+backend/venv
 
 # migrations
 **/migrations/
@@ -35,4 +35,4 @@ __pycache__/
 *.pyo
 
 # uploads
-server/uploads
+backend/uploads
