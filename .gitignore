@@ -26,22 +26,13 @@ yarn-error.log*
 # virtual environment
 server/venv
 
-# migrations and cache
-server/comments/migrations
-server/comments/__pycache__
-server/posts/migrations
-server/posts/__pycache__
-server/accounts/migrations
-server/accounts/__pycache__
-server/contests/migrations
-server/contests/__pycache__
-server/teams/migrations
-server/teams/__pycache__
-server/server/__pycache__
-server/__pycache__
+# migrations
+**/migrations/
 
-# database
-server/db.sqlite3
+# bytecode files
+__pycache__/
+*.pyc
+*.pyo
 
-# profile images
+# uploads
 server/uploads

@@ -1,0 +1,61 @@
+version: '3.8'
+
+services:
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_container
+    env_file:
+      - .env.development.local
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - project_network
+
+
+  backend:
+    image: akbarihossein/mathbot-server
+    container_name: django_container
+    env_file:
+      - .env.development.local
+    command: gunicorn --bind 0.0.0.0:8000 myproject.wsgi:application
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mysql
+    networks:
+      - project_network
+
+
+  frontend:
+    image: akbarihossein/mathbot
+    container_name: react_container
+    stdin_open: true
+    tty: true
+    ports:
+      - "3000:3000"
+    networks:
+      - project_network
+
+
+  nginx:
+    image: nginx:stable-alpine
+    container_name: nginx_container
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - "80:80"
+    depends_on:
+      - frontend
+      - backend
+    networks:
+      - project_network
+
+volumes:
+  mysql_data:
+
+networks:
+  project_network:
+    driver: bridge
