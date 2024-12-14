@@ -9,11 +9,9 @@ ENV PYTHONUNBUFFERED 1
 WORKDIR /backend
 
 # Install system dependencies for MySQL
-RUN apt-get update && apt-get install -y \
-    gcc \
-    default-libmysqlclient-dev \
-    --no-install-recommends && \
-    rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential pkg-config libmariadb-dev \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install Python dependencies
 COPY requirements.txt /backend/
@@ -26,4 +24,4 @@ COPY . /backend/
 EXPOSE 8000
 
 # Run the application
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "myproject.wsgi:application"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "server.wsgi:application"]
