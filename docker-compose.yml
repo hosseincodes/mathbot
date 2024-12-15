@@ -4,21 +4,18 @@ services:
     image: mysql:8.0
     container_name: mysql_container
     env_file:
-      - ./backend/.env.development.local
+      - ./backend/.env
     ports:
       - "3306:3306"
-    volumes:
-      - mysql_data:/var/lib/mysql
     networks:
       - project_network
 
 
   backend:
-    image: akbarihossein/mathbot-server:1.0.3
+    image: akbarihossein/mathbot-server:1.0.3.1
     container_name: server
     env_file:
-      - ./backend/.env.development.local
-    command: gunicorn --bind 0.0.0.0:8000 server.wsgi:application
+      - ./backend/.env
     ports:
       - "8000:8000"
     depends_on:
@@ -32,7 +29,6 @@ services:
     container_name: frontend
     stdin_open: true
     tty: true
-    restart: always
     ports:
       - "3000:3000"
     networks:
@@ -51,9 +47,6 @@ services:
       - backend
     networks:
       - project_network
-
-volumes:
-  mysql_data:
 
 networks:
   project_network:
